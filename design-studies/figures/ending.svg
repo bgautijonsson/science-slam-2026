@@ -26,10 +26,10 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
-<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #FAF9F9;' />
-<text x='46.08' y='79.47' style='font-size: 29.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='401.25px' lengthAdjust='spacingAndGlyphs'>The Hessian wasn't the enemy.</text>
-<text x='46.08' y='247.78' style='font-size: 38.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='415.58px' lengthAdjust='spacingAndGlyphs'>Assuming independence</text>
-<text x='46.08' y='301.59' style='font-size: 38.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='264.36px' lengthAdjust='spacingAndGlyphs'>was the enemy.</text>
+<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
+<text x='46.08' y='79.61' style='font-size: 29.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='392.83px' lengthAdjust='spacingAndGlyphs'>The Hessian wasn't the enemy.</text>
+<text x='46.08' y='247.95' style='font-size: 38.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='412.02px' lengthAdjust='spacingAndGlyphs'>Assuming independence</text>
+<text x='46.08' y='301.76' style='font-size: 38.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='257.62px' lengthAdjust='spacingAndGlyphs'>was the enemy.</text>
 </g>
 </g>
 </svg>

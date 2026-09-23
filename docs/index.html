@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-2fe01f284214a4d0e036c3bb6c0d5540.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fc6244f29ba5aa1a0378faabe205b364.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -133,10 +133,11 @@
     <div class="slides">
 
 
-<section id="section" class="slide level2 no-heading poster" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
+<section id="poster" class="slide level2 art" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
 <h2></h2>
 <aside class="notes">
-<p>~15 s. The worrying.</p>
+<p><strong>The worrying — 15 seconds.</strong></p>
+<p>Let the poster register. Introduce your research as modelling extreme rainfall. Establish the apparently unreasonable attachment to a Hessian; do not explain the film reference. Keep the opening in your own voice.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -149,21 +150,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2 no-heading">
+<section id="rain" class="slide level2 print">
 <h2></h2>
-<div class="rain quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="Figures/flod1.jpg"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="Figures/flod2.webp"></p>
-</div>
-</div>
-</div>
-<p><span class="photo-credit">Reykjavík, 2016 (photo: Júlíus Sigurjónsson, mbl.is) · Siglufjörður, 2024 (photo: Eva Björk Benediktsdóttir, RÚV)</span></p>
+<p><img data-src="Figures/flod1.jpg" class="flood"></p>
+<p><span class="photo-credit">Reykjavík, 2016 · Photo: Júlíus Sigurjónsson, mbl.is</span></p>
 <aside class="notes">
-<p>~20 s. When it rains hard here, it rains hard next door.</p>
+<p><strong>Why connected rainfall matters — 20 seconds.</strong></p>
+<p>Use the flood photograph as motivation. A severe storm can affect more than one station. The question is how to represent that connection when we estimate rainfall extremes. This is a photograph of Reykjavik in 2016, not paired evidence from several stations. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -176,113 +169,148 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="covariance" class="slide level2">
-<h2>Covariance</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figures/fig1-covariance.png" class="quarto-figure quarto-figure-center" height="480"></p>
-</figure>
-</div>
-<aside class="notes">
-<p>~30 s. Two places: rain here, rain next door.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-2" class="slide level2 no-heading">
-<h2></h2>
-
-<img data-src="Figures/fig2-cov-vs-prec.png" class="quarto-figure quarto-figure-center r-stretch" style="width:92.0%"><aside class="notes">
-<p>~35 s. Ten places along a line. Blank cell = no direct link.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="give-ourselves-a-hessian" class="slide level2">
-<h2>Give ourselves a Hessian</h2>
-
-<img data-src="Figures/fig3-hessian-peaks.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><aside class="notes">
-<p>~30 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. End on the flat peak: it’s an approximation.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="three-types-of-hessian" class="slide level2">
-<h2>Three types of Hessian</h2>
-<div class="r-stack">
-<div class="hessian-step">
-<p><img data-src="Figures/fig4-hessian-diagonal.png" height="420"></p>
-<p><span class="hessian-label">Diagonal</span></p>
-</div>
-<div class="hessian-step fragment">
-<p><img data-src="Figures/fig5-hessian-block.png" height="420"></p>
-<p><span class="hessian-label">Block diagonal</span></p>
-</div>
-<div class="hessian-step fragment">
-<p><img data-src="Figures/fig6-hessian-banded.png" height="420"></p>
-<p><span class="hessian-label">Block and banded</span></p>
-</div>
-</div>
-<aside class="notes">
-<p>~85 s, two clicks. Bridge first: many numbers → the curvature is a grid, and that grid is a precision matrix like the ten places. Then diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="every-road-leads-back-to-the-normal-distribution" class="slide level2 closing">
-<h2>Every road leads back to the normal distribution</h2>
-<p><span class="fragment punchline">The Hessian wasn’t the enemy.</span></p>
-<p><span class="fragment punchline">Assuming independence was the enemy.</span></p>
-<aside class="notes">
-<p>~25 s, two clicks.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-3" class="slide level2 no-heading poster" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
+<section id="level" class="slide level2 art" data-background-image="design-studies/designs/stations-1.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
 <aside class="notes">
-<p>~5 s. Callback to the opener.</p>
+<p><strong>Station A: higher level — 10 seconds.</strong></p>
+<p>Three imaginary places. The dashed curve is the same reference in every panel. At A, move the level up: its annual biggest downpours tend to be larger. Point to the horizontal shift. These are invented distributions, not fitted observations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="spread" class="slide level2 art" data-background-image="design-studies/designs/stations-2.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Station B: more spread — 10 seconds.</strong></p>
+<p>At B, increase the spread: those annual maxima vary more from year to year. Compare B with its dashed reference, not with A. The level and tail parameters remain at their reference values. This is rainfall variability, not parameter uncertainty.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tail" class="slide level2 art" data-background-image="design-studies/designs/stations-3.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Station C: heavier tail — 10 seconds.</strong></p>
+<p>At C, increase the tail parameter: exceptionally large downpours become more plausible. Point to the shaded far tail. Changing shape can also affect the centre and spread of the distribution; we have held the other parameters fixed, not all other distributional features.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="stations" class="slide level2 art" data-background-image="design-studies/designs/station-tokens.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Three stations: nine estimates — 20 seconds.</strong></p>
+<p>These examples changed one setting at a time. In practice, we estimate all three at every station: three stations, nine estimates. All nine tokens now have equal emphasis. Different rainfall distributions do not yet tell us how the stations behave together. Keep A-B-C and L-S-T in this order for the grid.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="uncertainty" class="slide level2 art" data-background-image="design-studies/figures/uncertainty.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Give ourselves a Hessian — 35 seconds.</strong></p>
+<p>Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="separate" class="slide level2 art" data-background-image="design-studies/designs/matrix-1.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>First: ignore the connections — 15 seconds.</strong></p>
+<p>Each row and column is one of our nine quantities. Start with the simplest picture: keep uncertainty for each one, but pretend all those uncertainties are separate. Point to one diagonal entry. This is a deliberate approximation, not a claim that a three-parameter GEV naturally has a diagonal Hessian.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="within" class="slide level2 art" data-background-image="design-studies/designs/matrix-2.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Then: keep links within a station — 25 seconds.</strong></p>
+<p>But we estimate a station’s three quantities from the same record. Different combinations can fit similar observations, so those estimates are linked. The three-by-three block keeps those links. Point to just one block, then show that the other two stations have their own. We are still treating the station records separately in the likelihood.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="between" class="slide level2 art" data-background-image="design-studies/designs/matrix-3.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>The research moment: links between stations — 45 seconds.</strong></p>
+<p>Now let the rainfall records be dependent between stations. The same storm can affect several places, and the likelihood couples estimates across station boundaries. Point to one newly blue block. This is the part I work on: carrying those connections into an approximation we can compute with. Optional joke: Those extra blue squares took several years. Pause before returning to the science. These are schematic links for a three-station chain; the colours do not show numerical Hessian values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="callback" class="slide level2 art" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
+<h2></h2>
+<aside class="notes">
+<p><strong>The ending, spoken over the poster — 15 seconds.</strong></p>
+<p>The Hessian wasn’t the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.</p>
+<p>Return to the poster. Hold it, finish, and stop. Do not introduce another scientific point.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -299,7 +327,7 @@
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://bggj.is/science-slam-2026">bggj.is/science-slam-2026</a></p>
+
 </div>
 </div></div>
 
@@ -324,14 +352,14 @@
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -349,7 +377,7 @@
         controlsBackArrows: 'faded',
 
         // Display a presentation progress bar
-        progress: true,
+        progress: false,
 
         // Display the page number of the current slide
         slideNumber: false,
@@ -477,15 +505,15 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1536,
 
-        height: 700,
+        height: 1024,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 0,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

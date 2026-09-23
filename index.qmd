@@ -4,94 +4,112 @@ author-meta: "Brynjólfur Gauti Guðrúnar Jónsson"
 format:
   revealjs:
     theme: theme.scss
-    footer: "[bggj.is/science-slam-2026](https://bggj.is/science-slam-2026)"
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    width: 1536
+    height: 1024
+    margin: 0
+    center: false
+    controls: false
+    progress: false
+    slide-number: false
+    menu: false
+    transition: none
+    background-transition: none
+    navigation-mode: linear
+# Running order and figures come from design-studies/ (the Codex studies,
+# adopted 2026-09-23). Rebuild the figures there (design-studies/README.md; run
+# R in a UTF-8 locale), then quarto render here. Speaker notes: press S.
 ---
 
-## {.no-heading .poster background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+## {#poster .art background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
 
 ::: {.notes}
-~15 s. The worrying.
+**The worrying — 15 seconds.**
+
+Let the poster register. Introduce your research as modelling extreme rainfall. Establish the apparently unreasonable attachment to a Hessian; do not explain the film reference. Keep the opening in your own voice.
 :::
 
-## {.no-heading}
+## {#rain .print}
 
-::: {.rain layout-ncol="2"}
-![](Figures/flod1.jpg)
+![](Figures/flod1.jpg){.flood .nostretch}
 
-![](Figures/flod2.webp)
-:::
-
-[Reykjavík, 2016 (photo: Júlíus Sigurjónsson, mbl.is) · Siglufjörður, 2024 (photo: Eva Björk Benediktsdóttir, RÚV)]{.photo-credit}
+[Reykjavík, 2016 · Photo: Júlíus Sigurjónsson, mbl.is]{.photo-credit}
 
 ::: {.notes}
-~20 s. When it rains hard here, it rains hard next door.
+**Why connected rainfall matters — 20 seconds.**
+
+Use the flood photograph as motivation. A severe storm can affect more than one station. The question is how to represent that connection when we estimate rainfall extremes. This is a photograph of Reykjavik in 2016, not paired evidence from several stations. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.
 :::
 
-## Covariance
-
-![](Figures/fig1-covariance.png){fig-align="center" height="480"}
+## {#level .art background-image="design-studies/designs/stations-1.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~30 s. Two places: rain here, rain next door.
+**Station A: higher level — 10 seconds.**
+
+Three imaginary places. The dashed curve is the same reference in every panel. At A, move the level up: its annual biggest downpours tend to be larger. Point to the horizontal shift. These are invented distributions, not fitted observations.
 :::
 
-## {.no-heading}
-
-![](Figures/fig2-cov-vs-prec.png){fig-align="center" width="92%"}
+## {#spread .art background-image="design-studies/designs/stations-2.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~35 s. Ten places along a line. Blank cell = no direct link.
+**Station B: more spread — 10 seconds.**
+
+At B, increase the spread: those annual maxima vary more from year to year. Compare B with its dashed reference, not with A. The level and tail parameters remain at their reference values. This is rainfall variability, not parameter uncertainty.
 :::
 
-## Give ourselves a Hessian
-
-![](Figures/fig3-hessian-peaks.png){fig-align="center" width="100%"}
+## {#tail .art background-image="design-studies/designs/stations-3.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~30 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. End on the flat peak: it's an approximation.
+**Station C: heavier tail — 10 seconds.**
+
+At C, increase the tail parameter: exceptionally large downpours become more plausible. Point to the shaded far tail. Changing shape can also affect the centre and spread of the distribution; we have held the other parameters fixed, not all other distributional features.
 :::
 
-## Three types of Hessian
-
-::: {.r-stack}
-::: {.hessian-step}
-![](Figures/fig4-hessian-diagonal.png){height="420"}
-
-[Diagonal]{.hessian-label}
-:::
-
-::: {.hessian-step .fragment}
-![](Figures/fig5-hessian-block.png){height="420"}
-
-[Block diagonal]{.hessian-label}
-:::
-
-::: {.hessian-step .fragment}
-![](Figures/fig6-hessian-banded.png){height="420"}
-
-[Block and banded]{.hessian-label}
-:::
-:::
+## {#stations .art background-image="design-studies/designs/station-tokens.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~85 s, two clicks. Bridge first: many numbers → the curvature is a grid, and that grid is a precision matrix like the ten places. Then diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.
+**Three stations: nine estimates — 20 seconds.**
+
+These examples changed one setting at a time. In practice, we estimate all three at every station: three stations, nine estimates. All nine tokens now have equal emphasis. Different rainfall distributions do not yet tell us how the stations behave together. Keep A-B-C and L-S-T in this order for the grid.
 :::
 
-## Every road leads back to the normal distribution {.closing}
-
-[The Hessian wasn't the enemy.]{.fragment .punchline}
-
-[Assuming independence was the enemy.]{.fragment .punchline}
+## {#uncertainty .art background-image="design-studies/figures/uncertainty.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~25 s, two clicks.
+**Give ourselves a Hessian — 35 seconds.**
+
+Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.
 :::
 
-## {.no-heading .poster background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+## {#separate .art background-image="design-studies/designs/matrix-1.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-~5 s. Callback to the opener.
+**First: ignore the connections — 15 seconds.**
+
+Each row and column is one of our nine quantities. Start with the simplest picture: keep uncertainty for each one, but pretend all those uncertainties are separate. Point to one diagonal entry. This is a deliberate approximation, not a claim that a three-parameter GEV naturally has a diagonal Hessian.
+:::
+
+## {#within .art background-image="design-studies/designs/matrix-2.png" background-size="contain" background-color="#f8f6f0"}
+
+::: {.notes}
+**Then: keep links within a station — 25 seconds.**
+
+But we estimate a station's three quantities from the same record. Different combinations can fit similar observations, so those estimates are linked. The three-by-three block keeps those links. Point to just one block, then show that the other two stations have their own. We are still treating the station records separately in the likelihood.
+:::
+
+## {#between .art background-image="design-studies/designs/matrix-3.png" background-size="contain" background-color="#f8f6f0"}
+
+::: {.notes}
+**The research moment: links between stations — 45 seconds.**
+
+Now let the rainfall records be dependent between stations. The same storm can affect several places, and the likelihood couples estimates across station boundaries. Point to one newly blue block. This is the part I work on: carrying those connections into an approximation we can compute with. Optional joke: Those extra blue squares took several years. Pause before returning to the science. These are schematic links for a three-station chain; the colours do not show numerical Hessian values.
+:::
+
+## {#callback .art background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+
+::: {.notes}
+**The ending, spoken over the poster — 15 seconds.**
+
+The Hessian wasn't the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.
+
+Return to the poster. Hold it, finish, and stop. Do not introduce another scientific point.
 :::

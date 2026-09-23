@@ -4,8 +4,9 @@ library(grid)
 library(ragg)
 library(svglite)
 
-bg <- "#faf9f9"; ink <- "#182e48"; blue <- "#397ca8"
-muted <- "#617080"; pale <- "#e5e9ee"; grey <- "#aeb7c1"
+# Same paper/ink/accent system as slide-designs.R (unified 2026-09-23).
+bg <- "#f8f6f0"; ink <- "#20272d"; blue <- "#347eab"
+muted <- "#7e858b"; pale <- "#e5e3dd"; grey <- "#b8b5ae"
 font <- "Lato"
 dir.create("figures", showWarnings = FALSE)
 checks <- list()
@@ -106,8 +107,8 @@ save_slide("stations",function(){
 save_slide("uncertainty",function(){
   canvas("How sure are we about an estimate?", "NOW: UNCERTAINTY ABOUT A PARAMETER")
   txt("Rainfall values",.06,.745,15,muted)
-  txt("→",.24,.745,22,blue)
-  txt("Possible values of a parameter",.285,.745,17,blue,face="bold")
+  txt("→",.24,.745,22,ink)
+  txt("Possible values of a parameter",.285,.745,17,ink,face="bold")
   x <- seq(.01,3.5,length.out=600)
   for(i in 1:2) {
     n <- c(30,3)[i]; left <- c(.10,.56)[i]; bottom <- .275
@@ -116,11 +117,11 @@ save_slide("uncertainty",function(){
     txt(c("Pinned down","Room for doubt")[i],left+.17,.63,22,face="bold",just="centre")
     line(c(left,left+.34),c(bottom,bottom),grey,1)
     line(mapx,mapy(likelihood),ink,2.5)
-    line(mapx,mapy(approx),blue,2.5,"dashed")
+    line(mapx,mapy(approx),muted,2.5,"dashed")
     txt("Possible parameter value",left+.17,.225,13,muted,just="centre")
   }
   line(c(.1,.15),c(.14,.14),ink,2.5); txt("Likelihood",.17,.14,14)
-  line(c(.45,.50),c(.14,.14),blue,2.5,"dashed"); txt("Normal approximation",.52,.14,14)
+  line(c(.45,.50),c(.14,.14),muted,2.5,"dashed"); txt("Normal approximation",.52,.14,14)
   txt("The Hessian records curvature near the peak.",.06,.06,17,face="bold")
 })
 

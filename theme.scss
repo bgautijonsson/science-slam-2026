@@ -1,111 +1,56 @@
 /*-- scss:defaults --*/
 
-// Academic-navy baseline — canonical for ~/talks/academic/ decks.
-// Source: ~/talks/.claude/rules/quarto-deck-mechanics.md "theme.scss" section.
+// One visual system, taken from design-studies/slide-designs.R:
+// warm paper, ink, and one accent colour with one job (the added
+// between-station links, which only appear inside the matrix figures).
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-$darkblue:  #08306b;
-$lightblue: #4292c6;
-$white:     #ffffff;
-$lightgray: #f0f0f0;
+$paper: #f8f6f0;
+$ink:   #20272d;
+$grey:  #7e858b;
+$blue:  #347eab;
 
-$primary:    hsla(232, 20%, 35%, 1);
-$secondary:  #faf9f9;
-$body-bg:    $secondary;
-$body-color: #333333;
+$body-bg:    $paper;
+$body-color: $ink;
+$link-color: $ink;
 
-$font-size-base: 1rem;
-$font-family-sans-serif: "Lato", "Open Sans", "Montserrat", "Roboto", sans-serif;
-$font-family-monospace:  "Fira Code", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
-
-$headings-font-family: "Fira Sans", $font-family-sans-serif;
-$headings-font-weight: 600;
-$headings-color:       $primary;
-
-$link-color:       $primary;
-$link-hover-color: darken($primary, 15%);
+$font-family-sans-serif: "Lato", "Helvetica Neue", Arial, sans-serif;
+$headings-font-family:   $font-family-sans-serif;
+$headings-color:         $ink;
+$headings-font-weight:   700;
 
 /*-- scss:rules --*/
 
-// =========================================================================
-// SIMPLEMENU SAFE ZONE + .no-heading VERTICAL CENTERING
-//
-// The simplemenu bar floats at top:0 / position:absolute and reserves no
-// space — without padding, content draws under it. Hiding the leading
-// `## ` heading on .no-heading sections also collapses Reveal's
-// vertical-centering math, so content sticks to the top.
-//
-// The :not(:has(.r-stretch)) exclusion is load-bearing: Reveal's
-// auto-stretch JS calculates 0×0 dimensions inside a flex container, so
-// screenshot-only slides (lone image → .r-stretch) keep default block
-// layout and let Reveal own the sizing.
-// =========================================================================
-
-.reveal .slides > section:not(#title-slide) {
-  box-sizing: border-box;
-  padding-top:    40px; // simplemenu bar is off in this deck
-  padding-bottom: 55px;
+// Figure slides: the 1536 x 1024 composition is the slide (same 3:2 as the
+// deck), drawn as a contain-sized background on matching paper, so a 16:9
+// projector gets paper-coloured side bars, never a crop.
+.reveal .slides > section.art {
+  padding: 0;
+  height: 100%;
 }
+.reveal .slides > section.art h2 { display: none; }
 
-.reveal .slides > section.no-heading:not(:has(.r-stretch)),
-.reveal .slides > section.thank-you {
+// The flood photo is only 610 x 406, so it sits on the paper as a print
+// instead of being stretched full-bleed.
+.reveal .slides > section.print {
   display: flex !important;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: stretch;
-  min-height: 100%;
+  height: 100%;
+  padding: 0;
 }
-
-// Deck-specific rules go here.
-
-// Photo credits under the rain-hook photos.
+.reveal .slides > section.print h2 { display: none; }
+.reveal .slides > section.print p { margin: 0; }
+.reveal img.flood {
+  width: 820px;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+}
 .reveal .photo-credit {
   display: block;
-  text-align: center;
-  font-size: 0.45em;
-  color: lighten($body-color, 30%);
-}
-
-// The Hessian walk: steps stack on one spot; each later step covers the
-// one before, so it needs the slide background behind it.
-.reveal .r-stack .hessian-step {
-  background-color: $body-bg;
-  text-align: center;
-}
-.reveal .hessian-step p { margin: 0; }
-// Reveal caps images at max-width: 95% of their container; inside a
-// shrink-to-fit stack item that squashes a square figure to 95% width.
-.reveal .hessian-step img { max-width: none; }
-
-// Rain-hook photos: same height side by side, cropped rather than squashed.
-.reveal .rain img {
-  height: 330px;
-  width: 100%;
-  object-fit: cover;
-}
-.reveal .hessian-label {
-  font-family: $headings-font-family;
-  font-weight: 600;
-  color: $primary;
-  font-size: 0.9em;
-}
-
-// Poster slides (the bomb): the image is the slide; nothing drawn over it.
-.reveal:has(.slides > section.poster.present) .footer,
-.reveal:has(.slides > section.poster.present) .slide-menu-button {
-  display: none !important;
-}
-
-// Closing slide: the statement and its punchline, centred.
-.reveal .slides > section.closing {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  text-align: center;
-}
-.reveal .punchline {
-  display: block;
-  margin-top: 1em;
-  font-size: 1.3em;
-  color: $darkblue;
+  margin-top: 18px;
+  font-size: 20px;
+  color: $grey;
 }
