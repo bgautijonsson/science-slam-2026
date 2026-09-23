@@ -25,38 +25,63 @@ dgev <- function(x,mu,sigma,xi) {
   a <- 1+xi*(x-mu)/sigma; out <- rep(0,length(x)); ok <- a>0
   out[ok] <- exp(-(1+1/xi)*log(a[ok])-a[ok]^(-1/xi))/sigma; out
 }
-knob <- function(x,y,angle,letter,r=.054) {
-  grid.circle(x,y,r=unit(r,"npc"),gp=gpar(fill=paper,col=ink,lwd=2.4))
-  # The circle radius is relative to the smaller device dimension.
-  ln(c(x,x+cos(angle)*r*.69*1024/1536),c(y,y+sin(angle)*r*.69),ink,3)
-  grid.circle(x,y,r=unit(.007,"npc"),gp=gpar(fill=ink,col=NA))
-  tx(letter,x,y-.085,15,ink,"bold","centre")
+# Same reference and axes in every panel. Only one parameter changes at a time.
+reference <- c(45,12,.1)
+station_pars <- list(c(65,12,.1),c(45,22,.1),c(45,12,.45))
+for(p in c(list(reference),station_pars)) {
+  lower <- p[1]-p[2]/p[3]
+  mass <- integrate(function(x)dgev(x,p[1],p[2],p[3]),lower,Inf,
+                    subdivisions=2000,rel.tol=1e-10)$value
+  stopifnot(abs(mass-1)<1e-5)
 }
-save("three-settings",function(){
-  base(); tx("Three settings for the extremes.",.06,.90,34,face="bold")
-  x <- seq(-10,190,length.out=900)
-  pars <- list(c(65,12,.1),c(45,22,.1),c(45,12,.45))
-  for(i in 1:3) {
+stopifnot(all(vapply(seq_along(station_pars),function(i) {
+  changed <- which(station_pars[[i]]!=reference)
+  identical(changed,as.integer(i))
+},logical(1))))
+station_labels <- c("Higher level","More spread","Heavier tail")
+draw_stations <- function(stage) {
+  base(); tx("Three imaginary places.",.06,.92,34,face="bold")
+  ln(c(.065,.11),c(.845,.845),grey,2,"dashed")
+  tx("Same reference",.12,.845,16,grey)
+  ln(c(.39,.435),c(.845,.845),ink,2.8)
+  tx("Fictional station",.445,.845,16,ink)
+  x <- seq(-10,190,length.out=1200)
+  for(i in seq_len(stage)) {
     mid <- c(.205,.5,.795)[i]; left <- mid-.12
-    tx(c("Level","Spread","Tail")[i],mid,.73,27,face="bold",just="centre")
-    original <- dgev(x,45,12,.1); p <- pars[[i]]; yy <- dgev(x,p[1],p[2],p[3])
+    tx(paste("Station",LETTERS[i]),mid,.748,24,face="bold",just="centre")
+    tx(station_labels[i],mid,.691,20,just="centre")
+    original <- dgev(x,reference[1],reference[2],reference[3])
+    p <- station_pars[[i]]; yy <- dgev(x,p[1],p[2],p[3])
     xx <- left+(x+10)/200*.24
-    ln(c(left,left+.24),c(.44,.44),grey,1)
-    ln(xx,.44+original/.035*.19,"#b7b9b9",1.5,"dashed")
+    ln(c(left,left+.24),c(.405,.405),grey,1)
     if(i==3) {
       ok <- x>=95
-      grid.polygon(c(xx[ok][1],xx[ok],tail(xx,1)),c(.44,.44+yy[ok]/.035*.19,.44),gp=gpar(fill=faint,col=NA))
+      grid.polygon(c(xx[ok][1],xx[ok],tail(xx,1)),
+                   c(.405,.405+yy[ok]/.035*.235,.405),
+                   gp=gpar(fill="#bfc4c5",col=NA))
     }
-    ln(xx,.44+yy/.035*.19,ink,2.8)
-    knob(mid,.30,c(.8,2.0,.4)[i],c("L","S","T")[i])
+    ln(xx,.405+original/.035*.235,grey,1.8,"dashed")
+    ln(xx,.405+yy/.035*.235,ink,2.8)
+    tx("Rainfall amount",mid,.368,14,grey,just="centre")
+    for(j in 1:3) {
+      cx <- mid+(j-2)*.066
+      grid.circle(cx,.28,r=unit(.027,"npc"),
+                  gp=gpar(fill=if(j==i)ink else paper,col=ink,lwd=1.7))
+      tx(c("L","S","T")[j],cx,.28,16,if(j==i)paper else ink,"bold","centre")
+      tx(c("Level","Spread","Tail")[j],cx,.224,12,grey,just="centre")
+    }
   }
-  tx("One station. Three numbers to estimate.",.06,.085,19,grey)
-})
+  tx("Wettest day of each year.",.06,.105,20,face="bold")
+  tx("One parameter changed from the reference at each station.",.06,.055,15,grey)
+}
+for(i in 1:3) save(paste0("stations-",i),function()draw_stations(i))
+save("three-settings",function()draw_stations(3))
 save("station-tokens",function(){
-  base();tx("Every station gets the same three.",.06,.90,34,face="bold")
+  base();tx("Now estimate all three at every station.",.06,.90,31,face="bold")
   for(i in 1:3) {
     y <- c(.70,.45,.20)[i]
     tx(paste("Station",LETTERS[i]),.08,y,25,face="bold")
+    tx(station_labels[i],.08,y-.065,15,grey)
     for(j in 1:3) {
       x <- c(.47,.65,.83)[j]
       grid.circle(x,y,r=unit(.048,"npc"),gp=gpar(fill=paper,col=ink,lwd=2))
@@ -85,7 +110,7 @@ draw_matrix <- function(stage) {
     tx(LETTERS[s],x0+(s*3-1.5)*cw,.842,18,face="bold",just="centre")
     tx(LETTERS[s],.361,top-(s*3-1.5)*ch,18,face="bold",just="centre")
   }
-  tx("A, B, C = stations",.06,.12,14,grey)
+  tx("A, B, C = fictional stations",.06,.12,14,grey)
 }
 for(i in 1:3) save(paste0("matrix-",i),function()draw_matrix(i))
 
@@ -105,4 +130,4 @@ tx("The reveal",.09,.67,33,face="bold")
 tx("Keep the grid still.\nAdd the connections.\nGive the joke a pause.",.09,.42,22)
 tx("One accent colour. One job.",.09,.15,16,blue)
 popViewport();dev.off()
-cat("Verified: five design studies exported as PNG and SVG; text bounds checked; matrix cells are square.\n")
+cat("Verified: fictional-station GEV densities integrate to one; exactly one parameter changes per station; PNG/SVG exports and text bounds checked; matrix cells are square.\n")

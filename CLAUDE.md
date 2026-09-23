@@ -23,7 +23,7 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 
 ## Design studies
 
-The additional Codex drafts and assets live in `design-studies/`; start with `design-studies/README.md` or `design-studies/slide-design-board.html`. This contains the proposed GEV-to-Hessian flow, speaker notes, PNG/SVG figures and editable sources. Its nested Quarto project renders independently of the main deck. These are working alternatives; incorporating them into `index.qmd` is a separate editing step.
+The additional Codex drafts and assets live in `design-studies/`; start with `design-studies/README.md` or `design-studies/slide-design-board.html`. This contains the proposed GEV-to-Hessian flow, speaker notes, PNG/SVG figures and editable sources. Its nested Quarto project renders independently of the main deck. These are working alternatives; incorporating them into `index.qmd` is a separate editing step. The author chose imaginary stations on 23 September 2026: A changes the GEV location parameter, B scale, and C shape against one shared reference. The rehearsal draft carries A/B/C and all nine parameter labels into the simpler Hessian ladder.
 
 ## Audience
 

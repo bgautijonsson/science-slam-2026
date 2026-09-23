@@ -1,2 +1,4 @@
 /work/
 /.quarto/
+
+**/*.quarto_ipynb

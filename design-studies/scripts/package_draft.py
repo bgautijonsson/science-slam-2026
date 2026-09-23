@@ -11,14 +11,14 @@ stages = [
  'Let the poster register. Introduce your research as modelling extreme rainfall. Establish the apparently unreasonable attachment to a Hessian; do not explain the film reference. Keep the opening in your own voice.'),
 ('rain','flod1.jpg',20,'Why connected rainfall matters',
  'Use the flood photograph as motivation. A severe storm can affect more than one station. The question is how to represent that connection when we estimate rainfall extremes. This is a photograph of Reykjavik in 2016, not paired evidence from several stations. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.'),
-('level','gev-1.png',10,'One station: level',
- 'At each station, we describe the extremes with three numbers. The first sets their rough level. Point to the horizontal shift. The curves show distributions of annual rainfall maxima; there is no need to introduce the acronym GEV or its formula.'),
-('spread','gev-2.png',10,'One station: spread',
- 'The second controls how much those extremes vary. Point to the wider curve. This is variability between rainfall maxima, not uncertainty in our estimate of a parameter.'),
-('tail','gev-3.png',10,'One station: tail',
- 'The third controls the behaviour of the really rare extremes. Point to the shaded far tail. Move on after that sentence. These pictures are a way to recognise the three quantities, not a lesson in fitting a GEV.'),
+('level','gev-1.png',10,'Station A: higher level',
+ 'Three imaginary places. The dashed curve is the same reference in every panel. At A, move the level up: its annual biggest downpours tend to be larger. Point to the horizontal shift. These are invented distributions, not fitted observations.'),
+('spread','gev-2.png',10,'Station B: more spread',
+ 'At B, increase the spread: those annual maxima vary more from year to year. Compare B with its dashed reference, not with A. The level and tail parameters remain at their reference values. This is rainfall variability, not parameter uncertainty.'),
+('tail','gev-3.png',10,'Station C: heavier tail',
+ 'At C, increase the tail parameter: exceptionally large downpours become more plausible. Point to the shaded far tail. Changing shape can also affect the centre and spread of the distribution; we have held the other parameters fixed, not all other distributional features.'),
 ('stations','stations.png',20,'Three stations: nine estimates',
- 'Now give each of three stations the same three quantities: level, spread and tail. That is nine numbers to estimate. Point across one row, then down to the other stations. Keep this order when moving to the grid. Do not explain any matrix algebra.'),
+ 'These examples changed one setting at a time. In practice, we estimate all three at every station: three stations, nine estimates. All nine tokens now have equal emphasis. Different rainfall distributions do not yet tell us how the stations behave together. Keep A-B-C and L-S-T in this order for the grid.'),
 ('uncertainty','uncertainty.png',35,'Give ourselves a Hessian',
  'Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.'),
 ('separate','hessian-1.png',15,'First: ignore the connections',
@@ -56,13 +56,20 @@ format:
 ---
 
 '''
+asset_paths = {
+    'level': 'designs/stations-1.png', 'spread': 'designs/stations-2.png',
+    'tail': 'designs/stations-3.png', 'stations': 'designs/station-tokens.png',
+    'separate': 'designs/matrix-1.png', 'within': 'designs/matrix-2.png',
+    'between': 'designs/matrix-3.png',
+}
 slides = []
 for key, image, seconds, title, cue in stages:
-    background = '#000000' if image == 'bomb.jpg' else '#faf9f9'
+    asset = asset_paths.get(key, f'figures/{image}')
+    background = '#000000' if image == 'bomb.jpg' else '#f8f6f0' if key in asset_paths else '#faf9f9'
     caption = ''
     if key == 'rain':
         caption = '\n<div class="photo-credit">Reykjavík, 2016 · Photo: Júlíus Sigurjónsson, mbl.is</div>\n'
-    slides.append(f'''## {{#{key} .art background-image="figures/{image}" background-size="contain" background-color="{background}"}}
+    slides.append(f'''## {{#{key} .art background-image="{asset}" background-size="contain" background-color="{background}"}}
 {caption}
 ::: {{.notes}}
 **{title} — {seconds} seconds.**
@@ -100,7 +107,7 @@ A separate draft for the five-minute talk, built around your proposed Hessian la
 | Beat | Time | Purpose |
 | --- | ---: | --- |
 | Poster + rain | 35 s | Establish the character and the problem |
-| Level, spread, tail | 30 s | Give the three quantities an intuitive meaning |
+| Three imaginary places | 30 s | Isolate level, spread and tail against one shared reference |
 | Three stations | 20 s | Establish the same nine quantities used in the matrix |
 | Uncertainty + Hessian | 35 s | Switch explicitly from rainfall to parameter uncertainty |
 | Separate / within / between | 85 s | Let the structure build; spend 45 seconds on the research step |
@@ -112,26 +119,40 @@ There are 13 visual states but eight narrative beats: the three GEV panels and t
 
 ## The three reveals
 
-![](figures/ladder-overview.png){fig-alt="Three nine-by-nine schematic Hessian patterns: separate diagonal entries; three within-station blocks; then links between adjacent station blocks."}
+![](designs/contact-sheet.png){fig-alt="Fictional station distributions, the nine parameter tokens, and three progressively connected Hessian patterns."}
 
 The biggest distinction to preserve aloud: within-station links arise because we estimate three quantities from one record; between-station links here enter because rainfall records are dependent. Give that last step the most time.
+
+## The fictional stations
+
+The author chose imaginary locations on 23 September 2026. A, B and C are teaching examples with no geographical claims. Every panel uses the same axes and dashed reference curve; compare each station with that reference, not with the preceding station.
+
+| Distribution | Location / level | Scale / spread | Shape / tail | What changes |
+| --- | ---: | ---: | ---: | --- |
+| Dashed reference | 45 | 12 | 0.10 | Common comparison, not a fourth station |
+| Station A | 65 | 12 | 0.10 | Location parameter only |
+| Station B | 45 | 22 | 0.10 | Scale parameter only |
+| Station C | 45 | 12 | 0.45 | Shape parameter only |
+
+The filled token marks the parameter changed for the illustration. On the next slide, all nine tokens have equal emphasis: we estimate all three parameters at every station. Changing one parameter can affect several distributional features; the labels are intuitive descriptions, not a claim that shape only affects the tail. Distinct marginal distributions do not determine dependence between stations.
 
 ## Speaking cues and visual sequence
 
 '''
 article = intro
 for key, image, seconds, title, cue in stages:
+    asset = asset_paths.get(key, f'figures/{image}')
     if key=='callback':
         article += f'### {title} · {seconds} seconds\n\n{cue}\n\n'
     else:
-        article += f'### {title} · {seconds} seconds\n\n![](figures/{image}){{width=85% fig-alt="{title}"}}\n\n{cue}\n\n'
+        article += f'### {title} · {seconds} seconds\n\n![]({asset}){{width=85% fig-alt="{title}"}}\n\n{cue}\n\n'
 article += '''## Keep these details in the preparation notes
 
 - **What the matrices represent:** schematic likelihood Hessian structure, and hence the local Gaussian approximation to the likelihood when the curvature has the appropriate definiteness. They are not measured Hessians from your research pipeline.
 - **Diagonal:** deliberately drops mixed curvature. An ordinary GEV likelihood generally couples location, scale and shape; the diagonal is not the automatic result of assuming independent station records.
 - **Within-station blocks:** records are treated separately in the likelihood. This does not rule out a spatial prior that links parameters between stations elsewhere in a hierarchical model.
 - **Between-station blocks:** a toy chain connects A–B and B–C. A blank A–C block indicates no direct coupling in this illustration; it does not claim marginal independence. The drawing is not a geographical claim about real weather.
-- **Colour:** navy retains the within-station entries, blue marks the added between-station entries, and pale grey marks zeros. Colour shows the pattern only, not sign or magnitude.
+- **Colour:** dark ink retains the within-station entries, blue marks the added between-station entries, and pale grey marks zeros. Colour shows the pattern only, not sign or magnitude.
 - **Curves:** the GEV panels vary one parameter at a time from a common baseline (location 45, scale 12, shape 0.1). The later narrow/broad peaks are illustrative exponential-rate relative likelihoods, not GEV fits. Their dashed curves are local normal approximations. No empirical result is asserted.
 - **Technical translation:** the negative Hessian of the log likelihood at a suitable maximum gives the precision of the local normal likelihood approximation. Keep the sign convention and inversion off the stage.
 - **Rehearsal cut:** if the middle runs long, shorten the peak explanation to one sentence and move on. Do not cut the transition that explains why links appear between stations.
@@ -139,7 +160,7 @@ article += '''## Keep these details in the preparation notes
 
 ## Source and reuse
 
-The PNG figures are 1536 × 1024 pixels; matching SVGs provide vector versions. `make-visuals.R` rebuilds the new figures with installed `grid`, `ragg` and `svglite`. Run it from the extracted folder, then render either `.qmd` with Quarto. The two HTML files embed their images and presentation assets.
+The PNG figures are 1536 × 1024 pixels; matching SVGs provide vector versions. `make-visuals.R` rebuilds the new figures with installed `grid`, `ragg` and `svglite`. The current fictional-station panels and simplified matrices come from `slide-designs.R` (also using `png`). Run the figure scripts from this directory, then render either `.qmd` with Quarto. The two HTML files embed their images and presentation assets.
 
 Reference checks: [GEV parameters](https://search.r-project.org/CRAN/refmans/evd/html/gev.html), [Laplace approximation](https://mc-stan.org/docs/reference-manual/laplace.html), and [zeros in a Gaussian precision matrix](https://stephens999.github.io/fiveMinuteStats/normal_markov_chain.html).
 

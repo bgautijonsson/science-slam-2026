@@ -27,37 +27,40 @@
 </defs>
 <g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
 <rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
-<text x='46.08' y='63.34' style='font-size: 34.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='512.52px' lengthAdjust='spacingAndGlyphs'>Every station gets the same three.</text>
-<text x='61.44' y='162.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='101.02px' lengthAdjust='spacingAndGlyphs'>Station A</text>
+<text x='46.08' y='62.41' style='font-size: 31.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='541.81px' lengthAdjust='spacingAndGlyphs'>Now estimate all three at every station.</text>
+<text x='61.44' y='162.64' style='font-size: 25.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='103.64px' lengthAdjust='spacingAndGlyphs'>Station A</text>
+<text x='61.44' y='192.25' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='78.72px' lengthAdjust='spacingAndGlyphs'>Higher level</text>
 <circle cx='360.96' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='360.96' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
-<text x='360.96' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='360.96' y='161.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='11.89px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='200.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='34.31px' lengthAdjust='spacingAndGlyphs'>Level</text>
 <circle cx='499.20' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='499.20' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
-<text x='499.20' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<text x='499.20' y='161.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='12.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='200.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>Spread</text>
 <circle cx='637.44' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='637.44' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
-<text x='637.44' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
-<text x='61.44' y='290.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='101.02px' lengthAdjust='spacingAndGlyphs'>Station B</text>
+<text x='637.44' y='161.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='13.69px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='200.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='22.27px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+<text x='61.44' y='290.64' style='font-size: 25.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='102.17px' lengthAdjust='spacingAndGlyphs'>Station B</text>
+<text x='61.44' y='320.25' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='83.64px' lengthAdjust='spacingAndGlyphs'>More spread</text>
 <circle cx='360.96' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='360.96' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
-<text x='360.96' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='360.96' y='289.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='11.89px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='328.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='34.31px' lengthAdjust='spacingAndGlyphs'>Level</text>
 <circle cx='499.20' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='499.20' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
-<text x='499.20' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<text x='499.20' y='289.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='12.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='328.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>Spread</text>
 <circle cx='637.44' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='637.44' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
-<text x='637.44' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
-<text x='61.44' y='418.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='102.39px' lengthAdjust='spacingAndGlyphs'>Station C</text>
+<text x='637.44' y='289.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='13.69px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='328.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='22.27px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+<text x='61.44' y='418.64' style='font-size: 25.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='102.66px' lengthAdjust='spacingAndGlyphs'>Station C</text>
+<text x='61.44' y='448.25' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='75.80px' lengthAdjust='spacingAndGlyphs'>Heavier tail</text>
 <circle cx='360.96' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='360.96' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
-<text x='360.96' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='360.96' y='417.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='11.89px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='456.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='34.31px' lengthAdjust='spacingAndGlyphs'>Level</text>
 <circle cx='499.20' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='499.20' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
-<text x='499.20' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<text x='499.20' y='417.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='12.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='456.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>Spread</text>
 <circle cx='637.44' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
-<text x='637.44' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
-<text x='637.44' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+<text x='637.44' y='417.91' text-anchor='middle' style='font-size: 23.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='13.69px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='456.96' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='22.27px' lengthAdjust='spacingAndGlyphs'>Tail</text>
 </g>
 </g>
 </svg>

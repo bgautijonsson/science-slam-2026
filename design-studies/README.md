@@ -13,13 +13,13 @@ Working drafts and assets developed with Codex, brought into the talk repository
 
 - `science-slam-draft.qmd`, `flow-notes.qmd`, `preview.css`: presentation and notes sources.
 - `figures/`: first draft figures in PNG/SVG, plus copies of the existing poster and flood photograph.
-- `designs/`: simpler slide studies in PNG/SVG, plus the contact sheet.
+- `designs/`: fictional station reveals (`stations-1` to `stations-3`), all-nine-parameter diagram, simplified Hessian ladder, and contact sheet, in PNG/SVG.
 - `make-visuals.R`, `slide-designs.R`: figure-generation sources; run from this directory.
 - `scripts/build_design_board.py`: builds the self-contained design board and its ZIP archive using relative paths.
-- `scripts/package_draft.py`: original draft generator. Running it overwrites both QMD sources with its stored draft text; edit the QMD files directly for normal slide development.
-- `science-slam-draft.zip`, `slide-design-assets.zip`: copies of the original downloadable packages. These are snapshots, not automatically synchronised with later edits.
+- `scripts/package_draft.py`: current draft generator. Running it overwrites both QMD sources with its stored draft text; keep speaker-cue changes in this script when rebuilding both views together.
+- `science-slam-draft.zip`, `slide-design-assets.zip`: downloadable snapshots refreshed with this revision; rebuild the packages after later changes.
 
-The curves and Hessian patterns are illustrative, not fitted research results. See the flow notes for the scientific distinctions and photograph credit. The later suggestion to use real place names has not yet been implemented in these studies.
+The curves and Hessian patterns are illustrative, not fitted research results. See the flow notes for the scientific distinctions and photograph credit. The author chose fictional stations on 23 September 2026. Station A changes location, B changes scale, and C changes shape, each against the same reference. The rehearsal draft uses these examples and the simplified Hessian ladder.
 
 ## Rebuild
 
@@ -28,6 +28,7 @@ From this directory:
 ```sh
 Rscript make-visuals.R
 Rscript slide-designs.R
+python3 scripts/package_draft.py
 quarto render
 python3 scripts/build_design_board.py
 ```
