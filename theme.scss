@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// Academic-navy baseline — canonical for ~/talks/academic/ decks.
+// Source: ~/talks/.claude/rules/quarto-deck-mechanics.md "theme.scss" section.
+
+$darkblue:  #08306b;
+$lightblue: #4292c6;
+$white:     #ffffff;
+$lightgray: #f0f0f0;
+
+$primary:    hsla(232, 20%, 35%, 1);
+$secondary:  #faf9f9;
+$body-bg:    $secondary;
+$body-color: #333333;
+
+$font-size-base: 1rem;
+$font-family-sans-serif: "Lato", "Open Sans", "Montserrat", "Roboto", sans-serif;
+$font-family-monospace:  "Fira Code", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+
+$headings-font-family: "Fira Sans", $font-family-sans-serif;
+$headings-font-weight: 600;
+$headings-color:       $primary;
+
+$link-color:       $primary;
+$link-hover-color: darken($primary, 15%);
+
+/*-- scss:rules --*/
+
+// =========================================================================
+// SIMPLEMENU SAFE ZONE + .no-heading VERTICAL CENTERING
+//
+// The simplemenu bar floats at top:0 / position:absolute and reserves no
+// space — without padding, content draws under it. Hiding the leading
+// `## ` heading on .no-heading sections also collapses Reveal's
+// vertical-centering math, so content sticks to the top.
+//
+// The :not(:has(.r-stretch)) exclusion is load-bearing: Reveal's
+// auto-stretch JS calculates 0×0 dimensions inside a flex container, so
+// screenshot-only slides (lone image → .r-stretch) keep default block
+// layout and let Reveal own the sizing.
+// =========================================================================
+
+.reveal .slides > section:not(#title-slide) {
+  box-sizing: border-box;
+  padding-top:    100px;
+  padding-bottom: 55px;
+}
+
+.reveal .slides > section.no-heading:not(:has(.r-stretch)),
+.reveal .slides > section.thank-you {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+// Deck-specific rules go here.

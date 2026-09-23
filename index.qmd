@@ -1,0 +1,23 @@
+---
+title: "Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian"
+subtitle: "Science Slam · University of Iceland Centre for AI"
+author:
+  - name: Brynjólfur Gauti Guðrúnar Jónsson
+format:
+  revealjs:
+    theme: theme.scss
+    simplemenu:
+      flat: false
+      barhtml:
+        header: "<div class='menubar mb-10'><ul class='menu'></ul></div>"
+        footer: "<div class='footer footer-default' style='display: block;'> <a href='https://bggj.is/science-slam-2026' target='_blank'>bggj.is/science-slam-2026</a></div>"
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+revealjs-plugins:
+  - simplemenu
+---
+
+## Title {data-name="Intro"}
+
+Replace this with the first slide.
