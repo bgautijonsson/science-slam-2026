@@ -17,8 +17,8 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 | 3 — Audience artefact (4 sentences)           | ✓ done 2026-09-23 |
 | 4 — Computation plan                          | ✓ done 2026-09-23 (fig 6 stylisation: author to check) |
 | 5 — Slide map                                 | ✓ done 2026-09-23 |
-| 6 — Render-and-check (deliberate visual pass) | □       |
-| 7 — Draft slide-by-slide                      | □       |
+| 6 — Render-and-check (deliberate visual pass) | ✓ done 2026-09-23 (DOM measurements; squash fixed) |
+| 7 — Draft slide-by-slide                      | in progress (all 7 drafted; ending being revised) |
 | 8 — Post-talk annotated pass                  | □       |
 
 ## Audience
@@ -45,6 +45,7 @@ Working notes (step 2):
 - Ending (author agreed, 2026-09-23): "…but that's just approximations" is the punchline, not a disclaimer. Strangelove's "love" is knowingly riding the thing down anyway: you know it's only a normal approximation and you ride the Hessian regardless.
 - Imagery (author, 2026-09-23): "me riding the bomb (hessian)". Major Kong riding the bomb; asset to source at step 4 (edited still, or a stage prop).
 - Cut (author, 2026-09-23): "We can skip how optimisation works and just give ourselves a hessian".
+- **Ending changed (author, 2026-09-23, step 7 → 2 backtrack):** after reading a ChatGPT draft script, the author chose its ending, in his words: "The Hessian wasn't the enemy. Assuming independence was the enemy". Supersedes the signed-off "just an approximation, ride the Hessian anyway" punchline; closing-slide set-up still open. Author: "Don't take anything word for word" from that script.
 - No software names (author, 2026-09-23): "Let's just look at three types of hessian: Diagonal hessian (inla style), block diagonal hessian (max-and-smooth), block and banded hessian (copula-extended max-and-smooth)".
 
 ## Rough sequence
@@ -107,3 +108,5 @@ All generated figures come from `R/figures.R` (run from the deck root: `Rscript 
 | 2026-09-23 | Figures 1–6 generated (`R/figures.R`); fig 3 key moved off the curves; opaque slide background | Step 4; visual check |
 | 2026-09-23 | Slide map drafted (10 slides, ~280 s) | Step 5 |
 | 2026-09-23 | Map → 7 slides (~250 s) after slide-critic; simplemenu bar off | Author took all four critic edits |
+| 2026-09-23 | All 7 slides drafted; Hessian squash + rain-photo heights fixed; slide 6 notes bug fixed | Step 6 measurements; second slide-critic pass |
+| 2026-09-23 | Ending → "The Hessian wasn't the enemy. Assuming independence was the enemy" | Author, after reading a ChatGPT draft |

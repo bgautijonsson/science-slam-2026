@@ -47,7 +47,7 @@ html-math-method:
 ![](Figures/fig3-hessian-peaks.png){fig-align="center" width="100%"}
 
 ::: {.notes}
-~40 s. Your words: "just give ourselves a hessian". Curvature at the top = precision of the normal. Land on the flat peak: it's an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.
+~40 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. Land on the flat peak: it's an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.
 :::
 
 ## Three types of Hessian
@@ -73,7 +73,7 @@ html-math-method:
 :::
 
 ::: {.notes}
-~80 s, two clicks. Third click is yours: modelling data-level dependence is hard.
+~80 s, two clicks. Diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.
 :::
 
 ## Every road leads back to the normal distribution {.closing}
