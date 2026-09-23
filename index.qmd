@@ -1,8 +1,6 @@
 ---
-title: "Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian"
-subtitle: "Science Slam · University of Iceland Centre for AI"
-author:
-  - name: Brynjólfur Gauti Guðrúnar Jónsson
+pagetitle: "Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian"
+author-meta: "Brynjólfur Gauti Guðrúnar Jónsson"
 format:
   revealjs:
     theme: theme.scss
@@ -11,6 +9,12 @@ html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 ---
+
+## {.no-heading .poster background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+
+::: {.notes}
+~15 s. The worrying.
+:::
 
 ## {.no-heading}
 
@@ -34,7 +38,7 @@ html-math-method:
 ~30 s. Two places: rain here, rain next door.
 :::
 
-## Precision
+## {.no-heading}
 
 ![](Figures/fig2-cov-vs-prec.png){fig-align="center" width="92%"}
 
@@ -47,7 +51,7 @@ html-math-method:
 ![](Figures/fig3-hessian-peaks.png){fig-align="center" width="100%"}
 
 ::: {.notes}
-~40 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. Land on the flat peak: it's an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.
+~30 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. End on the flat peak: it's an approximation.
 :::
 
 ## Three types of Hessian
@@ -73,15 +77,21 @@ html-math-method:
 :::
 
 ::: {.notes}
-~80 s, two clicks. Diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.
+~85 s, two clicks. Bridge first: many numbers → the curvature is a grid, and that grid is a precision matrix like the ten places. Then diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.
 :::
 
 ## Every road leads back to the normal distribution {.closing}
 
-[…but that's just approximations]{.fragment .punchline}
+[The Hessian wasn't the enemy.]{.fragment .punchline}
 
-<!-- Bomb callback to the title slide: the author's imagery goes here. -->
+[Assuming independence was the enemy.]{.fragment .punchline}
 
 ::: {.notes}
-~30 s. Then ride the Hessian anyway.
+~25 s, two clicks.
+:::
+
+## {.no-heading .poster background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+
+::: {.notes}
+~5 s. Callback to the opener.
 :::

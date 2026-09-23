@@ -89,6 +89,12 @@ $link-hover-color: darken($primary, 15%);
   font-size: 0.9em;
 }
 
+// Poster slides (the bomb): the image is the slide; nothing drawn over it.
+.reveal:has(.slides > section.poster.present) .footer,
+.reveal:has(.slides > section.poster.present) .slide-menu-button {
+  display: none !important;
+}
+
 // Closing slide: the statement and its punchline, centred.
 .reveal .slides > section.closing {
   display: flex !important;

@@ -34,7 +34,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23 (author's edit: no software names; three kinds of Hessian):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves, and that curvature is the precision of the normal. The talk uses covariance as a stepping stone to precision, hands the audience a Hessian without explaining the optimisation, then shows three kinds of Hessian: diagonal, block diagonal, and block and banded. It ends on the Strangelove punchline: it's just an approximation, and we ride the Hessian anyway.
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves, and that curvature is the precision of the normal. The talk uses covariance as a stepping stone to precision, hands the audience a Hessian without explaining the optimisation, then shows three kinds of Hessian: diagonal, block diagonal, and block and banded. It ends: every road leads back to the normal distribution, then "The Hessian wasn't the enemy. Assuming independence was the enemy." (ending changed by the author 2026-09-23; see working notes).
 
 Working notes (step 2):
 
@@ -72,27 +72,26 @@ All generated figures come from `R/figures.R` (run from the deck root: `Rscript 
 | 4 | `Figures/fig4-hessian-diagonal.png` | walk 1 | 24×24 diagonal | made 2026-09-23 |
 | 5 | `Figures/fig5-hessian-block.png` | walk 2 | 8 sites × 3 parameters: 3×3 blocks on the diagonal | made 2026-09-23 |
 | 6 | `Figures/fig6-hessian-banded.png` | walk 3 | Blocks + neighbouring-site blocks (chain, as in fig 2); stylisation for author to check | made 2026-09-23 |
-| 7 | — | opening + ending | Riding the bomb (Hessian) | author |
+| 7 | `Figures/bomb.jpg` | opening + closing callback | Author's image (made with ChatGPT): Strangelove poster, H(θ) on the bomb, title in poster type; 1536×1024 = the deck's 3:2; JPEG q90 from the Downloads PNG | made 2026-09-23 |
 | 8 | `Figures/flod1.jpg`, `Figures/flod2.webp` | rain hook | Reykjavík 2016 (photo Júlíus Sigurjónsson, mbl.is), Siglufjörður 2024 (photo Eva Björk Benediktsdóttir, RÚV); copied from `phd/talks/talk_uniice_2026/images`, credits from its `references.bib` | copied |
 
 ## Slide map
 
-**Signed off 2026-09-23** after slide-critic review; author took all four edits (merge the Hessian walk into one build; peak-to-grid bridge; fold "every road" into the punchline; simplemenu bar off) and kept the chain in fig 6. Target ≈ 250 s of 300 s.
+**Signed off 2026-09-23** after slide-critic review; author took all four edits (merge the Hessian walk into one build; peak-to-grid bridge; fold "every road" into the closing; simplemenu bar off) and kept the chain in fig 6. **Revised same day** after the second critic pass and the author's new ending: slide 4 heading dropped, bridge cue moved to slide 6, poster image as opener and closing callback. Target ≈ 245 s of 300 s.
 
 ```
-1. Title card; bomb imagery (author). The worrying.                               ~15 s
-2. Rain hook: flood photos. When it rains hard here, it rains hard next door.     ~20 s
-3. Covariance: rain here vs rain next door (fig 1)                                 ~30 s
-4. Precision: ten places along a line; covariance (dense) vs precision (sparse);
-   a blank cell = no direct link (fig 2)                                           ~35 s
-5. Give ourselves a Hessian: sharp vs flat peak; curvature at the top = precision
-   of the normal; lands on "it's an approximation" (fig 3). Bridge line: many
-   numbers → the curvature is a grid, and that grid is a precision matrix like 4.  ~40 s
-6. Three kinds of Hessian, one build (figs 4 → 5 → 6 as clicks): diagonal; block
-   diagonal; block and banded = the author's, where modelling data-level
-   dependence is hard.                                                             ~80 s
-7. Every road leads back to the normal distribution → "…but that's just
-   approximations" → ride the Hessian anyway (bomb callback to 1).                 ~30 s
+1. Poster (bomb.jpg, letterboxed, no footer). The worrying.                        ~15 s
+2. Rain hook: flood photos. When it rains hard here, it rains hard next door.      ~20 s
+3. Covariance: rain here vs rain next door (fig 1)                                  ~30 s
+4. [no heading] Covariance vs precision (fig 2): ten places along a line;
+   a blank cell = no direct link                                                    ~35 s
+5. Give ourselves a Hessian (fig 3); ends on the flat peak: it's an approximation   ~30 s
+6. Three types of Hessian, one build: bridge (the curvature becomes a grid, a
+   precision matrix like slide 4), then diagonal → block diagonal → block and
+   banded (the author's): modelling data-level dependence is hard                   ~85 s
+7. Every road leads back to the normal distribution → "The Hessian wasn't the
+   enemy." → "Assuming independence was the enemy."                                ~25 s
+8. Poster again: callback                                                           ~5 s
 ```
 
 ## Iteration log
@@ -110,3 +109,4 @@ All generated figures come from `R/figures.R` (run from the deck root: `Rscript 
 | 2026-09-23 | Map → 7 slides (~250 s) after slide-critic; simplemenu bar off | Author took all four critic edits |
 | 2026-09-23 | All 7 slides drafted; Hessian squash + rain-photo heights fixed; slide 6 notes bug fixed | Step 6 measurements; second slide-critic pass |
 | 2026-09-23 | Ending → "The Hessian wasn't the enemy. Assuming independence was the enemy" | Author, after reading a ChatGPT draft |
+| 2026-09-23 | Poster opener + closing callback; closing = normal line → two-click ending; slide 4 heading off; bridge cue → slide 6 | Author's answers + second slide-critic pass |

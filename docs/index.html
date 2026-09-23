@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-08fa35d40ac68d1b4ac8d704426d49df.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-2fe01f284214a4d0e036c3bb6c0d5540.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,20 +132,24 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian</h1>
-  <p class="subtitle">Science Slam · University of Iceland Centre for AI</p>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Brynjólfur Gauti Guðrúnar Jónsson
-</div>
-</div>
-</div>
-
+<section id="section" class="slide level2 no-heading poster" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
+<h2></h2>
+<aside class="notes">
+<p>~15 s. The worrying.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section" class="slide level2 no-heading">
+<section id="section-1" class="slide level2 no-heading">
 <h2></h2>
 <div class="rain quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -193,8 +197,8 @@ Brynjólfur Gauti Guðrúnar Jónsson
           display:block!important;
       }</style></aside>
 </section>
-<section id="precision" class="slide level2">
-<h2>Precision</h2>
+<section id="section-2" class="slide level2 no-heading">
+<h2></h2>
 
 <img data-src="Figures/fig2-cov-vs-prec.png" class="quarto-figure quarto-figure-center r-stretch" style="width:92.0%"><aside class="notes">
 <p>~35 s. Ten places along a line. Blank cell = no direct link.</p>
@@ -214,7 +218,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 <h2>Give ourselves a Hessian</h2>
 
 <img data-src="Figures/fig3-hessian-peaks.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><aside class="notes">
-<p>~40 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. Land on the flat peak: it’s an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.</p>
+<p>~30 s. Just give ourselves a Hessian. Curvature at the top = precision of the normal. End on the flat peak: it’s an approximation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -244,7 +248,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </div>
 </div>
 <aside class="notes">
-<p>~80 s, two clicks. Diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.</p>
+<p>~85 s, two clicks. Bridge first: many numbers → the curvature is a grid, and that grid is a precision matrix like the ten places. Then diagonal → click → block diagonal → click → block and banded (yours): modelling data-level dependence is hard.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -259,10 +263,26 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </section>
 <section id="every-road-leads-back-to-the-normal-distribution" class="slide level2 closing">
 <h2>Every road leads back to the normal distribution</h2>
-<p><span class="fragment punchline">…but that’s just approximations</span></p>
-<!-- Bomb callback to the title slide: the author's imagery goes here. -->
+<p><span class="fragment punchline">The Hessian wasn’t the enemy.</span></p>
+<p><span class="fragment punchline">Assuming independence was the enemy.</span></p>
 <aside class="notes">
-<p>~30 s. Then ride the Hessian anyway.</p>
+<p>~25 s, two clicks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-3" class="slide level2 no-heading poster" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
+<h2></h2>
+<aside class="notes">
+<p>~5 s. Callback to the opener.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
