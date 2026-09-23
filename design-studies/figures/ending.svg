@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='768.00pt' height='512.00pt' viewBox='0 0 768.00 512.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA='>
+    <rect x='0.00' y='0.00' width='768.00' height='512.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
+<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #FAF9F9;' />
+<text x='46.08' y='79.47' style='font-size: 29.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='401.25px' lengthAdjust='spacingAndGlyphs'>The Hessian wasn't the enemy.</text>
+<text x='46.08' y='247.78' style='font-size: 38.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='415.58px' lengthAdjust='spacingAndGlyphs'>Assuming independence</text>
+<text x='46.08' y='301.59' style='font-size: 38.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='264.36px' lengthAdjust='spacingAndGlyphs'>was the enemy.</text>
+</g>
+</g>
+</svg>

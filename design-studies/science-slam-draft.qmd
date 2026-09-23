@@ -1,0 +1,125 @@
+---
+pagetitle: "Science Slam — three stations, nine estimates"
+format:
+  revealjs:
+    width: 1536
+    height: 1024
+    margin: 0
+    center: false
+    controls: true
+    progress: false
+    slide-number: false
+    transition: none
+    background-transition: none
+    navigation-mode: linear
+    menu: false
+    theme: simple
+    embed-resources: true
+    css: preview.css
+---
+
+## {#poster .art background-image="figures/bomb.jpg" background-size="contain" background-color="#000000"}
+
+::: {.notes}
+**The worrying — 15 seconds.**
+
+Let the poster register. Introduce your research as modelling extreme rainfall. Establish the apparently unreasonable attachment to a Hessian; do not explain the film reference. Keep the opening in your own voice.
+:::
+
+## {#rain .art background-image="figures/flod1.jpg" background-size="contain" background-color="#faf9f9"}
+
+<div class="photo-credit">Reykjavík, 2016 · Photo: Júlíus Sigurjónsson, mbl.is</div>
+
+::: {.notes}
+**Why connected rainfall matters — 20 seconds.**
+
+Use the flood photograph as motivation. A severe storm can affect more than one station. The question is how to represent that connection when we estimate rainfall extremes. This is a photograph of Reykjavik in 2016, not paired evidence from several stations. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.
+:::
+
+## {#level .art background-image="figures/gev-1.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**One station: level — 10 seconds.**
+
+At each station, we describe the extremes with three numbers. The first sets their rough level. Point to the horizontal shift. The curves show distributions of annual rainfall maxima; there is no need to introduce the acronym GEV or its formula.
+:::
+
+## {#spread .art background-image="figures/gev-2.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**One station: spread — 10 seconds.**
+
+The second controls how much those extremes vary. Point to the wider curve. This is variability between rainfall maxima, not uncertainty in our estimate of a parameter.
+:::
+
+## {#tail .art background-image="figures/gev-3.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**One station: tail — 10 seconds.**
+
+The third controls the behaviour of the really rare extremes. Point to the shaded far tail. Move on after that sentence. These pictures are a way to recognise the three quantities, not a lesson in fitting a GEV.
+:::
+
+## {#stations .art background-image="figures/stations.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**Three stations: nine estimates — 20 seconds.**
+
+Now give each of three stations the same three quantities: level, spread and tail. That is nine numbers to estimate. Point across one row, then down to the other stations. Keep this order when moving to the grid. Do not explain any matrix algebra.
+:::
+
+## {#uncertainty .art background-image="figures/uncertainty.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**Give ourselves a Hessian — 35 seconds.**
+
+Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.
+:::
+
+## {#separate .art background-image="figures/hessian-1.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**First: ignore the connections — 15 seconds.**
+
+Each row and column is one of our nine quantities. Start with the simplest picture: keep uncertainty for each one, but pretend all those uncertainties are separate. Point to one diagonal entry. This is a deliberate approximation, not a claim that a three-parameter GEV naturally has a diagonal Hessian.
+:::
+
+## {#within .art background-image="figures/hessian-2.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**Then: keep links within a station — 25 seconds.**
+
+But we estimate a station's three quantities from the same record. Different combinations can fit similar observations, so those estimates are linked. The three-by-three block keeps those links. Point to just one block, then show that the other two stations have their own. We are still treating the station records separately in the likelihood.
+:::
+
+## {#between .art background-image="figures/hessian-3.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**The research moment: links between stations — 45 seconds.**
+
+Now let the rainfall records be dependent between stations. The same storm can affect several places, and the likelihood couples estimates across station boundaries. Point to one newly blue block. This is the part I work on: carrying those connections into an approximation we can compute with. Optional joke: Those extra blue squares took several years. Pause before returning to the science. These are schematic links for a three-station chain; the colours do not show numerical Hessian values.
+:::
+
+## {#payoff .art background-image="figures/payoff.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**Return to the rainfall — 30 seconds.**
+
+Bring the story back to the storm. Several records can contain overlapping information about the same weather. Treating them as unrelated can misrepresent our uncertainty. The point of the extra connections is to reflect that dependence when estimating extremes. The normal approximation remains an approximation; we are making it account for more of the structure that matters. Avoid adding an unsupported claim about forecast accuracy or speed.
+:::
+
+## {#ending .art background-image="figures/ending.png" background-size="contain" background-color="#faf9f9"}
+
+::: {.notes}
+**The accepted ending — 10 seconds.**
+
+The Hessian wasn't the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.
+:::
+
+## {#callback .art background-image="figures/bomb.jpg" background-size="contain" background-color="#000000"}
+
+::: {.notes}
+**Ride the Hessian — 5 seconds.**
+
+Return to the poster. Hold it, finish, and stop. Do not introduce another scientific point.
+:::

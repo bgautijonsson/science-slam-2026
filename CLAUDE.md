@@ -21,6 +21,10 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 | 7 — Draft slide-by-slide                      | in progress (all 7 drafted; ending being revised) |
 | 8 — Post-talk annotated pass                  | □       |
 
+## Design studies
+
+The additional Codex drafts and assets live in `design-studies/`; start with `design-studies/README.md` or `design-studies/slide-design-board.html`. This contains the proposed GEV-to-Hessian flow, speaker notes, PNG/SVG figures and editable sources. Its nested Quarto project renders independently of the main deck. These are working alternatives; incorporating them into `index.qmd` is a separate editing step.
+
 ## Audience
 
 _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended and signed off by the author 2026-09-23._

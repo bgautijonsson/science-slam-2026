@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='768.00pt' height='512.00pt' viewBox='0 0 768.00 512.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA='>
+    <rect x='0.00' y='0.00' width='768.00' height='512.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
+<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #FAF9F9;' />
+<text x='46.08' y='79.47' style='font-size: 29.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='483.34px' lengthAdjust='spacingAndGlyphs'>One storm can affect several stations.</text>
+<polygon points='103.22,289.28 664.78,289.28 664.34,289.27 666.11,289.20 667.86,288.84 669.52,288.21 671.06,287.32 672.44,286.20 673.62,284.86 674.57,283.36 675.27,281.72 675.70,279.99 675.84,278.22 675.84,278.22 675.84,162.10 675.84,162.10 675.70,160.33 675.27,158.60 674.57,156.96 673.62,155.46 672.44,154.12 671.06,153.00 669.52,152.11 667.86,151.48 666.11,151.12 664.78,151.04 103.22,151.04 104.55,151.12 102.77,151.05 101.01,151.26 99.30,151.76 97.69,152.52 96.22,153.53 94.94,154.77 93.87,156.19 93.04,157.76 92.48,159.45 92.20,161.21 92.16,162.10 92.16,278.22 92.20,277.33 92.20,279.11 92.48,280.87 93.04,282.56 93.87,284.13 94.94,285.55 96.22,286.79 97.69,287.80 99.30,288.56 101.01,289.06 102.77,289.27 ' style='stroke-width: 1.50; stroke: #AEB7C1;' />
+<text x='384.00' y='214.08' text-anchor='middle' style='font-size: 26.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='139.66px' lengthAdjust='spacingAndGlyphs'>Same storm</text>
+<polyline points='145.92,271.36 138.24,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='176.64,271.36 168.96,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='207.36,271.36 199.68,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<circle cx='176.64' cy='358.40' r='17.41' style='stroke-width: 0.75; stroke: none; fill: #182E48;' />
+<text x='176.64' y='364.83' text-anchor='middle' style='font-size: 18.00px;fill: #FFFFFF; font-family: "Noto Sans Syriac";' textLength='12.00px' lengthAdjust='spacingAndGlyphs'>A</text>
+<text x='176.64' y='405.46' text-anchor='middle' style='font-size: 17.00px;fill: #182E48; font-family: "Helvetica";' textLength='68.06px' lengthAdjust='spacingAndGlyphs'>Station A</text>
+<polyline points='353.28,271.36 345.60,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='384.00,271.36 376.32,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='414.72,271.36 407.04,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<circle cx='384.00' cy='358.40' r='17.41' style='stroke-width: 0.75; stroke: none; fill: #182E48;' />
+<text x='384.00' y='364.83' text-anchor='middle' style='font-size: 18.00px;fill: #FFFFFF; font-family: "Noto Sans Syriac";' textLength='12.00px' lengthAdjust='spacingAndGlyphs'>B</text>
+<text x='384.00' y='405.46' text-anchor='middle' style='font-size: 17.00px;fill: #182E48; font-family: "Helvetica";' textLength='68.98px' lengthAdjust='spacingAndGlyphs'>Station B</text>
+<polyline points='560.64,271.36 552.96,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='591.36,271.36 583.68,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<polyline points='622.08,271.36 614.40,302.08 ' style='stroke-width: 1.20; stroke: #397CA8;' />
+<circle cx='591.36' cy='358.40' r='17.41' style='stroke-width: 0.75; stroke: none; fill: #182E48;' />
+<text x='591.36' y='364.83' text-anchor='middle' style='font-size: 18.00px;fill: #FFFFFF; font-family: "Noto Sans Syriac";' textLength='13.00px' lengthAdjust='spacingAndGlyphs'>C</text>
+<text x='591.36' y='405.46' text-anchor='middle' style='font-size: 17.00px;fill: #182E48; font-family: "Helvetica";' textLength='69.92px' lengthAdjust='spacingAndGlyphs'>Station C</text>
+<text x='384.00' y='468.30' text-anchor='middle' style='font-size: 21.00px;fill: #182E48; font-family: "Noto Sans Syriac";' textLength='471.23px' lengthAdjust='spacingAndGlyphs'>Our uncertainty needs to reflect those connections.</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='768.00pt' height='512.00pt' viewBox='0 0 768.00 512.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA='>
+    <rect x='0.00' y='0.00' width='768.00' height='512.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
+<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
+<text x='46.08' y='63.34' style='font-size: 34.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='512.52px' lengthAdjust='spacingAndGlyphs'>Every station gets the same three.</text>
+<text x='61.44' y='162.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='101.02px' lengthAdjust='spacingAndGlyphs'>Station A</text>
+<circle cx='360.96' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='360.96' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<circle cx='499.20' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='499.20' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<circle cx='637.44' cy='153.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='637.44' y='161.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='200.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+<text x='61.44' y='290.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='101.02px' lengthAdjust='spacingAndGlyphs'>Station B</text>
+<circle cx='360.96' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='360.96' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<circle cx='499.20' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='499.20' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<circle cx='637.44' cy='281.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='637.44' y='289.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='328.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+<text x='61.44' y='418.53' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='102.39px' lengthAdjust='spacingAndGlyphs'>Station C</text>
+<circle cx='360.96' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='360.96' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>L</text>
+<text x='360.96' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<circle cx='499.20' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='499.20' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='499.20' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<circle cx='637.44' cy='409.60' r='24.58' style='stroke-width: 1.50; stroke: #20272D; fill: #F8F6F0;' />
+<text x='637.44' y='417.81' text-anchor='middle' style='font-size: 23.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='14.05px' lengthAdjust='spacingAndGlyphs'>T</text>
+<text x='637.44' y='456.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Helvetica";' textLength='22.50px' lengthAdjust='spacingAndGlyphs'>Tail</text>
+</g>
+</g>
+</svg>
