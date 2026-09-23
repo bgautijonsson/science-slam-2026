@@ -2,8 +2,10 @@
 
 Deck slug: `science-slam-2026`
 Talk date: 2026-09-24
-Repo: not yet created (will be `bgautijonsson/science-slam-2026` when published)
-Public URL: `bggj.is/science-slam-2026` (post-publish)
+Repo: `bgautijonsson/science-slam-2026` (public, created 2026-09-23)
+Public URL: https://bggj.is/science-slam-2026/ (GitHub Pages from `main:/docs`; first build from commit `9773042`, verified live 2026-09-23: 11 slides, all images 200)
+
+How `bggj.is/{slug}` works (verified 2026-09-23): the user site `bgautijonsson.github.io` has custom domain `bggj.is`, so GitHub serves every project repo with Pages enabled at `bggj.is/{repo}`. No proxy or redirect. To update: `quarto render && git add -A && git commit && git push`.
 
 ## Workflow status
 
@@ -114,3 +116,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-23 | Ending → "The Hessian wasn't the enemy. Assuming independence was the enemy" | Author, after reading a ChatGPT draft |
 | 2026-09-23 | Poster opener + closing callback; closing = normal line → two-click ending; slide 4 heading off; bridge cue → slide 6 | Author's answers + second slide-critic pass |
 | 2026-09-23 | Adopted the Codex flow and visual system; ending spoken over the poster; payoff slide cut; make-visuals.R unified; stale docs/ figures removed | Author: "improve the aesthetic" using design-studies/ |
+| 2026-09-23 | Published: public repo `bgautijonsson/science-slam-2026`, Pages from main:/docs, live at bggj.is/science-slam-2026 (build of `9773042`) | Author asked Claude to publish (overriding the user-only publish-deck rule for this deck) |
