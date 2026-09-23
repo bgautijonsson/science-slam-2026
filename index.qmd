@@ -6,18 +6,82 @@ author:
 format:
   revealjs:
     theme: theme.scss
-    simplemenu:
-      flat: false
-      barhtml:
-        header: "<div class='menubar mb-10'><ul class='menu'></ul></div>"
-        footer: "<div class='footer footer-default' style='display: block;'> <a href='https://bggj.is/science-slam-2026' target='_blank'>bggj.is/science-slam-2026</a></div>"
+    footer: "[bggj.is/science-slam-2026](https://bggj.is/science-slam-2026)"
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-revealjs-plugins:
-  - simplemenu
 ---
 
-## Title {data-name="Intro"}
+## {.no-heading}
 
-Replace this with the first slide.
+::: {.rain layout-ncol="2"}
+![](Figures/flod1.jpg)
+
+![](Figures/flod2.webp)
+:::
+
+[Reykjavík, 2016 (photo: Júlíus Sigurjónsson, mbl.is) · Siglufjörður, 2024 (photo: Eva Björk Benediktsdóttir, RÚV)]{.photo-credit}
+
+::: {.notes}
+~20 s. When it rains hard here, it rains hard next door.
+:::
+
+## Covariance
+
+![](Figures/fig1-covariance.png){fig-align="center" height="480"}
+
+::: {.notes}
+~30 s. Two places: rain here, rain next door.
+:::
+
+## Precision
+
+![](Figures/fig2-cov-vs-prec.png){fig-align="center" width="92%"}
+
+::: {.notes}
+~35 s. Ten places along a line. Blank cell = no direct link.
+:::
+
+## Give ourselves a Hessian
+
+![](Figures/fig3-hessian-peaks.png){fig-align="center" width="100%"}
+
+::: {.notes}
+~40 s. Your words: "just give ourselves a hessian". Curvature at the top = precision of the normal. Land on the flat peak: it's an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.
+:::
+
+## Three types of Hessian
+
+::: {.r-stack}
+::: {.hessian-step}
+![](Figures/fig4-hessian-diagonal.png){height="420"}
+
+[Diagonal]{.hessian-label}
+:::
+
+::: {.hessian-step .fragment}
+![](Figures/fig5-hessian-block.png){height="420"}
+
+[Block diagonal]{.hessian-label}
+:::
+
+::: {.hessian-step .fragment}
+![](Figures/fig6-hessian-banded.png){height="420"}
+
+[Block and banded]{.hessian-label}
+:::
+:::
+
+::: {.notes}
+~80 s, two clicks. Third click is yours: modelling data-level dependence is hard.
+:::
+
+## Every road leads back to the normal distribution {.closing}
+
+[…but that's just approximations]{.fragment .punchline}
+
+<!-- Bomb callback to the title slide: the author's imagery goes here. -->
+
+::: {.notes}
+~30 s. Then ride the Hessian anyway.
+:::

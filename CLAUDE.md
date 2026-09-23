@@ -16,7 +16,7 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 | 2 — Conversation / framing                    | ✓ done 2026-09-23 |
 | 3 — Audience artefact (4 sentences)           | ✓ done 2026-09-23 |
 | 4 — Computation plan                          | ✓ done 2026-09-23 (fig 6 stylisation: author to check) |
-| 5 — Slide map                                 | draft 2026-09-23 |
+| 5 — Slide map                                 | ✓ done 2026-09-23 |
 | 6 — Render-and-check (deliberate visual pass) | □       |
 | 7 — Draft slide-by-slide                      | □       |
 | 8 — Post-talk annotated pass                  | □       |
@@ -76,26 +76,23 @@ All generated figures come from `R/figures.R` (run from the deck root: `Rscript 
 
 ## Slide map
 
-**Draft 2026-09-23, awaiting slide-critic + author sign-off.** Target ≈ 280 s of 300 s.
+**Signed off 2026-09-23** after slide-critic review; author took all four edits (merge the Hessian walk into one build; peak-to-grid bridge; fold "every road" into the punchline; simplemenu bar off) and kept the chain in fig 6. Target ≈ 250 s of 300 s.
 
 ```
- 1. [Intro]       Title card; bomb imagery (author). The worrying.                        ~15 s
- 2. [Intro]       Rain hook: flood photos. When it rains hard here, it rains hard next door. ~20 s
- 3. [Dependence]  Covariance: rain here vs rain next door (fig 1)                          ~30 s
- 4. [Dependence]  Precision: same chain as covariance (dense) vs precision (sparse) (fig 2) ~35 s
- 5. [Hessian]     Give ourselves a Hessian: sharp vs flat peak; curvature at the top =
-                  precision of the normal; the flat peak shows it's an approximation (fig 3) ~40 s
- 6. [Hessian]     Hessian 1: diagonal (fig 4)                                              ~30 s
- 7. [Hessian]     Hessian 2: block diagonal, each site's parameters linked (fig 5)         ~30 s
- 8. [Hessian]     Hessian 3: block + banded, neighbouring sites linked through the data;
-                  modelling data-level dependence is hard (fig 6)                          ~40 s
- 9. [Outro]       Every road leads back to the normal distribution
-                  (optional: the dependence model is itself a Gaussian copula)             ~20 s
-10. [Outro]       Punchline: it's just an approximation, and we ride the Hessian anyway
-                  (bomb callback to slide 1)                                               ~20 s
+1. Title card; bomb imagery (author). The worrying.                               ~15 s
+2. Rain hook: flood photos. When it rains hard here, it rains hard next door.     ~20 s
+3. Covariance: rain here vs rain next door (fig 1)                                 ~30 s
+4. Precision: ten places along a line; covariance (dense) vs precision (sparse);
+   a blank cell = no direct link (fig 2)                                           ~35 s
+5. Give ourselves a Hessian: sharp vs flat peak; curvature at the top = precision
+   of the normal; lands on "it's an approximation" (fig 3). Bridge line: many
+   numbers → the curvature is a grid, and that grid is a precision matrix like 4.  ~40 s
+6. Three kinds of Hessian, one build (figs 4 → 5 → 6 as clicks): diagonal; block
+   diagonal; block and banded = the author's, where modelling data-level
+   dependence is hard.                                                             ~80 s
+7. Every road leads back to the normal distribution → "…but that's just
+   approximations" → ride the Hessian anyway (bomb callback to 1).                 ~30 s
 ```
-
-Covariance and precision are now adjacent (resolves the step-2 note).
 
 ## Iteration log
 
@@ -109,3 +106,4 @@ Covariance and precision are now adjacent (resolves the step-2 note).
 | 2026-09-23 | Title → "Modelling Dependence or: …"; computation plan written | Author: more inclusive, easier to digest; step 4 |
 | 2026-09-23 | Figures 1–6 generated (`R/figures.R`); fig 3 key moved off the curves; opaque slide background | Step 4; visual check |
 | 2026-09-23 | Slide map drafted (10 slides, ~280 s) | Step 5 |
+| 2026-09-23 | Map → 7 slides (~250 s) after slide-critic; simplemenu bar off | Author took all four critic edits |

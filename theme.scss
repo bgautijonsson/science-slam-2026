@@ -42,7 +42,7 @@ $link-hover-color: darken($primary, 15%);
 
 .reveal .slides > section:not(#title-slide) {
   box-sizing: border-box;
-  padding-top:    100px;
+  padding-top:    40px; // simplemenu bar is off in this deck
   padding-bottom: 55px;
 }
 
@@ -56,3 +56,50 @@ $link-hover-color: darken($primary, 15%);
 }
 
 // Deck-specific rules go here.
+
+// Photo credits under the rain-hook photos.
+.reveal .photo-credit {
+  display: block;
+  text-align: center;
+  font-size: 0.45em;
+  color: lighten($body-color, 30%);
+}
+
+// The Hessian walk: steps stack on one spot; each later step covers the
+// one before, so it needs the slide background behind it.
+.reveal .r-stack .hessian-step {
+  background-color: $body-bg;
+  text-align: center;
+}
+.reveal .hessian-step p { margin: 0; }
+// Reveal caps images at max-width: 95% of their container; inside a
+// shrink-to-fit stack item that squashes a square figure to 95% width.
+.reveal .hessian-step img { max-width: none; }
+
+// Rain-hook photos: same height side by side, cropped rather than squashed.
+.reveal .rain img {
+  height: 330px;
+  width: 100%;
+  object-fit: cover;
+}
+.reveal .hessian-label {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  color: $primary;
+  font-size: 0.9em;
+}
+
+// Closing slide: the statement and its punchline, centred.
+.reveal .slides > section.closing {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  text-align: center;
+}
+.reveal .punchline {
+  display: block;
+  margin-top: 1em;
+  font-size: 1.3em;
+  color: $darkblue;
+}

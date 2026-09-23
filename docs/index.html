@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Brynjólfur Gauti Guðrúnar Jónsson">
-  <title>Latent Gaussian Models or: How I Learned to Stop Worrying and Love the Hessian</title>
+  <title>Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -35,11 +35,10 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-793f989a698993b94a255097579134c2.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-08fa35d40ac68d1b4ac8d704426d49df.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/simplemenu/simplemenu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -134,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Latent Gaussian Models or: How I Learned to Stop Worrying and Love the Hessian</h1>
+  <h1 class="title">Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian</h1>
   <p class="subtitle">Science Slam · University of Iceland Centre for AI</p>
 
 <div class="quarto-title-authors">
@@ -146,15 +145,141 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </div>
 
 </section>
-<section id="title" class="slide level2" data-name="Intro">
-<h2>Title</h2>
-<p>Replace this with the first slide.</p>
+<section id="section" class="slide level2 no-heading">
+<h2></h2>
+<div class="rain quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="Figures/flod1.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="Figures/flod2.webp"></p>
+</div>
+</div>
+</div>
+<p><span class="photo-credit">Reykjavík, 2016 (photo: Júlíus Sigurjónsson, mbl.is) · Siglufjörður, 2024 (photo: Eva Björk Benediktsdóttir, RÚV)</span></p>
+<aside class="notes">
+<p>~20 s. When it rains hard here, it rains hard next door.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="covariance" class="slide level2">
+<h2>Covariance</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/fig1-covariance.png" class="quarto-figure quarto-figure-center" height="480"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>~30 s. Two places: rain here, rain next door.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="precision" class="slide level2">
+<h2>Precision</h2>
+
+<img data-src="Figures/fig2-cov-vs-prec.png" class="quarto-figure quarto-figure-center r-stretch" style="width:92.0%"><aside class="notes">
+<p>~35 s. Ten places along a line. Blank cell = no direct link.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="give-ourselves-a-hessian" class="slide level2">
+<h2>Give ourselves a Hessian</h2>
+
+<img data-src="Figures/fig3-hessian-peaks.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><aside class="notes">
+<p>~40 s. Your words: “just give ourselves a hessian”. Curvature at the top = precision of the normal. Land on the flat peak: it’s an approximation. Bridge: many numbers → the curvature is a grid, and that grid is a precision matrix like the last slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="three-types-of-hessian" class="slide level2">
+<h2>Three types of Hessian</h2>
+<div class="r-stack">
+<div class="hessian-step">
+<p><img data-src="Figures/fig4-hessian-diagonal.png" height="420"></p>
+<p><span class="hessian-label">Diagonal</span></p>
+</div>
+<div class="hessian-step fragment">
+<p><img data-src="Figures/fig5-hessian-block.png" height="420"></p>
+<p><span class="hessian-label">Block diagonal</span></p>
+</div>
+<div class="hessian-step fragment">
+<p><img data-src="Figures/fig6-hessian-banded.png" height="420"></p>
+<p><span class="hessian-label">Block and banded</span></p>
+</div>
+</div>
+<aside class="notes">
+<p>~80 s, two clicks. Third click is yours: modelling data-level dependence is hard.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="every-road-leads-back-to-the-normal-distribution" class="slide level2 closing">
+<h2>Every road leads back to the normal distribution</h2>
+<p><span class="fragment punchline">…but that’s just approximations</span></p>
+<!-- Bomb callback to the title slide: the author's imagery goes here. -->
+<aside class="notes">
+<p>~30 s. Then ride the Hessian anyway.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p><a href="https://bggj.is/science-slam-2026">bggj.is/science-slam-2026</a></p>
 </div>
 </div></div>
 
@@ -165,7 +290,6 @@ Brynjólfur Gauti Guðrúnar Jónsson
   <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/simplemenu/simplemenu.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -188,7 +312,6 @@ Brynjólfur Gauti Guðrúnar Jónsson
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'simplemenu': {"menubarclass":"menubar","menuclass":"menu","activeclass":"active","activeelement":"li","flat":false,"barhtml":{"header":"<div class='menubar mb-10'><ul class='menu'></ul></div>","footer":"<div class='footer footer-default' style='display: block;'> <a href='https://bggj.is/science-slam-2026' target='_blank'>bggj.is/science-slam-2026</a></div>"},"scale":0.67},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -359,7 +482,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Simplemenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
