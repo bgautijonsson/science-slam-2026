@@ -1,5 +1,5 @@
 ---
-pagetitle: "Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian"
+pagetitle: "Modelling Dependence · Science Slam 2026"
 author-meta: "Brynjólfur Gauti Guðrúnar Jónsson"
 format:
   revealjs:
@@ -21,12 +21,32 @@ format:
 # R in a UTF-8 locale), then quarto render here. Speaker notes: press S.
 ---
 
+## {#opening .art .opening background-color="#f8f6f0"}
+
+```{=html}
+<p class="opening-event">Science Slam</p>
+<div class="opening-topic">
+  <h1>Modelling dependence</h1>
+  <p>The wettest hour of the year</p>
+</div>
+<div class="opening-speaker">
+  <p class="opening-name">Brynjólfur Gauti Guðrúnar Jónsson</p>
+  <p class="opening-date">Gróska · 24 September 2026</p>
+</div>
+```
+
+::: {.notes}
+**A light introduction — 10 seconds.**
+
+Introduce yourself, give the name of your PhD project and name your advisor in your own words. This opening can stay on screen while you settle in. Introduce the topic lightly: the wettest hour of the year. Keep the full comic title for the next slide. Advance once when you are ready for the whole audience to see the poster together.
+:::
+
 ## {#poster .art background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
 
 ::: {.notes}
-**The worrying — 15 seconds.**
+**The poster reveal — 5 seconds.**
 
-Introduce yourself, give the name of your PhD project and name your advisor. Introduce the research as predicting changes in annual maximum hourly precipitation: the wettest hour of each year. Let the poster carry the humour; keep the introduction in your own voice.
+Reveal the full poster and comic title together. Give the audience a moment to take it in and let the joke land before moving on. The self-introduction belongs on the preceding slide, so the poster gets its own beat. Then move to the rainfall photograph and why predicting changes matters.
 :::
 
 ## {#rain .print}

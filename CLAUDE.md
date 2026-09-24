@@ -71,6 +71,7 @@ Verbatim, 2026-09-23:
 
 | Slide | File | Source | Status |
 | ----- | ---- | ------ | ------ |
+| opening | inline title, presenter and event label | `index.qmd`, `theme.scss` | made; neutral browser title preserves the reveal |
 | poster, callback | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
 | Gauss interlude | `Figures/gauss.png` | author's GPT poster, supplied 2026-09-24 | made; full portrait, no crop |
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
@@ -84,22 +85,23 @@ Verbatim, 2026-09-23:
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 13 slides, 18 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening lets the author control the first poster reveal. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 14 slides, 19 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
- 1. poster        The worrying.                                   ~15 s
- 2. rain          Flood photo as a print + credit                 ~20 s
- 3. level         Station A: higher level                         ~10 s
- 4. spread        Station B: more spread                          ~10 s
- 5. tail          Station C: heavier tail                         ~10 s
- 6. stations      Rainfall records → nine estimates               ~20 s
- 7. gauss         Gauss poster: estimation → normal approximation ~8 s
- 8. uncertainty   Hill → normal density via the Hessian            ~30 s
- 9. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
-10. separate      Working alone (diagonal)                        ~15 s
-11. within        Sharing within stations (blocks)                        ~25 s
-12. between       Sharing with neighbours (blue): the research     ~45 s
-13. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+ 1. opening       Science Slam introduction; hold for poster cue  ~10 s
+ 2. poster        Comic poster reveal; give the joke a beat        ~5 s
+ 3. rain          Flood photo as a print + credit                 ~20 s
+ 4. level         Station A: higher level                         ~10 s
+ 5. spread        Station B: more spread                          ~10 s
+ 6. tail          Station C: heavier tail                         ~10 s
+ 7. stations      Rainfall records → nine estimates               ~20 s
+ 8. gauss         Gauss poster: estimation → normal approximation ~8 s
+ 9. uncertainty   Hill → normal density via the Hessian            ~30 s
+10. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
+11. separate      Working alone (diagonal)                        ~15 s
+12. within        Sharing within stations (blocks)                        ~25 s
+13. between       Sharing with neighbours (blue): the research     ~45 s
+14. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -135,3 +137,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Replaced the hill on the matrix slide with the shared density; added a camera pan and three mouse/keyboard reveals for level, spread and interaction | Author wanted the density to link directly to matrix entries. Diagonal reveals use conditional slices; the full matrix determines joint widths |
 | 2026-09-24 | Added two clicks after the interaction highlight: first clear the overlay, then live density contours morph into circles while off-diagonal entries fade; both live SVG and static artwork share the camera pan | Author requested independence animation with a separate click to clear the tilted overlay first. Caption names standardised axes; independence alone need not produce a circle. Forward/backward controls are native Reveal fragments |
 | 2026-09-24 | Rebuilt the final three matrices with square brackets, fixed symmetric magnitude shading and nine people grouped by station; grey within-group links and blue neighbour bridges match the retained blocks | Author proposed a communication analogy. People represent estimates; independence does not require identical uncertainty, and absent A–C precision links do not rule out association through B |
+| 2026-09-24 | Added a restrained Science Slam opening with the short topic title, presenter, venue and date; moved the introduction there and kept the complete poster reveal on one advance | Author wants control over comedic timing so the whole audience sees the poster together. Opening plus poster share the previous 15-second planning cue |

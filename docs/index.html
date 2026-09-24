@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Brynjólfur Gauti Guðrúnar Jónsson">
-  <title>Modelling Dependence or: How I Learned to Stop Worrying and Love the Hessian</title>
+  <title>Modelling Dependence · Science Slam 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-c700696689ce4e004ac832bc3a4c9759.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-08419cf676977d1d6baaad013b3567e3.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -133,11 +133,37 @@
     <div class="slides">
 
 
+<section id="opening" class="slide level2 art opening" data-background-color="#f8f6f0">
+<h2></h2>
+<p class="opening-event">Science Slam</p>
+<div class="opening-topic">
+  <h1>Modelling dependence</h1>
+  <p>The wettest hour of the year</p>
+</div>
+<div class="opening-speaker">
+  <p class="opening-name">Brynjólfur Gauti Guðrúnar Jónsson</p>
+  <p class="opening-date">Gróska · 24 September 2026</p>
+</div>
+<aside class="notes">
+<p><strong>A light introduction — 10 seconds.</strong></p>
+<p>Introduce yourself, give the name of your PhD project and name your advisor in your own words. This opening can stay on screen while you settle in. Introduce the topic lightly: the wettest hour of the year. Keep the full comic title for the next slide. Advance once when you are ready for the whole audience to see the poster together.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="poster" class="slide level2 art" data-background-image="Figures/bomb.jpg" data-background-size="contain" data-background-color="#000000">
 <h2></h2>
 <aside class="notes">
-<p><strong>The worrying — 15 seconds.</strong></p>
-<p>Introduce yourself, give the name of your PhD project and name your advisor. Introduce the research as predicting changes in annual maximum hourly precipitation: the wettest hour of each year. Let the poster carry the humour; keep the introduction in your own voice.</p>
+<p><strong>The poster reveal — 5 seconds.</strong></p>
+<p>Reveal the full poster and comic title together. Give the audience a moment to take it in and let the joke land before moving on. The self-introduction belongs on the preceding slide, so the poster gets its own beat. Then move to the rainfall photograph and why predicting changes matters.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -643,12 +669,12 @@
       });
     </script>
     <script>
-    // Clicks advance the camera pair and its native fragments. Keyboard navigation
+    // Clicks reveal the opening poster, or advance the camera pair and its fragments. Keyboard navigation
     // remains Reveal's own, including stepping backwards through the highlights.
     document.addEventListener("click", function (event) {
       const deck = window.Reveal;
       if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-      if (!["uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+      if (!["opening", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
       if (event.button !== 0 || event.defaultPrevented ||
           event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;

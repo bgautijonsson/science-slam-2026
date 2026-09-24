@@ -1,10 +1,10 @@
 <script>
-// Clicks advance the camera pair and its native fragments. Keyboard navigation
+// Clicks reveal the opening poster, or advance the camera pair and its fragments. Keyboard navigation
 // remains Reveal's own, including stepping backwards through the highlights.
 document.addEventListener("click", function (event) {
   const deck = window.Reveal;
   if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-  if (!["uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+  if (!["opening", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
   if (event.button !== 0 || event.defaultPrevented ||
       event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
   const target = event.target;
