@@ -26,7 +26,7 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 
 ## Design studies
 
-`design-studies/` holds the Codex drafts and figure sources (start with `design-studies/README.md`). **Adopted into `index.qmd` on 2026-09-23** (author's choice): Codex running order, figures referenced in place from `design-studies/designs/` and `design-studies/figures/`, one visual system (paper `#f8f6f0`, ink `#20272d`, blue `#347eab` only for the added between-station links). `make-visuals.R` was moved onto that palette the same day; the current uncertainty slide pairs the hill with grey density contours; blue remains reserved for the between-station links. Re-run the R scripts in a UTF-8 locale (`LC_ALL=en_US.UTF-8`), or non-ASCII labels such as "→" render as "…".
+`design-studies/` holds the Codex drafts and figure sources (start with `design-studies/README.md`). **Adopted into `index.qmd` on 2026-09-23** (author's choice): Codex running order, figures referenced in place from `design-studies/designs/` and `design-studies/figures/`, one visual system (paper `#f8f6f0`, ink `#20272d`, blue `#347eab` only for the added between-station links). `make-visuals.R` was moved onto that palette the same day; the current uncertainty slide pairs the hill with grey density contours; blue remains reserved for the between-station links, in both the matrix cells and the matching bridges between people groups. Re-run the R scripts in a UTF-8 locale (`LC_ALL=en_US.UTF-8`), or non-ASCII labels such as "→" render as "…".
 
 ## Audience
 
@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed 9×9 grid gains connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -78,7 +78,7 @@ Verbatim, 2026-09-23:
 | stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | redesigned 2026-09-24: three illustrative annual-maximum records → nine estimates |
 | uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip plus generated inline SVG; initial view: hill + normal density |
 | density + Hessian matrix | same panorama and `_hessian-panorama.qmd` SVG plus three highlight overlays | `design-studies/hessian-hill.R` | camera pans one panel right; three exclusive highlights, clear overlay, then independence morph |
-| separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | made (Codex) |
+| separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | redesigned 2026-09-24: symmetric magnitudes, brackets and matching people groups |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
 
@@ -96,9 +96,9 @@ Verbatim, 2026-09-23:
  7. gauss         Gauss poster: estimation → normal approximation ~8 s
  8. uncertainty   Hill → normal density via the Hessian            ~30 s
  9. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
-10. separate      Each estimate (diagonal)                        ~15 s
-11. within        Within stations (blocks)                        ~25 s
-12. between       Between stations (blue links): the research     ~45 s
+10. separate      Working alone (diagonal)                        ~15 s
+11. within        Sharing within stations (blocks)                        ~25 s
+12. between       Sharing with neighbours (blue): the research     ~45 s
 13. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
@@ -134,3 +134,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Labelled maximum likelihood estimate, Hessian and uncertainty explicitly; added a schematic uphill trail from a starting point; aligned both parameter frames exactly and retained the same hill on the matrix slide | Author requested a simple estimation cue and cleaner alignment between the hill and density plot |
 | 2026-09-24 | Replaced the hill on the matrix slide with the shared density; added a camera pan and three mouse/keyboard reveals for level, spread and interaction | Author wanted the density to link directly to matrix entries. Diagonal reveals use conditional slices; the full matrix determines joint widths |
 | 2026-09-24 | Added two clicks after the interaction highlight: first clear the overlay, then live density contours morph into circles while off-diagonal entries fade; both live SVG and static artwork share the camera pan | Author requested independence animation with a separate click to clear the tilted overlay first. Caption names standardised axes; independence alone need not produce a circle. Forward/backward controls are native Reveal fragments |
+| 2026-09-24 | Rebuilt the final three matrices with square brackets, fixed symmetric magnitude shading and nine people grouped by station; grey within-group links and blue neighbour bridges match the retained blocks | Author proposed a communication analogy. People represent estimates; independence does not require identical uncertainty, and absent A–C precision links do not rule out association through B |

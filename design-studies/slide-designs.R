@@ -141,27 +141,98 @@ save("station-tokens",function(){
   }
   tx("Lower \u2192 higher",.81,.075,15,grey,just="centre")
 })
+# Fixed illustrative precision values. All three stages share the same entries;
+# only the retained links change. Strict diagonal dominance gives a valid SPD
+# precision at every stage (the corresponding log-likelihood Hessian is -Q).
+matrix_stations <- rep(1:3, each = 3)
+Q_full <- matrix(0, 9, 9)
+within_weights <- list(c(.55, .38, .72), c(.82, .46, .61), c(.41, .77, .59))
+for (station in 1:3) {
+  ids <- (station - 1) * 3 + 1:3
+  pairs <- combn(ids, 2)
+  for (k in 1:3) {
+    Q_full[pairs[1, k], pairs[2, k]] <- -within_weights[[station]][k]
+    Q_full[pairs[2, k], pairs[1, k]] <- -within_weights[[station]][k]
+  }
+}
+Q_full[1:3, 4:6] <- -matrix(c(.35, .13, .24, .22, .42, .18, .29, .17, .31), 3, byrow = TRUE)
+Q_full[4:6, 7:9] <- -matrix(c(.23, .36, .14, .19, .28, .40, .32, .16, .26), 3, byrow = TRUE)
+Q_full[4:6, 1:3] <- t(Q_full[1:3, 4:6])
+Q_full[7:9, 4:6] <- t(Q_full[4:6, 7:9])
+diag(Q_full) <- rowSums(abs(Q_full)) + c(.7, 1.1, .8, .6, .9, 1.2, .75, 1, .65)
+matrix_masks <- list(diag(9) == 1,
+                     outer(matrix_stations, matrix_stations, "=="),
+                     abs(outer(matrix_stations, matrix_stations, "-")) <= 1)
+precision_stages <- lapply(matrix_masks, function(mask) Q_full * mask)
+cell_alpha <- .18 + .82 * sqrt(abs(Q_full) / max(abs(Q_full)))
+stopifnot(identical(Q_full, t(Q_full)), identical(cell_alpha, t(cell_alpha)),
+          all(vapply(precision_stages, function(q) min(eigen(q, symmetric = TRUE)$values) > 0, logical(1))),
+          identical(vapply(precision_stages, function(q) sum(q != 0), integer(1)), c(9L, 27L, 63L)))
+
+# Nine people stand for nine estimates; enclosures stand for stations.
+# Between-station bridges join entire groups, corresponding to whole blocks.
+draw_person <- function(x, y, label) {
+  grid.circle(x, y + .026, r = unit(5.2, "pt"), gp = gpar(fill = ink, col = NA))
+  grid.roundrect(x, y + .001, width = .018, height = .031,
+                 r = unit(3, "pt"), gp = gpar(fill = ink, col = NA))
+  ln(x + c(-.004, -.008), y + c(-.009, -.03), ink, 3.2)
+  ln(x + c(.004, .008), y + c(-.009, -.03), ink, 3.2)
+  tx(label, x, y - .052, 13, grey, just = "centre")
+}
+draw_people <- function(stage, centres) {
+  group_x <- .235
+  if (stage == 3) for (i in 1:2) {
+    ln(rep(group_x, 2), c(centres[i] - .081, centres[i + 1] + .081), blue, 3)
+  }
+  for (station in 1:3) {
+    cy <- centres[station]
+    grid.roundrect(group_x, cy, width = .27, height = .162,
+                   r = unit(9, "pt"), gp = gpar(fill = paper, col = "#cfcec8", lwd = 1.1))
+    tx(LETTERS[station], .065, cy, 20, face = "bold", just = "centre")
+    px <- group_x + c(-.078, 0, .078)
+    py <- cy + c(-.010, .026, -.010)
+    if (stage >= 2) {
+      pairs <- combn(1:3, 2)
+      for (k in 1:3) ln(px[pairs[, k]], py[pairs[, k]] + .009, "#a0a5a3", 1.8)
+    }
+    for (person in 1:3) draw_person(px[person], py[person], c("L", "S", "T")[person])
+  }
+  tx("One person = one estimate", group_x, .10, 14, grey, just = "centre")
+}
+
 draw_matrix <- function(stage) {
-  base(); tx("Same nine estimates. More connections.",.06,.92,29,face="bold")
-  tx(c("Each\nestimate.","Within\nstations.","Between\nstations.")[stage],.06,.53,34,if(stage==3)blue else ink,"bold")
-  x0 <- .43; top <- .755; cw <- .048; ch <- cw*1536/1024
-  stopifnot(abs(cw*1536-ch*1024)<1e-10)
-  stations <- rep(1:3,each=3)
-  for(i in 1:9) for(j in 1:9) {
-    fill <- faint
-    if(i==j || (stage>=2 && stations[i]==stations[j])) fill <- ink
-    if(stage==3 && abs(stations[i]-stations[j])==1) fill <- blue
-    box(x0+(j-.5)*cw,top-(i-.5)*ch,cw*.88,ch*.88,fill)
+  base()
+  tx(c("Working alone", "Sharing within stations", "Sharing with neighbours")[stage],
+     .06, .92, 30, face = "bold")
+  x0 <- .53; top <- .755; cw <- .045; ch <- cw * 1536 / 1024
+  stopifnot(abs(cw * 1536 - ch * 1024) < 1e-10)
+  block_centres <- top - (c(1, 2, 3) * 3 - 1.5) * ch
+  draw_people(stage, block_centres)
+  tx("The Hessian", x0 + 4.5 * cw, .92, 23, face = "bold", just = "centre")
+  for (i in 1:9) for (j in 1:9) {
+    fill <- "#eeece6"
+    if (matrix_masks[[stage]][i, j]) {
+      colour <- if (matrix_stations[i] != matrix_stations[j]) blue else ink
+      fill <- adjustcolor(colour, alpha.f = cell_alpha[i, j])
+    }
+    box(x0 + (j - .5) * cw, top - (i - .5) * ch, cw * .88, ch * .88, fill)
   }
-  for(i in 1:9) {
-    tx(c("L","S","T")[(i-1)%%3+1],x0+(i-.5)*cw,.79,13,grey,just="centre")
-    tx(c("L","S","T")[(i-1)%%3+1],.407,top-(i-.5)*ch,13,grey,just="centre")
+  # Square brackets and repeated row/column ordering make the matrix explicit.
+  bottom <- top - 9 * ch
+  for (side in c(-1, 1)) {
+    edge <- if (side < 0) x0 - .009 else x0 + 9 * cw + .009
+    inner <- edge - side * .008
+    ln(c(inner, edge, edge, inner), c(top, top, bottom, bottom), ink, 1.8)
   }
-  for(s in 1:3) {
-    tx(LETTERS[s],x0+(s*3-1.5)*cw,.842,18,face="bold",just="centre")
-    tx(LETTERS[s],.361,top-(s*3-1.5)*ch,18,face="bold",just="centre")
+  for (i in 1:9) {
+    tx(c("L", "S", "T")[(i - 1) %% 3 + 1], x0 + (i - .5) * cw, .79, 13, grey, just = "centre")
+    tx(c("L", "S", "T")[(i - 1) %% 3 + 1], x0 - .028, top - (i - .5) * ch, 13, grey, just = "centre")
   }
-  tx("A, B, C = fictional stations",.06,.12,14,grey)
+  for (station in 1:3) {
+    tx(LETTERS[station], x0 + (station * 3 - 1.5) * cw, .842, 18, face = "bold", just = "centre")
+    tx(LETTERS[station], x0 - .064, block_centres[station], 18, face = "bold", just = "centre")
+  }
+  tx("Illustrative magnitudes", x0 + 4.5 * cw, .10, 14, grey, just = "centre")
 }
 for(i in 1:3) save(paste0("matrix-",i),function()draw_matrix(i))
 
