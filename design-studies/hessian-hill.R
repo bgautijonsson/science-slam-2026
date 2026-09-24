@@ -26,6 +26,18 @@ text_at <- function(label, x, y, size = 20, colour = ink,
 line_at <- function(x, y, colour = ink, width = 1.5, dash = "solid") {
   grid.lines(x, y, gp = gpar(col = colour, lwd = width, lty = dash))
 }
+badge <- function(kind, x, y) {
+  grid.circle(x, y, r = unit(13, "pt"),
+              gp = gpar(fill = paper, col = ink, lwd = 1.5))
+  # One dot versus linked dots: visual keys, not numerical Hessian entries.
+  if (kind == "1") {
+    grid.circle(x, y, r = unit(4, "pt"), gp = gpar(fill = ink, col = NA))
+  } else {
+    line_at(x + c(-.006, .006), c(y, y), ink, 1.7)
+    grid.circle(x + c(-.006, .006), c(y, y), r = unit(3, "pt"),
+                gp = gpar(fill = ink, col = NA))
+  }
+}
 
 Q <- matrix(c(2.4, -1.5, -1.5, 2.4), 2)
 log_fit <- function(x) -drop(t(x) %*% Q %*% x) / 2
@@ -106,43 +118,52 @@ draw_hill <- function() {
     grid.polygon(patch$p[, 1], patch$p[, 2],
                  gp = gpar(fill = patch$fill, col = patch$fill, lwd = .35))
   }
-  # Show the visible, forward-facing half of each path from the summit.
-  # Stay within the rendered radius (x'Qx <= 9); do not draw through the hill.
-  steep <- seq(0, 1.02, length.out = 150)
+  # A coordinate slice corresponds to a diagonal entry; an eigenvector does not.
+  # The joint path illustrates compensation, whose curvature uses the full Q.
+  # Stay within the rendered radius (x'Qx <= 9).
+  level_only <- seq(0, 1.8, length.out = 150)
   gentle <- seq(-2.1, 0, length.out = 150)
-  stopifnot(max(7.8 * steep^2) <= 9, max(1.8 * gentle^2) <= 9)
-  surface_line(steep, -steep, ink, 2.6)
+  stopifnot(max(Q[1, 1] * level_only^2) <= 9,
+            max(sum(Q) * gentle^2) <= 9)
+  surface_line(level_only, rep(0, length(level_only)), ink, 2.6)
   surface_line(gentle, gentle, ink, 2.6, "dashed")
+  single_marker <- project(.85, 0, fit(.85, 0))
+  joint_marker <- project(-1.05, -1.05, fit(-1.05, -1.05))
+  badge("1", single_marker[1], single_marker[2])
+  badge("2", joint_marker[1], joint_marker[2])
   peak <- project(0, 0, 1)
   grid.circle(peak[1], peak[2], r = unit(4, "pt"), gp = gpar(fill = ink, col = paper, lwd = 1.5))
   line_at(c(peak[1], peak[1] + .05), c(peak[2] + .012, peak[2] + .065), ink, 1.2)
   text_at("Best fit", peak[1] + .065, peak[2] + .065, 18, face = "bold")
 
-  line_at(c(.075, .12), c(.195, .195), ink, 2.6)
-  text_at("Steep: little room to move", .135, .195, 17)
-  line_at(c(.075, .12), c(.14, .14), ink, 2.6, "dashed")
-  text_at("Gentle: parameters can compensate", .135, .14, 17)
+  badge("1", .085, .195)
+  text_at("Change level. Hold spread fixed.", .12, .195, 17)
+  badge("2", .085, .14)
+  text_at("Move both: one can offset the other.", .12, .14, 17)
   text_at("Nudge the parameters. How quickly does the fit get worse?", .06, .06, 20, face = "bold")
 }
 
 draw_matrix <- function(new_page = TRUE) {
   if (new_page) grid.newpage()
   # Transparent overlay, aligned to the same 1536 x 1024 composition.
-  text_at("The Hessian", .79, .73, 25, face = "bold", just = "centre")
+  text_at("The Hessian", .79, .758, 25, face = "bold", just = "centre")
   x <- c(.746, .84)
-  y <- c(.56, .419)
+  y <- c(.59, .449)
   for (i in 1:2) for (j in 1:2) {
     grid.rect(x[j], y[i], width = .086, height = .129,
               gp = gpar(fill = if (i == j) ink else interaction, col = NA))
+    badge(if (i == j) "1" else "2", x[j], y[i])
   }
   for (i in 1:2) {
-    text_at(c("Level", "Spread")[i], x[i], .668, 15, just = "centre")
+    text_at(c("Level", "Spread")[i], x[i], .698, 15, just = "centre")
     text_at(c("Level", "Spread")[i], .681, y[i], 15, just = "right")
   }
-  grid.rect(.665, .295, width = .018, height = .027, gp = gpar(fill = ink, col = NA))
-  text_at("Curvature for each\nparameter", .691, .283, 15)
-  grid.rect(.665, .203, width = .018, height = .027, gp = gpar(fill = interaction, col = NA))
-  text_at("How they interact", .691, .203, 15)
+  badge("1", .665, .308)
+  text_at("How tightly\npinned down?", .70, .307, 17)
+  text_at("Holding the other fixed", .70, .245, 12.5, muted)
+  badge("2", .665, .168)
+  text_at("Interaction", .70, .187, 17)
+  text_at("How estimates move together", .70, .146, 12.5)
 }
 
 save_figure <- function(name, draw, background = paper) {

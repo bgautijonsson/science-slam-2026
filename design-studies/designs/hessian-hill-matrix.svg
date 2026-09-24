@@ -26,20 +26,38 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
-<text x='606.72' y='147.17' text-anchor='middle' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='139.89px' lengthAdjust='spacingAndGlyphs'>The Hessian</text>
-<rect x='539.90' y='192.26' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
-<rect x='612.10' y='192.26' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #8A9295;' />
-<rect x='539.90' y='264.45' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #8A9295;' />
-<rect x='612.10' y='264.45' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
-<text x='572.93' y='175.37' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
-<text x='523.01' y='230.66' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
-<text x='645.12' y='175.37' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
-<text x='523.01' y='302.85' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
-<rect x='503.81' y='354.05' width='13.82' height='13.82' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
-<text x='530.69' y='362.77' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='124.27px' lengthAdjust='spacingAndGlyphs'>Curvature for each</text>
-<text x='530.69' y='382.21' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='68.39px' lengthAdjust='spacingAndGlyphs'>parameter</text>
-<rect x='503.81' y='401.15' width='13.82' height='13.82' style='stroke-width: 0.75; stroke: none; fill: #8A9295;' />
-<text x='530.69' y='413.45' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='115.91px' lengthAdjust='spacingAndGlyphs'>How they interact</text>
+<text x='606.72' y='132.83' text-anchor='middle' style='font-size: 25.00px;fill: #20272D; font-family: "Noto Sans Syriac";' textLength='139.89px' lengthAdjust='spacingAndGlyphs'>The Hessian</text>
+<rect x='539.90' y='176.90' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<circle cx='572.93' cy='209.92' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<circle cx='572.93' cy='209.92' r='3.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<rect x='612.10' y='176.90' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #8A9295;' />
+<circle cx='645.12' cy='209.92' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<polyline points='640.51,209.92 649.73,209.92 ' style='stroke-width: 1.27; stroke: #20272D;' />
+<circle cx='640.51' cy='209.92' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<circle cx='649.73' cy='209.92' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<rect x='539.90' y='249.09' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #8A9295;' />
+<circle cx='572.93' cy='282.11' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<polyline points='568.32,282.11 577.54,282.11 ' style='stroke-width: 1.27; stroke: #20272D;' />
+<circle cx='568.32' cy='282.11' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<circle cx='577.54' cy='282.11' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<rect x='612.10' y='249.09' width='66.05' height='66.05' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<circle cx='645.12' cy='282.11' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<circle cx='645.12' cy='282.11' r='3.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<text x='572.93' y='160.01' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='523.01' y='215.30' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='35.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='645.12' y='160.01' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<text x='523.01' y='287.49' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Helvetica";' textLength='48.38px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<circle cx='510.72' cy='354.30' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<circle cx='510.72' cy='354.30' r='3.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<text x='537.60' y='349.90' style='font-size: 17.00px;fill: #20272D; font-family: "Helvetica";' textLength='83.14px' lengthAdjust='spacingAndGlyphs'>How tightly</text>
+<text x='537.60' y='371.93' style='font-size: 17.00px;fill: #20272D; font-family: "Helvetica";' textLength='105.86px' lengthAdjust='spacingAndGlyphs'>pinned down?</text>
+<text x='537.60' y='391.04' style='font-size: 12.50px;fill: #7E858B; font-family: "Helvetica";' textLength='125.08px' lengthAdjust='spacingAndGlyphs'>Holding the other fixed</text>
+<circle cx='510.72' cy='425.98' r='12.95' style='stroke-width: 1.12; stroke: #20272D; fill: #F8F6F0;' />
+<polyline points='506.11,425.98 515.33,425.98 ' style='stroke-width: 1.27; stroke: #20272D;' />
+<circle cx='506.11' cy='425.98' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<circle cx='515.33' cy='425.98' r='2.99' style='stroke-width: 0.75; stroke: none; fill: #20272D;' />
+<text x='537.60' y='422.35' style='font-size: 17.00px;fill: #20272D; font-family: "Helvetica";' textLength='79.36px' lengthAdjust='spacingAndGlyphs'>Interaction</text>
+<text x='537.60' y='441.73' style='font-size: 12.50px;fill: #20272D; font-family: "Helvetica";' textLength='165.33px' lengthAdjust='spacingAndGlyphs'>How estimates move together</text>
 </g>
 </g>
 </svg>
