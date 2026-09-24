@@ -25,7 +25,7 @@ format:
 ::: {.notes}
 **The worrying — 15 seconds.**
 
-Introduce yourself, give the name of your PhD project and name your advisor. Introduce the research as predicting changes in extreme sub-daily precipitation. Let the poster carry the humour; keep the introduction in your own voice.
+Introduce yourself, give the name of your PhD project and name your advisor. Introduce the research as predicting changes in annual maximum hourly precipitation: the wettest hour of each year. Let the poster carry the humour; keep the introduction in your own voice.
 :::
 
 ## {#rain .print}
@@ -47,7 +47,9 @@ Preparation detail: a hundred-year event denotes a 1% annual exceedance probabil
 ::: {.notes}
 **Station A: higher level — 10 seconds.**
 
-Three imaginary places. The dashed curve is the same reference in every panel. At A, move the level up: its annual biggest downpours tend to be larger. Point to the horizontal shift. These are invented distributions, not fitted observations.
+Name the generalised extreme value (GEV) distribution without explaining it in detail. It describes the wettest hour of each year using three parameters: location (level), scale (spread), and shape (particularly the behaviour of the most extreme downpours). Every station has all three; the examples change one parameter at a time.
+
+Three imaginary places, with the same dashed reference in each panel. At A, move the location parameter up: the wettest hour tends to bring more rain. Point to the horizontal shift. These are invented distributions, not fitted observations.
 :::
 
 ## {#spread .art background-image="design-studies/designs/stations-2.png" background-size="contain" background-color="#f8f6f0"}
@@ -55,7 +57,7 @@ Three imaginary places. The dashed curve is the same reference in every panel. A
 ::: {.notes}
 **Station B: more spread — 10 seconds.**
 
-At B, increase the spread: those annual maxima vary more from year to year. Compare B with its dashed reference, not with A. The level and tail parameters remain at their reference values. This is rainfall variability, not parameter uncertainty.
+At B, increase the scale parameter, or spread: the wettest hour varies more from year to year. Compare B with its dashed reference, not with A. The location and shape parameters remain at their reference values. This is rainfall variability, not parameter uncertainty.
 :::
 
 ## {#tail .art background-image="design-studies/designs/stations-3.png" background-size="contain" background-color="#f8f6f0"}
@@ -63,7 +65,9 @@ At B, increase the spread: those annual maxima vary more from year to year. Comp
 ::: {.notes}
 **Station C: heavier tail — 10 seconds.**
 
-At C, increase the tail parameter: exceptionally large downpours become more plausible. Point to the shaded far tail. Changing shape can also affect the centre and spread of the distribution; we have held the other parameters fixed, not all other distributional features.
+At C, change the shape parameter to give a heavier tail: exceptionally large hourly downpours become more plausible. Point to the shaded far tail.
+
+Preparation detail: shape changes more than just the far tail. It can also affect the centre and spread of the distribution; we have held the location and scale parameters fixed, not all other distributional features.
 :::
 
 ## {#stations .art background-image="design-studies/designs/station-tokens.png" background-size="contain" background-color="#f8f6f0"}

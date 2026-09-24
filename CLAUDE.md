@@ -2,6 +2,7 @@
 
 Deck slug: `science-slam-2026`
 Talk date: 2026-09-24
+Modelled response: annual maximum hourly precipitation — the wettest hour of each year (author confirmed 2026-09-24).
 Repo: `bgautijonsson/science-slam-2026` (public, created 2026-09-23)
 Public URL: https://bggj.is/science-slam-2026/ (GitHub Pages from `main:/docs`; first build from commit `9773042`, verified live 2026-09-23: 11 slides, all images 200)
 
@@ -123,3 +124,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Linked the hill paths to diagonal and off-diagonal matrix cells with matching symbols; changed the solid path to a Level-only slice; made the conditional-uncertainty qualifier visible | Author wanted certainty and co-movement connected directly to the matrix; overall uncertainty and joint movement use the full Hessian |
 | 2026-09-24 | Simplified the Hessian slide to the hill, peak marker, parameter labels and a plain matrix reveal; removed paths, symbols and explanatory captions | Author found the slide too busy and will explain the details verbally |
 | 2026-09-24 | Opening talking points: self, PhD project title and advisor; changing sub-daily precipitation and infrastructure design; illustrative hundred-year threshold becoming eighty- or fifty-year | Author supplied the opening in the slide-by-slide discussion. Follow up: station figure currently says wettest day; confirm the sub-daily duration before changing it |
+| 2026-09-24 | Changed station captions to wettest hour of each year; recorded annual maximum hourly precipitation as the response; station talking points name the GEV and introduce location/level, scale/spread and shape/tail without a distribution tutorial | Author confirmed the hourly duration and the intended explanation; resolves the previous daily-label follow-up |

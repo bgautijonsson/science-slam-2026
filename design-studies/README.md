@@ -35,6 +35,6 @@ quarto render
 python3 scripts/build_design_board.py
 ```
 
-R packages: grid, ragg, svglite and png; the Python builders use only the standard library. Figure text uses Lato; PNGs preserve the rendered appearance, while SVG text needs the font installed. The local Quarto configuration keeps these draft renders separate from the repository's main deck render. The HTML files embed their images and presentation assets.
+R packages: grid, ragg, svglite and png; the Python builders use only the standard library. Figure text uses Lato; PNGs preserve the rendered appearance, while SVG text needs the font installed. `slide-designs.R` explicitly registers Lato from the macOS user font directory when available and stops if Lato cannot be resolved, preventing silent font substitution. The local Quarto configuration keeps these draft renders separate from the repository's main deck render. The HTML files embed their images and presentation assets.
 
 Original deliverables remain in `/Users/brynjolfurjonsson/Documents/Codex/2026-09-23/referenced-chatgpt-conversation-this-is-an/outputs/`. Transient checks remain in that task's `work/` folder; the two reusable builders are now included here.

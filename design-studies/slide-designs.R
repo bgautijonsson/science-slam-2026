@@ -3,6 +3,15 @@
 library(grid)
 library(ragg)
 library(svglite)
+# Explicit registration also works when the macOS font catalogue is unavailable
+# to a sandboxed R process; otherwise Lato can silently become a fallback font.
+lato_dir <- path.expand("~/Library/Fonts")
+lato_files <- file.path(lato_dir, paste0("Lato-", c("Regular", "Bold", "Italic", "BoldItalic"), ".ttf"))
+if (all(file.exists(lato_files))) {
+  systemfonts::register_font("Lato", plain = lato_files[1], bold = lato_files[2],
+                            italic = lato_files[3], bolditalic = lato_files[4])
+}
+stopifnot(grepl("Lato", basename(systemfonts::match_fonts("Lato")$path), ignore.case = TRUE))
 dir.create("designs",showWarnings=FALSE)
 paper <- "#f8f6f0"; ink <- "#20272d"; faint <- "#e5e3dd"
 grey <- "#7e858b"; blue <- "#347eab"
@@ -71,7 +80,7 @@ draw_stations <- function(stage) {
       tx(c("Level","Spread","Tail")[j],cx,.224,12,grey,just="centre")
     }
   }
-  tx("Wettest day of each year.",.06,.105,20,face="bold")
+  tx("Wettest hour of each year.",.06,.105,20,face="bold")
   tx("One parameter changed from the reference at each station.",.06,.055,15,grey)
 }
 for(i in 1:3) save(paste0("stations-",i),function()draw_stations(i))

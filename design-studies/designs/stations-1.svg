@@ -47,7 +47,7 @@
 <circle cx='208.13' cy='368.64' r='13.82' style='stroke-width: 1.27; stroke: #20272D; fill: #F8F6F0;' />
 <text x='208.13' y='374.43' text-anchor='middle' style='font-size: 16.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='9.52px' lengthAdjust='spacingAndGlyphs'>T</text>
 <text x='208.13' y='401.61' text-anchor='middle' style='font-size: 12.00px;fill: #7E858B; font-family: "Lato";' textLength='17.81px' lengthAdjust='spacingAndGlyphs'>Tail</text>
-<text x='46.08' y='465.47' style='font-size: 20.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='224.75px' lengthAdjust='spacingAndGlyphs'>Wettest day of each year.</text>
+<text x='46.08' y='465.47' style='font-size: 20.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='234.86px' lengthAdjust='spacingAndGlyphs'>Wettest hour of each year.</text>
 <text x='46.08' y='489.21' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='386.00px' lengthAdjust='spacingAndGlyphs'>One parameter changed from the reference at each station.</text>
 </g>
 </g>
