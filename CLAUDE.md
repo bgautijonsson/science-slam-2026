@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -72,7 +72,8 @@ Verbatim, 2026-09-23:
 | Slide | File | Source | Status |
 | ----- | ---- | ------ | ------ |
 | opening | inline title, presenter and event label | `index.qmd`, `theme.scss` | made; neutral browser title preserves the reveal |
-| poster, callback | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
+| poster | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
+| callback | `Figures/hessian-ending.png` | author-supplied `hessian_ending.png`, 2026-09-24 | copied unchanged; full image, no crop |
 | Gauss interlude | `Figures/gauss.png` | author's GPT poster, supplied 2026-09-24 | made; full portrait, no crop |
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
@@ -85,7 +86,7 @@ Verbatim, 2026-09-23:
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening lets the author control the first poster reveal. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 14 slides, 19 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening lets the author control the first poster reveal. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 14 slides, 19 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. opening       Science Slam introduction; hold for poster cue  ~10 s
@@ -101,7 +102,7 @@ Verbatim, 2026-09-23:
 11. separate      Working alone (diagonal)                        ~15 s
 12. within        Sharing within stations (blocks)                        ~25 s
 13. between       Sharing with neighbours (blue): the research     ~45 s
-14. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+14. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -138,3 +139,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Added two clicks after the interaction highlight: first clear the overlay, then live density contours morph into circles while off-diagonal entries fade; both live SVG and static artwork share the camera pan | Author requested independence animation with a separate click to clear the tilted overlay first. Caption names standardised axes; independence alone need not produce a circle. Forward/backward controls are native Reveal fragments |
 | 2026-09-24 | Rebuilt the final three matrices with square brackets, fixed symmetric magnitude shading and nine people grouped by station; grey within-group links and blue neighbour bridges match the retained blocks | Author proposed a communication analogy. People represent estimates; independence does not require identical uncertainty, and absent A–C precision links do not rule out association through B |
 | 2026-09-24 | Added a restrained Science Slam opening with the short topic title, presenter, venue and date; moved the introduction there and kept the complete poster reveal on one advance | Author wants control over comedic timing so the whole audience sees the poster together. Opening plus poster share the previous 15-second planning cue |
+| 2026-09-24 | Replaced the closing callback image with the author's new hessian_ending.png; retained the spoken ending and original opening poster | Author supplied a distinct final poster. Full image retained with paper-coloured surround |

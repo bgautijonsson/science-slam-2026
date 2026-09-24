@@ -201,12 +201,12 @@ Now the groups share openly with their neighbours. The same storm can affect sev
 Preparation detail: the blue bridges connect whole station groups, matching entire blocks rather than just one pair of parameters. This is an illustrative A–B–C chain. A and C have no direct precision link, but can still be associated through B; do not describe the blank corner blocks as unconditional independence. Colours distinguish within-station and between-station entries; opacity shows illustrative absolute magnitude on the same scale, not correlations or fitted values.
 :::
 
-## {#callback .art background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
+## {#callback .art background-image="Figures/hessian-ending.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
 **The ending, spoken over the poster — 15 seconds.**
 
 The Hessian wasn't the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.
 
-Return to the poster. Hold it, finish, and stop. Do not introduce another scientific point.
+Reveal the new closing poster. Hold it, finish, and stop. Do not introduce another scientific point. Author-supplied artwork, hessian_ending.png, added 24 September 2026; the complete image is shown without cropping.
 :::
