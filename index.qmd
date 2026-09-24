@@ -15,6 +15,7 @@ format:
     transition: none
     background-transition: none
     navigation-mode: linear
+    include-after-body: hessian-interactions.html
 # Running order and figures come from design-studies/ (the Codex studies,
 # adopted 2026-09-23). Rebuild the figures there (design-studies/README.md; run
 # R in a UTF-8 locale), then quarto render here. Speaker notes: press S.
@@ -92,7 +93,14 @@ A brief comic bridge from parameter estimation to the normal approximation. Let 
 Author-supplied GPT poster, revised 24 September 2026 with gauss2.png. Its paper background, hill and density contours echo the following slide. The poster remains comic artwork; the scientific explanation follows. The full portrait image is preserved without cropping.
 :::
 
-## {#uncertainty .art background-image="design-studies/designs/hessian-normal.png" background-size="contain" background-color="#f8f6f0"}
+## {#uncertainty .art .camera-slide auto-animate="true" auto-animate-id="hessian-camera" auto-animate-duration="0.8" auto-animate-easing="ease-in-out" auto-animate-unmatched="false" background-color="#f8f6f0"}
+
+```{=html}
+<div class="panorama-frame">
+  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, leading to a normal approximation of joint uncertainty.">
+</div>
+<h3 class="camera-title">A normal approximation</h3>
+```
 
 ::: {.notes}
 **A normal approximation — 30 seconds.**
@@ -106,16 +114,32 @@ Author's humorous loop, in your own words: normal distributions make the Hessian
 Preparation detail: the hill is a schematic Gaussian-shaped relative likelihood over centred, rescaled Level/Spread coordinates. Here its normal approximation is exact by construction; this does not demonstrate the accuracy of a normal approximation for a fitted GEV. The dashed trail is a schematic search path whose likelihood increases continuously; it is not a recorded optimiser run. Both panels use identical parameter extents, scales, axis directions and baselines; the left panel alone adds likelihood height, so its summit is above the matching parameter-plane centre. The contours are equal-density ellipses from the same full precision matrix, with covariance equal to its inverse. Their enclosed probability levels are 95%, 80%, 50% and 20%; the slide does not label percentages.
 :::
 
-## {#hessian-hill .art background-image="design-studies/designs/hessian-hill.png" background-size="contain" background-color="#f8f6f0"}
+## {#hessian-hill .art .camera-slide auto-animate="true" auto-animate-id="hessian-camera" auto-animate-duration="0.8" auto-animate-easing="ease-in-out" auto-animate-unmatched="false" background-color="#f8f6f0"}
+
+```{=html}
+<div class="panorama-frame">
+  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="The same joint density now sits on the left and points to a two-by-two Hessian matrix on the right.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="0" src="design-studies/designs/hessian-level.png" alt="Horizontal level slice with spread held fixed, linked to the first diagonal cell.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="1" src="design-studies/designs/hessian-spread.png" alt="Vertical spread slice with level held fixed, linked to the second diagonal cell.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="2" src="design-studies/designs/hessian-interaction.png" alt="Joint movement along the tilted contours, linked to both off-diagonal cells.">
+</div>
+<h3 class="camera-title">The Hessian</h3>
+```
 
 ::: {.notes}
 **The Hessian: putting the shape into a matrix — 25 seconds.**
 
-The hill stays in exactly the same place; the density plot becomes a two-by-two matrix. Two parameters give us two rows and two columns. The diagonal describes curvature as one parameter moves with the other held fixed. The off-diagonal describes their interaction. The full matrix gives the local shape used to describe joint uncertainty.
+The camera moves right: the hill leaves, the same density moves to the left and a two-by-two matrix enters on the right. Two parameters give us two rows and two columns. Click the mouse or press the right arrow for each explanation:
 
-Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. Keep the explanation in your own words; the matrix is already visible, with no extra reveal click.
+1. Level: the horizontal slice shows how tightly level is pinned down with spread held fixed; highlight the first diagonal entry.
+2. Spread: the vertical slice shows how tightly spread is pinned down with level held fixed; highlight the second diagonal entry.
+3. Interaction: highlight both off-diagonal entries and the tilted direction in which the two estimates can move together. The full matrix determines the joint shape, including the direction's width.
 
-Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.
+One highlight replaces the previous one. Keep the explanation in your own words; the short captions carry the held-fixed qualification.
+
+Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. The next click after the three highlights advances to that nine-by-nine grid; the left arrow retraces the highlights and camera movement.
+
+Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Highlighted horizontal and vertical segments intersect the same density contour with the other coordinate fixed; they are not marginal standard deviations. The tilted segment illustrates interaction, not a width determined by the off-diagonal alone. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.
 :::
 
 ## {#separate .art background-image="design-studies/designs/matrix-1.png" background-size="contain" background-color="#f8f6f0"}

@@ -17,6 +17,7 @@ paper <- "#f8f6f0"
 ink <- "#20272d"
 muted <- "#7e858b"
 interaction <- "#8a9295"
+drawing_width <- 1
 dir.create("designs", showWarnings = FALSE)
 
 text_at <- function(label, x, y, size = 20, colour = ink,
@@ -27,7 +28,8 @@ text_at <- function(label, x, y, size = 20, colour = ink,
   width <- convertWidth(grobWidth(g), "npc", valueOnly = TRUE)
   height <- convertHeight(grobHeight(g), "npc", valueOnly = TRUE)
   left <- if (just == "left") x else if (just == "right") x - width else x - width / 2
-  stopifnot(left >= 0, left + width <= 1, y - height / 2 >= 0, y + height / 2 <= 1)
+  stopifnot(left >= 0, left + width <= drawing_width,
+            y - height / 2 >= 0, y + height / 2 <= 1)
   grid.draw(g)
 }
 line_at <- function(x, y, colour = ink, width = 1.5, dash = "solid") {
@@ -132,23 +134,30 @@ draw_hill <- function() {
   text_at("Maximum likelihood estimate", peak[1], peak[2] + .057, 17, just = "centre")
 }
 
-draw_matrix <- function() {
-  x <- c(.746, .84)
+draw_matrix <- function(centre_x = panel_centres[2], active = NULL, labels = TRUE) {
+  x <- centre_x + c(-.049, .045)
   y <- c(.59, .449)
   for (i in 1:2) for (j in 1:2) {
+    fill <- if (i == j) ink else interaction
+    if (!is.null(active)) {
+      selected <- (active == "level" && i == 1 && j == 1) ||
+        (active == "spread" && i == 2 && j == 2) ||
+        (active == "interaction" && i != j)
+      fill <- if (selected) ink else "#deded8"
+    }
     grid.rect(x[j], y[i], width = .086, height = .129,
-              gp = gpar(fill = if (i == j) ink else interaction, col = NA))
+              gp = gpar(fill = fill, col = if (is.null(active)) NA else fill, lwd = .6))
   }
-  for (i in 1:2) {
+  if (labels) for (i in 1:2) {
     text_at(c("Level", "Spread")[i], x[i], .698, 15, just = "centre")
-    text_at(c("Level", "Spread")[i], .681, y[i], 15, just = "right")
+    text_at(c("Level", "Spread")[i], centre_x - .114, y[i], 15, just = "right")
   }
 }
 
-draw_density <- function() {
+draw_density <- function(centre_x = panel_centres[2]) {
   # The same parameter plane viewed without the likelihood height component.
   # Both panels use the same scales; covariance is the full inverse precision.
-  centre <- parameter_plane(0, 0, panel_centres[2])
+  centre <- parameter_plane(0, 0, centre_x)
   aa <- seq(0, 2 * pi, length.out = 241)
   radii <- sqrt(qchisq(c(.95, .80, .50, .20), df = 2))
   shades <- c("#eeece6", "#deded8", "#c6cac6", "#a6afad")
@@ -157,13 +166,49 @@ draw_density <- function() {
     # Each ellipse is a genuine equal-density contour of the hill.
     d2 <- rowSums((xy %*% Q) * xy)
     stopifnot(max(abs(d2 - radii[i]^2)) < 1e-10)
-    p <- parameter_plane(xy[, 1], xy[, 2], panel_centres[2])
+    p <- parameter_plane(xy[, 1], xy[, 2], centre_x)
     stopifnot(all(abs(xy) < parameter_limit))
     grid.polygon(p[, 1], p[, 2], gp = gpar(fill = shades[i], col = "#929b98", lwd = 1.1))
   }
-  draw_axes(panel_centres[2])
+  draw_axes(centre_x)
   grid.circle(centre[1], centre[2], r = unit(4, "pt"),
               gp = gpar(fill = ink, col = paper, lwd = 1.5))
+}
+
+draw_arrow <- function(offset = 0, label = FALSE) {
+  if (label) text_at("Hessian", .50 + offset, .54, 16, just = "centre")
+  grid.lines(c(.468, .535) + offset, c(.49, .49),
+             arrow = arrow(length = unit(5, "pt"), type = "closed"),
+             gp = gpar(col = muted, fill = muted, lwd = 1.5))
+}
+
+draw_highlight <- function(part, new_page = TRUE) {
+  if (new_page) grid.newpage()
+  # Intersections with one fixed density contour. These are conditional slices,
+  # not the marginal standard deviations from diag(solve(Q)).
+  radius <- sqrt(qchisq(.95, df = 2))
+  if (part == "level") {
+    ends <- cbind(c(-1, 1) * radius / sqrt(Q[1, 1]), 0)
+    caption <- "Level varies; spread held fixed"
+  } else if (part == "spread") {
+    ends <- cbind(0, c(-1, 1) * radius / sqrt(Q[2, 2]))
+    caption <- "Spread varies; level held fixed"
+  } else {
+    major <- which.min(eig$values)
+    ends <- outer(c(-1, 1) * radius / sqrt(eig$values[major]), eig$vectors[, major])
+    caption <- "Level and spread move together"
+  }
+  stopifnot(max(abs(rowSums((ends %*% Q) * ends) - radius^2)) < 1e-10)
+  p <- parameter_plane(ends[, 1], ends[, 2], panel_centres[1])
+  line_at(p[, 1], p[, 2], paper, 6)
+  grid.lines(p[, 1], p[, 2],
+             arrow = arrow(ends = "both", length = unit(5, "pt"), type = "closed"),
+             gp = gpar(col = ink, fill = ink, lwd = 2.5))
+  centre <- parameter_plane(0, 0, panel_centres[1])
+  grid.circle(centre[1], centre[2], r = unit(4, "pt"),
+              gp = gpar(fill = ink, col = paper, lwd = 1.5))
+  draw_matrix(active = part, labels = FALSE)
+  text_at(caption, .5, .105, 20, just = "centre")
 }
 
 draw_pair <- function(normal = FALSE) {
@@ -171,33 +216,57 @@ draw_pair <- function(normal = FALSE) {
   grid.rect(gp = gpar(fill = paper, col = NA))
   text_at(if (normal) "A normal approximation" else "The Hessian",
           .06, .92, 34, face = "bold")
-  text_at("Fit to the data", panel_centres[1], .79, 21, just = "centre")
+  text_at(if (normal) "Fit to the data" else "Uncertainty", panel_centres[1], .79, 21, just = "centre")
   text_at(if (normal) "Uncertainty" else "Curvature near the peak",
           panel_centres[2], .79, 21, just = "centre")
-  draw_hill()
   if (normal) {
-    text_at("Hessian", .52, .54, 16, just = "centre")
-    grid.lines(c(.475, .565), c(.49, .49),
-               arrow = arrow(length = unit(5, "pt"), type = "closed"),
-               gp = gpar(col = muted, fill = muted, lwd = 1.5))
+    draw_hill()
+    draw_arrow(label = TRUE)
     draw_density()
   } else {
+    draw_density(panel_centres[1])
+    draw_arrow()
     draw_matrix()
   }
 }
 
-save_figure <- function(name, draw, background = paper) {
-  agg_png(file.path("designs", paste0(name, ".png")), width = 1536, height = 1024,
+draw_panorama <- function() {
+  grid.newpage()
+  grid.rect(gp = gpar(fill = paper, col = NA))
+  # Keep all existing coordinates in a 1536x1024 viewport on a twice-wide page.
+  pushViewport(viewport(x = 0, y = 0, just = c("left", "bottom"),
+                        width = unit(1536 / 144, "inches"),
+                        height = unit(1024 / 144, "inches"), clip = "off"))
+  drawing_width <<- 2
+  shift <- diff(panel_centres)
+  text_at("Fit to the data", panel_centres[1], .79, 21, just = "centre")
+  text_at("Uncertainty", panel_centres[2], .79, 21, just = "centre")
+  text_at("Curvature near the peak", panel_centres[2] + shift, .79, 21, just = "centre")
+  draw_hill()
+  draw_arrow(label = TRUE)
+  draw_density()
+  draw_arrow(offset = shift)
+  draw_matrix(panel_centres[2] + shift)
+  drawing_width <<- 1
+  popViewport()
+}
+
+save_figure <- function(name, draw, background = paper, width = 1536) {
+  agg_png(file.path("designs", paste0(name, ".png")), width = width, height = 1024,
           res = 144, background = background)
   draw()
   dev.off()
-  svglite(file.path("designs", paste0(name, ".svg")), width = 1536 / 144,
+  svglite(file.path("designs", paste0(name, ".svg")), width = width / 144,
           height = 1024 / 144, bg = background)
   draw()
   dev.off()
 }
 save_figure("hessian-normal", function() draw_pair(normal = TRUE))
 save_figure("hessian-hill", draw_pair)
+save_figure("hessian-panorama", draw_panorama, width = 3072)
+for (part in c("level", "spread", "interaction")) {
+  save_figure(paste0("hessian-", part), function() draw_highlight(part), "transparent")
+}
 cat("Validated the hill's log-Hessian, covariance, peak and equal-density contours.\n")
 cat("Validated the trail's monotone ascent and exactly matched parameter frames.\n")
-cat("Rendered matching hill/density and hill/matrix slides to PNG/SVG; text bounds checked.\n")
+cat("Rendered the camera panorama, static views and three matrix overlays; text bounds checked.\n")

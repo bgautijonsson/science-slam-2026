@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. The same hill stays in place as the density is replaced by a 2×2 matrix, before one fixed 9×9 grid gains connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal, before one fixed 9×9 grid gains connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -76,15 +76,15 @@ Verbatim, 2026-09-23:
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
 | stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | redesigned 2026-09-24: three illustrative annual-maximum records → nine estimates |
-| uncertainty | `design-studies/designs/hessian-normal.png` | `design-studies/hessian-hill.R` | made 2026-09-24: hill + normal density contours using inverse full precision |
-| Hessian hill + matrix | `design-studies/designs/hessian-hill.png` | `design-studies/hessian-hill.R` | revised 2026-09-24: identical hill, density replaced by matrix; no extra reveal |
+| uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip, initial view: hill + normal density |
+| density + Hessian matrix | same panorama plus `hessian-{level,spread,interaction}.png` overlays | `design-studies/hessian-hill.R` | camera pans one panel right; three exclusive click reveals |
 | separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | made (Codex) |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 13 slides, 13 visual states, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 13 slides, 16 visual states including the three matrix highlights, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. poster        The worrying.                                   ~15 s
@@ -95,7 +95,7 @@ Verbatim, 2026-09-23:
  6. stations      Rainfall records → nine estimates               ~20 s
  7. gauss         Gauss poster: estimation → normal approximation ~8 s
  8. uncertainty   Hill → normal density via the Hessian            ~30 s
- 9. hessian-hill  Same hill; density becomes the 2×2 Hessian        ~25 s
+ 9. hessian-hill  Pan to density + matrix; 3 click explanations    ~25 s
 10. separate      Each estimate (diagonal)                        ~15 s
 11. within        Within stations (blocks)                        ~25 s
 12. between       Between stations (blue links): the research     ~45 s
@@ -132,3 +132,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Replaced identical L/S/T tokens on the stations slide with point estimates on fixed ticked scales, with different positions at all three stations | Author wanted station-specific parameter estimates visible; schematic positions preserve higher level at A, spread at B and tail at C without adding exact numbers or uncertainty intervals |
 | 2026-09-24 | Replaced the Gauss interlude with the author's improved gauss2.png poster and paper-coloured surround | Its hill, contours and restrained palette connect directly to the following normal-approximation slide |
 | 2026-09-24 | Labelled maximum likelihood estimate, Hessian and uncertainty explicitly; added a schematic uphill trail from a starting point; aligned both parameter frames exactly and retained the same hill on the matrix slide | Author requested a simple estimation cue and cleaner alignment between the hill and density plot |
+| 2026-09-24 | Replaced the hill on the matrix slide with the shared density; added a camera pan and three mouse/keyboard reveals for level, spread and interaction | Author wanted the density to link directly to matrix entries. Diagonal reveals use conditional slices; the full matrix determines joint widths |

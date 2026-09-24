@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fc6244f29ba5aa1a0378faabe205b364.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-ee17cbbbf693e517e5f8ba05d708ac31.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -260,8 +260,12 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="uncertainty" class="slide level2 art" data-background-image="design-studies/designs/hessian-normal.png" data-background-size="contain" data-background-color="#f8f6f0">
-<h2></h2>
+<section id="uncertainty" class="slide level2 art camera-slide" data-auto-animate="true" data-auto-animate-id="hessian-camera" data-auto-animate-duration="0.8" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="false" data-background-color="#f8f6f0">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="panorama-frame">
+  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, leading to a normal approximation of joint uncertainty.">
+</div>
+<h3 class="camera-title">A normal approximation</h3>
 <aside class="notes">
 <p><strong>A normal approximation — 30 seconds.</strong></p>
 <p>We have moved from rainfall values to possible parameter values. Each point on the hill is a combination of level and spread; height describes how well that combination fits the observations. Follow the trail from the starting point to the summit: the best-fitting combination is the maximum likelihood estimate. No need to explain an optimisation algorithm. Nearby combinations fit almost as well, and the long direction shows how the two parameters can compensate for one another.</p>
@@ -280,13 +284,26 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="hessian-hill" class="slide level2 art" data-background-image="design-studies/designs/hessian-hill.png" data-background-size="contain" data-background-color="#f8f6f0">
-<h2></h2>
+<section id="hessian-hill" class="slide level2 art camera-slide" data-auto-animate="true" data-auto-animate-id="hessian-camera" data-auto-animate-duration="0.8" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="false" data-background-color="#f8f6f0">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="panorama-frame">
+  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="The same joint density now sits on the left and points to a two-by-two Hessian matrix on the right.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="0" src="design-studies/designs/hessian-level.png" alt="Horizontal level slice with spread held fixed, linked to the first diagonal cell.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="1" src="design-studies/designs/hessian-spread.png" alt="Vertical spread slice with level held fixed, linked to the second diagonal cell.">
+  <img class="matrix-highlight fragment current-visible" data-fragment-index="2" src="design-studies/designs/hessian-interaction.png" alt="Joint movement along the tilted contours, linked to both off-diagonal cells.">
+</div>
+<h3 class="camera-title">The Hessian</h3>
 <aside class="notes">
 <p><strong>The Hessian: putting the shape into a matrix — 25 seconds.</strong></p>
-<p>The hill stays in exactly the same place; the density plot becomes a two-by-two matrix. Two parameters give us two rows and two columns. The diagonal describes curvature as one parameter moves with the other held fixed. The off-diagonal describes their interaction. The full matrix gives the local shape used to describe joint uncertainty.</p>
-<p>Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. Keep the explanation in your own words; the matrix is already visible, with no extra reveal click.</p>
-<p>Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.</p>
+<p>The camera moves right: the hill leaves, the same density moves to the left and a two-by-two matrix enters on the right. Two parameters give us two rows and two columns. Click the mouse or press the right arrow for each explanation:</p>
+<ol type="1">
+<li>Level: the horizontal slice shows how tightly level is pinned down with spread held fixed; highlight the first diagonal entry.</li>
+<li>Spread: the vertical slice shows how tightly spread is pinned down with level held fixed; highlight the second diagonal entry.</li>
+<li>Interaction: highlight both off-diagonal entries and the tilted direction in which the two estimates can move together. The full matrix determines the joint shape, including the direction’s width.</li>
+</ol>
+<p>One highlight replaces the previous one. Keep the explanation in your own words; the short captions carry the held-fixed qualification.</p>
+<p>Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. The next click after the three highlights advances to that nine-by-nine grid; the left arrow retraces the highlights and camera movement.</p>
+<p>Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Highlighted horizontal and vertical segments intersect the same density contour with the other coordinate fixed; they are not marginal standard deviations. The tilted segment illustrates interaction, not a width determined by the off-diagonal alone. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -583,6 +600,23 @@
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    // Clicks advance the camera pair and its native fragments. Keyboard navigation
+    // remains Reveal's own, including stepping backwards through the highlights.
+    document.addEventListener("click", function (event) {
+      const deck = window.Reveal;
+      if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
+      if (!["uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+      if (event.button !== 0 || event.defaultPrevented ||
+          event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const target = event.target;
+      if (!(target instanceof Element) || !target.closest(".reveal")) return;
+      if (target.closest("a, button, input, select, textarea, .controls, " +
+                         "[contenteditable], .slide-menu, .speaker-notes")) return;
+      event.preventDefault();
+      deck.next();
+    });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='768.00pt' height='512.00pt' viewBox='0 0 768.00 512.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1536.00pt' height='512.00pt' viewBox='0 0 1536.00 512.00'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,15 +21,15 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #F8F6F0;'/>
 <defs>
-  <clipPath id='cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA='>
-    <rect x='0.00' y='0.00' width='768.00' height='512.00' />
+  <clipPath id='cpMC4wMHwxNTM2LjAwfDAuMDB8NTEyLjAw'>
+    <rect x='0.00' y='0.00' width='1536.00' height='512.00' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
-<rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
-<text x='46.08' y='53.25' style='font-size: 34.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='368.95px' lengthAdjust='spacingAndGlyphs'>A normal approximation</text>
+<g clip-path='url(#cpMC4wMHwxNTM2LjAwfDAuMDB8NTEyLjAw)'>
+<rect x='0.00' y='0.00' width='1536.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
 <text x='195.84' y='115.04' text-anchor='middle' style='font-size: 21.00px;fill: #20272D; font-family: "Lato";' textLength='128.08px' lengthAdjust='spacingAndGlyphs'>Fit to the data</text>
 <text x='610.56' y='115.04' text-anchor='middle' style='font-size: 21.00px;fill: #20272D; font-family: "Lato";' textLength='110.38px' lengthAdjust='spacingAndGlyphs'>Uncertainty</text>
+<text x='1025.28' y='115.04' text-anchor='middle' style='font-size: 21.00px;fill: #20272D; font-family: "Lato";' textLength='223.55px' lengthAdjust='spacingAndGlyphs'>Curvature near the peak</text>
 <polyline points='51.84,367.36 339.84,367.36 ' style='stroke-width: 1.12; stroke: #7E858B;' />
 <polyline points='51.84,367.36 51.84,175.36 ' style='stroke-width: 1.12; stroke: #7E858B;' />
 <text x='195.84' y='401.61' text-anchor='middle' style='font-size: 17.00px;fill: #20272D; font-family: "Lato";' textLength='38.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
@@ -2068,6 +2068,16 @@
 <text x='610.56' y='401.61' text-anchor='middle' style='font-size: 17.00px;fill: #20272D; font-family: "Lato";' textLength='38.86px' lengthAdjust='spacingAndGlyphs'>Level</text>
 <text transform='translate(453.45,271.36) rotate(-90)' text-anchor='middle' style='font-size: 17.00px;fill: #20272D; font-family: "Lato";' textLength='52.28px' lengthAdjust='spacingAndGlyphs'>Spread</text>
 <circle cx='610.56' cy='271.36' r='3.99' style='stroke-width: 1.12; stroke: #F8F6F0; fill: #20272D;' />
+<polyline points='774.14,261.12 825.60,261.12 ' style='stroke-width: 1.12; stroke: #7E858B;' />
+<polygon points='821.29,263.61 825.60,261.12 821.29,258.63 ' style='stroke-width: 1.12; stroke: #7E858B; fill: #7E858B;' />
+<rect x='954.62' y='176.90' width='66.05' height='66.05' style='stroke-width: 0.45; stroke: none; fill: #20272D;' />
+<rect x='1026.82' y='176.90' width='66.05' height='66.05' style='stroke-width: 0.45; stroke: none; fill: #8A9295;' />
+<rect x='954.62' y='249.09' width='66.05' height='66.05' style='stroke-width: 0.45; stroke: none; fill: #8A9295;' />
+<rect x='1026.82' y='249.09' width='66.05' height='66.05' style='stroke-width: 0.45; stroke: none; fill: #20272D;' />
+<text x='987.65' y='160.00' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Lato";' textLength='34.31px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='937.73' y='215.29' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Lato";' textLength='34.31px' lengthAdjust='spacingAndGlyphs'>Level</text>
+<text x='1059.84' y='160.00' text-anchor='middle' style='font-size: 15.00px;fill: #20272D; font-family: "Lato";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>Spread</text>
+<text x='937.73' y='287.49' text-anchor='end' style='font-size: 15.00px;fill: #20272D; font-family: "Lato";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>Spread</text>
 </g>
 </g>
 </svg>
