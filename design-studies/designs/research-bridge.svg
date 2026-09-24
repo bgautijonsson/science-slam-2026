@@ -27,8 +27,6 @@
 </defs>
 <g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
 <rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
-<text x='195.84' y='125.28' text-anchor='middle' style='font-size: 21.00px;fill: #20272D; font-family: "Lato";' textLength='183.39px' lengthAdjust='spacingAndGlyphs'>Estimates + Hessian</text>
-<text x='587.52' y='107.36' text-anchor='middle' style='font-size: 21.00px;fill: #20272D; font-family: "Lato";' textLength='116.70px' lengthAdjust='spacingAndGlyphs'>Rainfall level</text>
 <rect x='50.13' y='148.69' width='2.82' height='2.82' style='stroke-width: 0.75; stroke: none; fill: #20272D; fill-opacity: 0.84;' />
 <rect x='53.37' y='148.69' width='2.82' height='2.82' style='stroke-width: 0.75; stroke: none; fill: #20272D; fill-opacity: 0.47;' />
 <rect x='56.62' y='148.69' width='2.82' height='2.82' style='stroke-width: 0.75; stroke: none; fill: #20272D; fill-opacity: 0.41;' />

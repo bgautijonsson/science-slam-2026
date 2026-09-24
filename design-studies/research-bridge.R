@@ -101,8 +101,6 @@ draw_bridge <- function() {
   grid.rect(gp = gpar(fill = paper, col = NA))
   # Match the other recipe slides; their photo and caption are live HTML.
   pushViewport(viewport(x = 0, y = -.045, just = c('left', 'bottom'), clip = 'off'))
-  text_at('Estimates + Hessian', .255, .815, 21)
-  text_at('Rainfall level', map_cx, .85, 21)
   x0 <- .065; top <- .755; width <- .38
   cw <- width / n; ch <- cw * 1536 / 1024
   bottom <- top - n * ch
