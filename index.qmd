@@ -25,7 +25,7 @@ format:
 ::: {.notes}
 **The worrying — 15 seconds.**
 
-Let the poster register. Introduce your research as modelling extreme rainfall. Establish the apparently unreasonable attachment to a Hessian; do not explain the film reference. Keep the opening in your own voice.
+Introduce yourself, give the name of your PhD project and name your advisor. Introduce the research as predicting changes in extreme sub-daily precipitation. Let the poster carry the humour; keep the introduction in your own voice.
 :::
 
 ## {#rain .print}
@@ -35,9 +35,11 @@ Let the poster register. Introduce your research as modelling extreme rainfall. 
 [Reykjavík, 2016 · Photo: Júlíus Sigurjónsson, mbl.is]{.photo-credit}
 
 ::: {.notes}
-**Why connected rainfall matters — 20 seconds.**
+**Why changing rainfall extremes matter — 20 seconds.**
 
-Use the flood photograph as motivation. A severe storm can affect more than one station. The question is how to represent that connection when we estimate rainfall extremes. This is a photograph of Reykjavik in 2016, not paired evidence from several stations. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.
+Predicting changes in extreme sub-daily precipitation matters for infrastructure planning. Engineers use estimates of rare events, such as hundred-year floods, when designing infrastructure. If the process governing extreme rainfall changes with time, a threshold considered a hundred-year event today might become an eighty- or fifty-year event later. These are illustrative possibilities, not numerical findings from this project. Keep the distinction between rainfall extremes and the resulting floods clear.
+
+Preparation detail: a hundred-year event denotes a 1% annual exceedance probability under the conditions being described; a fifty-year event denotes 2%. The fixed threshold can become more likely as the distribution changes. The photograph shows Reykjavik in 2016 and motivates the stakes; it is not evidence for a particular return period or trend. Photo: Julius Sigurjonsson, mbl.is; original attribution retained in the preparation notes.
 :::
 
 ## {#level .art background-image="design-studies/designs/stations-1.png" background-size="contain" background-color="#f8f6f0"}
