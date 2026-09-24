@@ -75,6 +75,7 @@ Verbatim, 2026-09-23:
 | advisor | `Figures/birgir.png` plus inline name/role | author-supplied image, 2026-09-24 | copied unchanged; second slide, full image |
 | poster | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
 | callback | `Figures/hessian-ending.png` | author-supplied `hessian_ending.png`, 2026-09-24 | copied unchanged; full image, no crop |
+| thinking interlude | `Figures/binni-thinking.png` | author-supplied image, 2026-09-24 | copied unchanged; image-only setup before Gauss |
 | Gauss interlude | `Figures/gauss.png` | author's GPT poster, supplied 2026-09-24 | made; full portrait, no crop |
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
@@ -89,7 +90,7 @@ Verbatim, 2026-09-23:
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the closing artwork. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 16 slides, 21 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 276 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the closing artwork. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 17 slides, 25 visual states including three station-column focuses, three matrix highlights, a clear-overlay pause and the independence animation, with 280 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. opening       Science Slam introduction; hold for poster cue  ~10 s
@@ -100,14 +101,15 @@ Verbatim, 2026-09-23:
  6. spread        Station B: more spread                          ~10 s
  7. tail          Station C: heavier tail                         ~10 s
  8. stations      Nine estimates; 3 clicks focus Level/Spread/Tail ~20 s
- 9. gauss         Gauss poster: estimation → normal approximation ~8 s
-10. uncertainty   Hill → normal density via the Hessian            ~30 s
-11. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
-12. separate      “You take an assumption of independence”                        ~15 s
-13. within        “You add within-station dependence”                        ~25 s
-14. between       “You add spatial dependence between neighbours”     ~45 s
-15. research      “Baby, you got a stew going” → UK field        ~20 s
-16. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+ 9. thinking      Image-only question; set up the Gauss reveal    ~4 s
+10. gauss         Gauss poster: estimation → normal approximation ~8 s
+11. uncertainty   Hill → normal density via the Hessian            ~30 s
+12. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
+13. separate      “You take an assumption of independence”                        ~15 s
+14. within        “You add within-station dependence”                        ~25 s
+15. between       “You add spatial dependence between neighbours”     ~45 s
+16. research      “Baby, you got a stew going” → UK field        ~20 s
+17. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -151,3 +153,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Removed the research slide's “Estimates + Hessian” and “Rainfall level” panel headings | Author requested a cleaner final content slide before preparing the remote update |
 | 2026-09-24 | Removed the line-type legend and two bottom captions from all three station-parameter reveals | Author requested less unnecessary ink; the dashed-reference and annual-maximum explanations remain in the speaker notes |
 | 2026-09-24 | Removed “Lower → higher” and added three clicks to focus the Level, Spread and Tail columns of the nine-estimates slide | Author wants to compare parameter estimates across stations one column at a time; other columns fade without extra labels or coloured highlights |
+| 2026-09-24 | Added the author’s thinking cartoon between the estimates and Gauss, with the spoken Hessian question in notes and mouse-click progression through both images | Author approved a quick image-only setup and payoff before the hill explanation |

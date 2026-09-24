@@ -1,10 +1,10 @@
 <script>
-// Clicks advance the introductions, station columns and camera pair, including
-// their fragments. Keyboard navigation, including backwards, remains Reveal's own.
+// Clicks advance the introductions, station columns, comic interludes and camera
+// pair, including fragments. Keyboard navigation remains Reveal's own.
 document.addEventListener("click", function (event) {
   const deck = window.Reveal;
   if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-  if (!["opening", "advisor", "stations", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+  if (!["opening", "advisor", "stations", "thinking", "gauss", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
   if (event.button !== 0 || event.defaultPrevented ||
       event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
   const target = event.target;

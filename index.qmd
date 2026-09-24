@@ -127,11 +127,21 @@ Preparation detail: shape changes more than just the far tail. It can also affec
 
 Each bar is the wettest hour of one year. Use each station's history to estimate its level, spread and tail: three stations, nine estimates. Follow one row from observations to the three numbers, then gesture to the other rows. Each dot marks an estimate on a small scale. Compare down a column: A has the highest level, B the greatest spread and C the heaviest tail; their other estimates differ too. The earlier examples changed one parameter at a time; now every station has all three. These are invented records, not research observations.
 
-Start with all nine estimates visible. Click once to focus on Level (location), twice for Spread (scale), and three times for Tail (shape). Each step fades the other two columns while keeping the station names and rainfall records visible. The fourth click advances to Gauss; the left arrow reverses the steps.
+Start with all nine estimates visible. Click once to focus on Level (location), twice for Spread (scale), and three times for Tail (shape). Each step fades the other two columns while keeping the station names and rainfall records visible. The fourth click advances to the thinking interlude; the left arrow reverses the steps.
 
 Preparation detail: dot positions are schematic, not numerical GEV fits to the illustrated records. Each parameter has its own scale, held fixed across stations; the grey tracks are axes, not uncertainty intervals.
 
-Transition: those estimates are our best guesses, but how sure are we? Zoom in on level and spread at one station, holding tail fixed. Keep A-B-C and L-S-T in this order for the later nine-by-nine grid.
+Transition: the thinking interlude asks where these estimates come from and brings back the promised Hessian. After Gauss, zoom in on level and spread at one station, holding tail fixed. Keep A-B-C and L-S-T in this order for the later nine-by-nine grid.
+:::
+
+## {#thinking .art background-image="Figures/binni-thinking.png" background-size="contain" background-color="#f8f6f0"}
+
+::: {.notes}
+**Where is the Hessian? — 4 seconds.**
+
+“But how do we get these estimates? And where’s the Hessian I promised you?”
+
+Keep the slide image-only. Give the image a beat, then click to reveal Gauss. Treat the two images as one quick setup and payoff; the hill immediately afterwards provides the explanation. The supplied artwork is shown in full, without cropping.
 :::
 
 ## {#gauss .art background-image="Figures/gauss.png" background-size="contain" background-color="#f8f6f0"}
