@@ -28,10 +28,6 @@
 <g clip-path='url(#cpMC4wMHw3NjguMDB8MC4wMHw1MTIuMDA=)'>
 <rect x='0.00' y='0.00' width='768.00' height='512.00' style='stroke-width: 0.75; stroke: none; fill: #F8F6F0;' />
 <text x='46.08' y='53.25' style='font-size: 34.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='357.69px' lengthAdjust='spacingAndGlyphs'>Three imaginary places.</text>
-<polyline points='49.92,79.36 84.48,79.36 ' style='stroke-width: 1.50; stroke: #7E858B; stroke-dasharray: 8.00,8.00;' />
-<text x='92.16' y='85.09' style='font-size: 16.00px;fill: #7E858B; font-family: "Lato";' textLength='109.44px' lengthAdjust='spacingAndGlyphs'>Same reference</text>
-<polyline points='299.52,79.36 334.08,79.36 ' style='stroke-width: 2.10; stroke: #20272D;' />
-<text x='341.76' y='85.09' style='font-size: 16.00px;fill: #20272D; font-family: "Lato";' textLength='112.62px' lengthAdjust='spacingAndGlyphs'>Fictional station</text>
 <text x='157.44' y='137.70' text-anchor='middle' style='font-size: 24.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='99.45px' lengthAdjust='spacingAndGlyphs'>Station A</text>
 <text x='157.44' y='165.37' text-anchor='middle' style='font-size: 20.00px;fill: #20272D; font-family: "Lato";' textLength='104.92px' lengthAdjust='spacingAndGlyphs'>Higher level</text>
 <polyline points='65.28,304.64 249.60,304.64 ' style='stroke-width: 0.75; stroke: #7E858B;' />
@@ -47,8 +43,6 @@
 <circle cx='208.13' cy='368.64' r='13.82' style='stroke-width: 1.27; stroke: #20272D; fill: #F8F6F0;' />
 <text x='208.13' y='374.43' text-anchor='middle' style='font-size: 16.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='9.52px' lengthAdjust='spacingAndGlyphs'>T</text>
 <text x='208.13' y='401.61' text-anchor='middle' style='font-size: 12.00px;fill: #7E858B; font-family: "Lato";' textLength='17.81px' lengthAdjust='spacingAndGlyphs'>Tail</text>
-<text x='46.08' y='465.47' style='font-size: 20.00px; font-weight: bold;fill: #20272D; font-family: "Lato";' textLength='234.86px' lengthAdjust='spacingAndGlyphs'>Wettest hour of each year.</text>
-<text x='46.08' y='489.21' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='386.00px' lengthAdjust='spacingAndGlyphs'>One parameter changed from the reference at each station.</text>
 </g>
 </g>
 </svg>

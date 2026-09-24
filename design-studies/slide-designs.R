@@ -50,10 +50,6 @@ stopifnot(all(vapply(seq_along(station_pars),function(i) {
 station_labels <- c("Higher level","More spread","Heavier tail")
 draw_stations <- function(stage) {
   base(); tx("Three imaginary places.",.06,.92,34,face="bold")
-  ln(c(.065,.11),c(.845,.845),grey,2,"dashed")
-  tx("Same reference",.12,.845,16,grey)
-  ln(c(.39,.435),c(.845,.845),ink,2.8)
-  tx("Fictional station",.445,.845,16,ink)
   x <- seq(-10,190,length.out=1200)
   for(i in seq_len(stage)) {
     mid <- c(.205,.5,.795)[i]; left <- mid-.12
@@ -80,8 +76,6 @@ draw_stations <- function(stage) {
       tx(c("Level","Spread","Tail")[j],cx,.224,12,grey,just="centre")
     }
   }
-  tx("Wettest hour of each year.",.06,.105,20,face="bold")
-  tx("One parameter changed from the reference at each station.",.06,.055,15,grey)
 }
 for(i in 1:3) save(paste0("stations-",i),function()draw_stations(i))
 save("three-settings",function()draw_stations(3))
