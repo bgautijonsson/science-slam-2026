@@ -110,10 +110,24 @@ Preparation detail: shape changes more than just the far tail. It can also affec
 
 ## {#stations .art background-image="design-studies/designs/station-tokens.png" background-size="contain" background-color="#f8f6f0"}
 
+```{=html}
+<div class="station-focus fragment current-visible" data-fragment-index="0" aria-hidden="true">
+  <svg viewBox="0 0 3 1" preserveAspectRatio="none"><rect x="1" width="2" height="1"/></svg>
+</div>
+<div class="station-focus fragment current-visible" data-fragment-index="1" aria-hidden="true">
+  <svg viewBox="0 0 3 1" preserveAspectRatio="none"><rect width="1" height="1"/><rect x="2" width="1" height="1"/></svg>
+</div>
+<div class="station-focus fragment current-visible" data-fragment-index="2" aria-hidden="true">
+  <svg viewBox="0 0 3 1" preserveAspectRatio="none"><rect width="2" height="1"/></svg>
+</div>
+```
+
 ::: {.notes}
 **Three stations: rainfall records to nine estimates — 20 seconds.**
 
 Each bar is the wettest hour of one year. Use each station's history to estimate its level, spread and tail: three stations, nine estimates. Follow one row from observations to the three numbers, then gesture to the other rows. Each dot marks an estimate on a small scale. Compare down a column: A has the highest level, B the greatest spread and C the heaviest tail; their other estimates differ too. The earlier examples changed one parameter at a time; now every station has all three. These are invented records, not research observations.
+
+Start with all nine estimates visible. Click once to focus on Level (location), twice for Spread (scale), and three times for Tail (shape). Each step fades the other two columns while keeping the station names and rainfall records visible. The fourth click advances to Gauss; the left arrow reverses the steps.
 
 Preparation detail: dot positions are schematic, not numerical GEV fits to the illustrated records. Each parameter has its own scale, held fixed across stations; the grey tracks are axes, not uncertainty intervals.
 

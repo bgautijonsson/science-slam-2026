@@ -133,7 +133,6 @@ save("station-tokens",function(){
                   gp=gpar(fill=ink,col=paper,lwd=1.5))
     }
   }
-  tx("Lower \u2192 higher",.81,.075,15,grey,just="centre")
 })
 # Fixed illustrative precision values. All three stages share the same entries;
 # only the retained links change. Strict diagonal dominance gives a valid SPD

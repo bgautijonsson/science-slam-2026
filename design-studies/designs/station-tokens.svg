@@ -149,7 +149,6 @@
 <polyline points='723.07,419.33 723.07,410.11 ' style='stroke-width: 0.83; stroke: #B7BDBE;' />
 <polyline points='739.58,419.33 739.58,410.11 ' style='stroke-width: 0.83; stroke: #B7BDBE;' />
 <circle cx='727.70' cy='414.72' r='5.48' style='stroke-width: 1.12; stroke: #F8F6F0; fill: #20272D;' />
-<text x='622.08' y='478.97' text-anchor='middle' style='font-size: 15.00px;fill: #7E858B; font-family: "Lato";' textLength='104.06px' lengthAdjust='spacingAndGlyphs'>Lower → higher</text>
 </g>
 </g>
 </svg>

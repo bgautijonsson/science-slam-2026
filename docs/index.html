@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-8607dddddad45f6bffcd77b082138186.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-ba6af1a9730b45a93d4d3fa17cdb1ccc.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -273,9 +273,19 @@
 </section>
 <section id="stations" class="slide level2 art" data-background-image="design-studies/designs/station-tokens.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
+<div class="station-focus fragment current-visible" data-fragment-index="0" aria-hidden="true">
+  <svg viewbox="0 0 3 1" preserveaspectratio="none"><rect x="1" width="2" height="1"></rect></svg>
+</div>
+<div class="station-focus fragment current-visible" data-fragment-index="1" aria-hidden="true">
+  <svg viewbox="0 0 3 1" preserveaspectratio="none"><rect width="1" height="1"></rect><rect x="2" width="1" height="1"></rect></svg>
+</div>
+<div class="station-focus fragment current-visible" data-fragment-index="2" aria-hidden="true">
+  <svg viewbox="0 0 3 1" preserveaspectratio="none"><rect width="2" height="1"></rect></svg>
+</div>
 <aside class="notes">
 <p><strong>Three stations: rainfall records to nine estimates — 20 seconds.</strong></p>
 <p>Each bar is the wettest hour of one year. Use each station’s history to estimate its level, spread and tail: three stations, nine estimates. Follow one row from observations to the three numbers, then gesture to the other rows. Each dot marks an estimate on a small scale. Compare down a column: A has the highest level, B the greatest spread and C the heaviest tail; their other estimates differ too. The earlier examples changed one parameter at a time; now every station has all three. These are invented records, not research observations.</p>
+<p>Start with all nine estimates visible. Click once to focus on Level (location), twice for Spread (scale), and three times for Tail (shape). Each step fades the other two columns while keeping the station names and rainfall records visible. The fourth click advances to Gauss; the left arrow reverses the steps.</p>
 <p>Preparation detail: dot positions are schematic, not numerical GEV fits to the illustrated records. Each parameter has its own scale, held fixed across stations; the grey tracks are axes, not uncertainty intervals.</p>
 <p>Transition: those estimates are our best guesses, but how sure are we? Zoom in on level and spread at one station, holding tail fixed. Keep A-B-C and L-S-T in this order for the later nine-by-nine grid.</p>
 <style type="text/css">
@@ -730,12 +740,12 @@
       });
     </script>
     <script>
-    // Clicks advance the introductions and poster reveal, or the camera pair and
-    // its fragments. Keyboard navigation, including backwards, remains Reveal's own.
+    // Clicks advance the introductions, station columns and camera pair, including
+    // their fragments. Keyboard navigation, including backwards, remains Reveal's own.
     document.addEventListener("click", function (event) {
       const deck = window.Reveal;
       if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-      if (!["opening", "advisor", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+      if (!["opening", "advisor", "stations", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
       if (event.button !== 0 || event.defaultPrevented ||
           event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;

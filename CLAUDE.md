@@ -99,7 +99,7 @@ Verbatim, 2026-09-23:
  5. level         Station A: higher level                         ~10 s
  6. spread        Station B: more spread                          ~10 s
  7. tail          Station C: heavier tail                         ~10 s
- 8. stations      Rainfall records → nine estimates               ~20 s
+ 8. stations      Nine estimates; 3 clicks focus Level/Spread/Tail ~20 s
  9. gauss         Gauss poster: estimation → normal approximation ~8 s
 10. uncertainty   Hill → normal density via the Hessian            ~30 s
 11. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
@@ -150,3 +150,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Replaced the three large-matrix headings and research-bridge heading with the author's four Carl Weathers stew captions, as italic quotations beside the same top-left image; shifted full-size diagrams below the header | Author requested the Arrested Development recipe build and clarified that it replaces the old headings. Notes frame added connections as progressively relaxing independence |
 | 2026-09-24 | Removed the research slide's “Estimates + Hessian” and “Rainfall level” panel headings | Author requested a cleaner final content slide before preparing the remote update |
 | 2026-09-24 | Removed the line-type legend and two bottom captions from all three station-parameter reveals | Author requested less unnecessary ink; the dashed-reference and annual-maximum explanations remain in the speaker notes |
+| 2026-09-24 | Removed “Lower → higher” and added three clicks to focus the Level, Spread and Tail columns of the nine-estimates slide | Author wants to compare parameter estimates across stations one column at a time; other columns fade without extra labels or coloured highlights |
