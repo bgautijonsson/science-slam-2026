@@ -52,24 +52,50 @@ stopifnot(max(abs(numeric_H + Q)) < 1e-7,
           fit(0, 0) == 1, fit(.5, .5) > fit(.5, -.5),
           max(abs(Sigma %*% Q - diag(2))) < 1e-12)
 
-# Orthographic view. The hill is elongated along Level = Spread, not either axis.
-angle <- -5 * pi / 180
+# Matched parameter frames: same extents, scale, baseline and axis directions.
+# Only the hill has a height component, so its summit sits above the 2D centre.
+panel_centres <- c(.255, .795)
+parameter_centre_y <- .47
+parameter_scale <- c(.075, .075)
+parameter_limit <- 2.5
+hill_height <- .19
+parameter_plane <- function(x, y, centre_x) {
+  cbind(x = centre_x + parameter_scale[1] * x,
+        y = parameter_centre_y + parameter_scale[2] * y)
+}
 project <- function(x, y, z = 0) {
-  cbind(x = .28 + .09 * (cos(angle) * x - sin(angle) * y),
-        y = .405 + .055 * (sin(angle) * x + cos(angle) * y) + .255 * z)
+  p <- parameter_plane(x, y, panel_centres[1])
+  p[, 2] <- p[, 2] + hill_height * z
+  p
 }
 eig <- eigen(Q, symmetric = TRUE)
 transform <- eig$vectors %*% diag(1 / sqrt(eig$values))
 
-draw_hill <- function() {
-  # A simple front corner for the two parameter axes.
-  corner <- project(-2.4, -2.4)
-  level_end <- project(2.7, -2.4)
-  spread_end <- project(-2.4, 2.7)
+draw_axes <- function(centre_x) {
+  corner <- parameter_plane(-parameter_limit, -parameter_limit, centre_x)
+  level_end <- parameter_plane(parameter_limit, -parameter_limit, centre_x)
+  spread_end <- parameter_plane(-parameter_limit, parameter_limit, centre_x)
   line_at(c(corner[1], level_end[1]), c(corner[2], level_end[2]), muted, 1.5)
   line_at(c(corner[1], spread_end[1]), c(corner[2], spread_end[2]), muted, 1.5)
-  text_at("Level", level_end[1] + .018, level_end[2] - .016, 17, just = "centre")
-  text_at("Spread", spread_end[1] - .018, spread_end[2] + .025, 17, just = "centre")
+  text_at("Level", centre_x, corner[2] - .055, 17, just = "centre")
+  text_at("Spread", corner[1] - .025, parameter_centre_y, 17, just = "centre", rot = 90)
+}
+
+# A schematic climb, evaluated on the surface rather than drawn in image space.
+trail_t <- seq(0, 1, length.out = 160)
+trail_x <- -1.75 * (1 - trail_t)
+trail_y <- -1.30 * (1 - trail_t) + .20 * sin(pi * trail_t)
+trail_z <- fit(trail_x, trail_y)
+trail <- project(trail_x, trail_y, trail_z)
+stopifnot(all(diff(trail_z) >= -1e-12), tail(trail_z, 1) == 1,
+          max(abs(tail(trail, 1) - project(0, 0, 1))) < 1e-12)
+plane_left <- parameter_plane(c(-2.5, 0, 2.5), c(-2.5, 0, 2.5), panel_centres[1])
+plane_right <- parameter_plane(c(-2.5, 0, 2.5), c(-2.5, 0, 2.5), panel_centres[2])
+stopifnot(max(abs(plane_left[, 2] - plane_right[, 2])) < 1e-12,
+          max(abs((plane_right[, 1] - plane_left[, 1]) - diff(panel_centres))) < 1e-12)
+
+draw_hill <- function() {
+  draw_axes(panel_centres[1])
 
   # Radial quadrilaterals, sorted back-to-front for an opaque shaded surface.
   radii <- seq(0, 3, length.out = 29)
@@ -80,7 +106,7 @@ draw_hill <- function() {
     aa <- c(angles[j], angles[j], angles[j + 1], angles[j + 1])
     xy <- t(transform %*% rbind(rr * cos(aa), rr * sin(aa)))
     z <- fit(xy[, 1], xy[, 2])
-    depth <- mean(sin(angle) * xy[, 1] + cos(angle) * xy[, 2])
+    depth <- mean(xy[, 2])
     xy_mid <- colMeans(xy)
     gradient <- -fit(xy_mid[1], xy_mid[2]) * drop(Q %*% xy_mid)
     normal <- c(-gradient, 1)
@@ -96,9 +122,14 @@ draw_hill <- function() {
     grid.polygon(patch$p[, 1], patch$p[, 2],
                  gp = gpar(fill = patch$fill, col = patch$fill, lwd = .35))
   }
+  line_at(trail[, 1], trail[, 2], paper, 4.5)
+  line_at(trail[, 1], trail[, 2], ink, 2, "44")
+  grid.circle(trail[1, 1], trail[1, 2], r = unit(3.5, "pt"),
+              gp = gpar(fill = paper, col = ink, lwd = 1.5))
+  text_at("Starting point", trail[1, 1] + .028, trail[1, 2] - .054, 15, just = "centre")
   peak <- project(0, 0, 1)
   grid.circle(peak[1], peak[2], r = unit(4, "pt"), gp = gpar(fill = ink, col = paper, lwd = 1.5))
-  text_at("Best fit", peak[1], peak[2] + .045, 16, just = "centre")
+  text_at("Maximum likelihood estimate", peak[1], peak[2] + .057, 17, just = "centre")
 }
 
 draw_matrix <- function() {
@@ -115,11 +146,9 @@ draw_matrix <- function() {
 }
 
 draw_density <- function() {
-  # A top-down view in the same two parameter coordinates. Equal physical
-  # scales preserve the tilt; covariance is the inverse of the full precision.
-  centre <- c(.79, .45)
-  sx <- .062
-  sy <- sx * 1536 / 1024
+  # The same parameter plane viewed without the likelihood height component.
+  # Both panels use the same scales; covariance is the full inverse precision.
+  centre <- parameter_plane(0, 0, panel_centres[2])
   aa <- seq(0, 2 * pi, length.out = 241)
   radii <- sqrt(qchisq(c(.95, .80, .50, .20), df = 2))
   shades <- c("#eeece6", "#deded8", "#c6cac6", "#a6afad")
@@ -128,15 +157,11 @@ draw_density <- function() {
     # Each ellipse is a genuine equal-density contour of the hill.
     d2 <- rowSums((xy %*% Q) * xy)
     stopifnot(max(abs(d2 - radii[i]^2)) < 1e-10)
-    xp <- centre[1] + sx * xy[, 1]
-    yp <- centre[2] + sy * xy[, 2]
-    stopifnot(all(xp > .63 & xp < .95), all(yp > .215 & yp < .69))
-    grid.polygon(xp, yp, gp = gpar(fill = shades[i], col = "#929b98", lwd = 1.1))
+    p <- parameter_plane(xy[, 1], xy[, 2], panel_centres[2])
+    stopifnot(all(abs(xy) < parameter_limit))
+    grid.polygon(p[, 1], p[, 2], gp = gpar(fill = shades[i], col = "#929b98", lwd = 1.1))
   }
-  line_at(c(.63, .95), c(.215, .215), muted, 1.2)
-  line_at(c(.63, .63), c(.215, .69), muted, 1.2)
-  text_at("Level", .79, .17, 17, just = "centre")
-  text_at("Spread", .602, .45, 17, just = "centre", rot = 90)
+  draw_axes(panel_centres[2])
   grid.circle(centre[1], centre[2], r = unit(4, "pt"),
               gp = gpar(fill = ink, col = paper, lwd = 1.5))
 }
@@ -144,15 +169,15 @@ draw_density <- function() {
 draw_pair <- function(normal = FALSE) {
   grid.newpage()
   grid.rect(gp = gpar(fill = paper, col = NA))
-  text_at(if (normal) "A useful approximation" else "The Hessian",
-          .06, .90, 34, face = "bold")
-  text_at("Fit to the data", .28, .78, 21, just = "centre")
-  text_at(if (normal) "Normal approximation" else "Curvature near the peak",
-          .79, .78, 21, just = "centre")
+  text_at(if (normal) "A normal approximation" else "The Hessian",
+          .06, .92, 34, face = "bold")
+  text_at("Fit to the data", panel_centres[1], .79, 21, just = "centre")
+  text_at(if (normal) "Uncertainty" else "Curvature near the peak",
+          panel_centres[2], .79, 21, just = "centre")
   draw_hill()
   if (normal) {
-    text_at("Hessian", .548, .59, 16, just = "centre")
-    grid.lines(c(.509, .586), c(.55, .55),
+    text_at("Hessian", .52, .54, 16, just = "centre")
+    grid.lines(c(.475, .565), c(.49, .49),
                arrow = arrow(length = unit(5, "pt"), type = "closed"),
                gp = gpar(col = muted, fill = muted, lwd = 1.5))
     draw_density()
@@ -174,4 +199,5 @@ save_figure <- function(name, draw, background = paper) {
 save_figure("hessian-normal", function() draw_pair(normal = TRUE))
 save_figure("hessian-hill", draw_pair)
 cat("Validated the hill's log-Hessian, covariance, peak and equal-density contours.\n")
+cat("Validated the trail's monotone ascent and exactly matched parameter frames.\n")
 cat("Rendered matching hill/density and hill/matrix slides to PNG/SVG; text bounds checked.\n")
