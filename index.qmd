@@ -38,7 +38,24 @@ format:
 ::: {.notes}
 **A light introduction — 10 seconds.**
 
-Introduce yourself, give the name of your PhD project and name your advisor in your own words. This opening can stay on screen while you settle in. Introduce the topic lightly: the wettest hour of the year. Keep the full comic title for the next slide. Advance once when you are ready for the whole audience to see the poster together.
+Introduce yourself and give the name of your PhD project in your own words. This opening can stay on screen while you settle in. Introduce the topic lightly: the wettest hour of the year. Advance to introduce Birgir, then save the full comic title for the Strangelove poster that follows.
+:::
+
+## {#advisor .art background-image="Figures/birgir.png" background-size="contain" background-color="#f8f6f0"}
+
+```{=html}
+<div class="advisor-label">
+  <p>PhD advisor</p>
+  <h1>Birgir<br>Hrafnkelsson</h1>
+</div>
+```
+
+::: {.notes}
+**Meet my advisor — 8 seconds.**
+
+Introduce Birgir Hrafnkelsson as your PhD advisor in your own words. Give the audience a moment with the cartoon; no need to explain latent variables here. Advance once when you are ready to reveal the Strangelove poster to everyone together.
+
+Preparation note: this introduction establishes Birgir's appearance before he returns in the final poster, as identified by the author. Let that later recognition happen naturally. Author-supplied birgir.png, added 24 September 2026; full image retained without cropping.
 :::
 
 ## {#poster .art background-image="Figures/bomb.jpg" background-size="contain" background-color="#000000"}
@@ -46,7 +63,7 @@ Introduce yourself, give the name of your PhD project and name your advisor in y
 ::: {.notes}
 **The poster reveal — 5 seconds.**
 
-Reveal the full poster and comic title together. Give the audience a moment to take it in and let the joke land before moving on. The self-introduction belongs on the preceding slide, so the poster gets its own beat. Then move to the rainfall photograph and why predicting changes matters.
+Reveal the full poster and comic title together. Give the audience a moment to take it in and let the joke land before moving on. The self-introduction and advisor introduction have their own slides, so the poster gets its own beat. Then move to the rainfall photograph and why predicting changes matters.
 :::
 
 ## {#rain .print}
@@ -208,5 +225,5 @@ Preparation detail: the blue bridges connect whole station groups, matching enti
 
 The Hessian wasn't the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.
 
-Reveal the new closing poster. Hold it, finish, and stop. Do not introduce another scientific point. Author-supplied artwork, hessian_ending.png, added 24 September 2026; the complete image is shown without cropping.
+Reveal the new closing poster. Birgir, introduced on slide two, returns here alongside the other riders. Hold it, finish, and stop. Do not introduce another scientific point. Author-supplied artwork, hessian_ending.png, added 24 September 2026; the complete image is shown without cropping.
 :::

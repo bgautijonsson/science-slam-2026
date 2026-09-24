@@ -78,6 +78,25 @@ $headings-font-weight:   700;
   color: $grey;
 }
 
+// Label the advisor in the supplied cartoon's empty upper-left area.
+.reveal .advisor-label {
+  position: absolute;
+  left: 6%;
+  top: 12%;
+  width: 35%;
+}
+.reveal .advisor-label p {
+  margin: 0 0 16px;
+  font-size: 30px;
+  color: $grey;
+}
+.reveal .advisor-label h1 {
+  margin: 0;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
 // One continuous hill-density-matrix scene; Reveal moves it by one panel.
 .reveal .camera-slide .panorama-frame {
   position: absolute;
