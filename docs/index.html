@@ -775,12 +775,12 @@
       });
     </script>
     <script>
-    // Clicks advance the introductions, station columns, comic reveals and camera
-    // pair, including fragments. Keyboard navigation remains Reveal's own.
+    // A left click advances every slide and fragment, like the right arrow, so a
+    // mouse or a clicking remote works throughout. Keyboard navigation remains
+    // Reveal's own.
     document.addEventListener("click", function (event) {
       const deck = window.Reveal;
       if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-      if (!["opening", "advisor", "stations", "thinking", "gauss", "uncertainty", "hessian-hill", "research", "birgir-lesson"].includes(deck.getCurrentSlide()?.id)) return;
       if (event.button !== 0 || event.defaultPrevented ||
           event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;
