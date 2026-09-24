@@ -218,6 +218,18 @@ Now the groups share openly with their neighbours. The same storm can affect sev
 Preparation detail: the blue bridges connect whole station groups, matching entire blocks rather than just one pair of parameters. This is an illustrative A–B–C chain. A and C have no direct precision link, but can still be associated through B; do not describe the blank corner blocks as unconditional independence. Colours distinguish within-station and between-station entries; opacity shows illustrative absolute magnitude on the same scale, not correlations or fitted values.
 :::
 
+## {#research .art background-image="design-studies/designs/research-bridge.png" background-size="contain" background-color="#f8f6f0"}
+
+::: {.notes}
+**Back to the research: a spatial picture — 20 seconds.**
+
+With more stations, the matrix gets much bigger, but the idea is the same: keep the connections. The estimates and their Hessian feed into a spatial model, giving us a picture of how a rainfall parameter varies from place to place. Gesture from the repeated black and blue blocks to the map. This map illustrates the rainfall level; the other parameters can also have spatial fields. Keep this as the connection back to the research, then reveal the closing poster.
+
+Preparation detail, not spoken: both panels are illustrative. The 90-by-90 matrix represents thirty fictional stations with three parameters each; this is not the project's actual station count or geographical neighbour graph. It extends the earlier chain pattern, with symmetric within-station blocks and neighbouring-station blocks. Its negative is a strictly diagonally dominant, positive-definite toy precision matrix. The normal approximation combines the estimates and their uncertainty; the Hessian alone does not determine a spatial mean or prediction. The arrow summarises the subsequent spatial modelling step, not a direct matrix-to-map calculation.
+
+The UK map, including Northern Ireland, shows an arbitrary smooth field of relative rainfall level generated from fixed random Gaussian basis weights. It is not a fitted result, a rainfall forecast, or a simulation from the displayed Hessian. Shading means lower to higher level, not uncertainty. The Republic of Ireland is faint geographical context without field values. The reference image supplied by the author showed Ireland; this slide follows the requested UK geography. Coastlines: Natural Earth 1:50m, public-domain data bundled with rnaturalearthdata; British National Grid projection preserves the map's physical aspect.
+:::
+
 ## {#callback .art background-image="Figures/hessian-ending.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}

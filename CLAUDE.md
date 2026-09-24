@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. A final research bridge expands the same block pattern to a 90×90 illustrative Hessian and leads, through a spatial model, to an arbitrary UK rainfall-level field. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -81,13 +81,14 @@ Verbatim, 2026-09-23:
 | stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | redesigned 2026-09-24: three illustrative annual-maximum records → nine estimates |
 | uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip plus generated inline SVG; initial view: hill + normal density |
 | density + Hessian matrix | same panorama and `_hessian-panorama.qmd` SVG plus three highlight overlays | `design-studies/hessian-hill.R` | camera pans one panel right; three exclusive highlights, clear overlay, then independence morph |
+| research | `design-studies/designs/research-bridge.{png,svg}` | `design-studies/research-bridge.R` | 90×90 toy Hessian and illustrative UK spatial field |
 | separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | redesigned 2026-09-24: symmetric magnitudes, brackets and matching people groups |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the closing artwork. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 15 slides, 20 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 256 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the closing artwork. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 16 slides, 21 visual states including three matrix highlights, a clear-overlay pause and the independence animation, with 276 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. opening       Science Slam introduction; hold for poster cue  ~10 s
@@ -104,7 +105,8 @@ Verbatim, 2026-09-23:
 12. separate      Working alone (diagonal)                        ~15 s
 13. within        Sharing within stations (blocks)                        ~25 s
 14. between       Sharing with neighbours (blue): the research     ~45 s
-15. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+15. research      More stations → spatial model → UK field        ~20 s
+16. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -143,3 +145,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Added a restrained Science Slam opening with the short topic title, presenter, venue and date; moved the introduction there and kept the complete poster reveal on one advance | Author wants control over comedic timing so the whole audience sees the poster together. Opening plus poster share the previous 15-second planning cue |
 | 2026-09-24 | Replaced the closing callback image with the author's new hessian_ending.png; retained the spoken ending and original opening poster | Author supplied a distinct final poster. Full image retained with paper-coloured surround |
 | 2026-09-24 | Added the author's Birgir cartoon as slide two, with his name and PhD-advisor label; moved the advisor introduction there and retained click control for the following poster reveal | Author identified Birgir Hrafnkelsson as his advisor and as a returning figure in the closing poster |
+| 2026-09-24 | Added a research bridge before the closing poster: larger patterned Hessian → spatial model → an illustrative UK rainfall-level field, with neutral map shading and Natural Earth coastlines | Author requested a direct link back to the research. The map is arbitrary, the station graph schematic, and the estimates accompany the Hessian as inputs to spatial modelling |
