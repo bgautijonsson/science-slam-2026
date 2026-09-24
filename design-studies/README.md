@@ -13,7 +13,7 @@ Working drafts and assets developed with Codex, brought into the talk repository
 
 - `science-slam-draft.qmd`, `flow-notes.qmd`, `preview.css`: presentation and notes sources.
 - `figures/`: first draft figures in PNG/SVG, plus copies of the existing poster and flood photograph.
-- `designs/`: fictional station reveals (`stations-1` to `stations-3`), rainfall-records-to-nine-estimates diagram, simplified Hessian ladder, and contact sheet, in PNG/SVG.
+- `designs/`: fictional station reveals (`stations-1` to `stations-3`), rainfall records leading to nine point estimates on small parameter scales, simplified Hessian ladder, and contact sheet, in PNG/SVG.
 - `make-visuals.R`, `slide-designs.R`: figure-generation sources; run from this directory.
 - `hessian-hill.R`: the live deck's paired normal-approximation and Hessian slides. Generates `designs/hessian-normal.{png,svg}` (hill → normal density) and `designs/hessian-hill.{png,svg}` (identically positioned hill + two-by-two matrix). The toy relative likelihood has an analytically and numerically checked log-Hessian; equal-density contours use the inverse of the full precision matrix. The slide uses a Gaussian-shaped toy likelihood, so the approximation is exact in this illustration. Notes distinguish parameter uncertainty from rainfall variability and conditional precision from marginal variance. Legacy `hessian-hill-matrix.*` and `hessian-hill-preview.png` are retired reference assets. The earlier click-through draft and ZIP snapshots remain historical snapshots.
 - `scripts/build_design_board.py`: builds the self-contained design board and its ZIP archive using relative paths.

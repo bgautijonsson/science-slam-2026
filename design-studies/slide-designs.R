@@ -1,4 +1,4 @@
-# Design studies for the Science Slam. No changes to the live slide deck.
+# Station and matrix figures used by the Science Slam deck.
 # Run from this directory with Rscript slide-designs.R.
 library(grid)
 library(ragg)
@@ -96,6 +96,14 @@ stopifnot(length(station_records) == 3L,
           all(lengths(station_records) == 14L),
           all(unlist(station_records) > 0),
           all(unlist(station_records) < 120))
+# Schematic positions on separate parameter scales, not numerical GEV fits.
+# The range is fixed down each column so station estimates can be compared.
+estimate_positions <- rbind(c(.82, .26, .20),
+                            c(.37, .83, .36),
+                            c(.24, .42, .82))
+stopifnot(all(estimate_positions > 0 & estimate_positions < 1),
+          identical(apply(estimate_positions, 2, which.max), 1:3),
+          all(apply(estimate_positions, 2, function(x) length(unique(x))) == 3))
 save("station-tokens",function(){
   base(); tx("Three stations. Nine estimates.",.06,.92,34,face="bold")
   tx("Wettest hour of each year",.40,.80,18,grey,just="centre")
@@ -119,11 +127,19 @@ save("station-tokens",function(){
                arrow=arrow(length=unit(.09,"inches"),type="open"),
                gp=gpar(col=grey,lwd=1.8))
     for(j in 1:3) {
-      grid.circle(token_x[j],y,r=unit(.042,"npc"),
-                  gp=gpar(fill=paper,col=ink,lwd=2))
-      tx(c("L","S","T")[j],token_x[j],y,23,face="bold",just="centre")
+      left <- token_x[j]-.043
+      right <- token_x[j]+.043
+      ln(c(left,right),c(y,y),"#b7bdbe",1.6)
+      for(tick in seq(left,right,length.out=5)) {
+        ln(c(tick,tick),c(y-.009,y+.009),"#b7bdbe",1.1)
+      }
+      estimate_x <- left+(right-left)*estimate_positions[i,j]
+      stopifnot(estimate_x > left, estimate_x < right, left >= 0, right <= 1)
+      grid.circle(estimate_x,y,r=unit(5.5,"pt"),
+                  gp=gpar(fill=ink,col=paper,lwd=1.5))
     }
   }
+  tx("Lower \u2192 higher",.81,.075,15,grey,just="centre")
 })
 draw_matrix <- function(stage) {
   base(); tx("Same nine estimates. More connections.",.06,.92,29,face="bold")
