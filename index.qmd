@@ -124,6 +124,11 @@ Gauss: back to the normal distribution
 
 :::: {.panorama-frame}
 {{< include design-studies/designs/_hessian-panorama.qmd >}}
+
+```{=html}
+  <div class="hessian-rest" style="background-image: url('design-studies/designs/hessian-panorama.png')" aria-hidden="true"></div>
+  <span class="uncertainty-reveal fragment" data-fragment-index="0" aria-hidden="true"></span>
+```
 ::::
 
 ```{=html}
@@ -133,7 +138,7 @@ Gauss: back to the normal distribution
 ::: {.notes}
 Hill = fit of each level/spread pair · summit = maximum likelihood
 
-Hessian = curvature at the summit → normal approximation
+Click: Hessian = curvature at the summit → normal approximation
 
 Loop: normals make the Hessian useful; the Hessian makes normals convenient
 :::

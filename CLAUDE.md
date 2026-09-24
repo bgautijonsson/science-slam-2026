@@ -81,7 +81,7 @@ Verbatim, 2026-09-23:
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
 | stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | redesigned 2026-09-24: three illustrative annual-maximum records → nine estimates |
-| uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip plus generated inline SVG; initial view: hill + normal density |
+| uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip plus generated inline SVG; opens on the hill alone, centred; one click slides in the Hessian arrow and density (a clipped copy of the strip, `theme.scss`) |
 | density + Hessian matrix | same panorama and `_hessian-panorama.qmd` SVG plus three highlight overlays | `design-studies/hessian-hill.R` | camera pans one panel right; three exclusive highlights, clear overlay, then independence morph |
 | research | `design-studies/designs/research-bridge.{png,svg}` | `design-studies/research-bridge.R` | 90×90 toy Hessian and illustrative UK spatial field |
 | stew header | `Figures/stew.png` and four exact captions | author-supplied screenshot; `index.qmd`, `theme.scss` | fixed top-left photo and italic quotations replace former headings |
@@ -91,7 +91,7 @@ Verbatim, 2026-09-23:
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the final meme as the personal punchline, followed by the closing poster as a farewell; the "Same storm" payoff slide remains cut. 18 slides, 26 visual states including three station-column focuses, three matrix highlights, a clear-overlay pause and the independence animation, with 280 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` notes are minimal cues (author's request, 2026-09-24); the full preparation notes, with technical caveats and credits, are in `index.qmd` at `eb48a90` (use them for step 8). The older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the final meme as the personal punchline, followed by the closing poster as a farewell; the "Same storm" payoff slide remains cut. 18 slides, 27 visual states including three station-column focuses, the hill-first reveal, three matrix highlights, a clear-overlay pause and the independence animation, with 280 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` notes are minimal cues (author's request, 2026-09-24); the full preparation notes, with technical caveats and credits, are in `index.qmd` at `eb48a90` (use them for step 8). The older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. opening       Science Slam introduction; hold for poster cue  ~10 s
@@ -104,7 +104,7 @@ Verbatim, 2026-09-23:
  8. stations      Nine estimates; 3 clicks focus Level/Spread/Tail ~20 s
  9. thinking      Image-only question; set up the Gauss reveal    ~4 s
 10. gauss         Gauss poster: estimation → normal approximation ~8 s
-11. uncertainty   Hill → normal density via the Hessian            ~30 s
+11. uncertainty   Hill alone; click slides in Hessian + density  ~30 s
 12. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
 13. separate      “You take an assumption of independence”                        ~15 s
 14. within        “You add within-station dependence”                        ~25 s
@@ -159,3 +159,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Added Birgir’s hockey-meme Hessian lesson after the spatial field; kept the setup on the map and the final poster as a farewell | Author proposed a personal closing callback to the advisor introduction; the meme replaces the earlier spoken independence ending |
 | 2026-09-24 | A left mouse click now advances every slide and fragment: removed the slide-id filter from `hessian-interactions.html` | Clicks did nothing on 9 of 18 slides (the bomb poster, flood, A/B/C and stew slides), so a mouse or clicking remote would stall on slide 3; on the local render, clicks alone traverse all 18 slides and 26 states |
 | 2026-09-24 | Cut the speaker notes to one-to-three-line cues (2,687 to 214 words); kept the author's verbatim thinking and Birgir-setup lines; replaced per-slide timings with one 2:50 checkpoint on the first stew slide | Author found the notes too verbose. Rendered audience view unchanged (HTML identical with notes stripped); full notes in git at `eb48a90` |
+| 2026-09-24 | The uncertainty slide opens on the hill alone, centred; one click moves it left while the Hessian arrow and density slide in, then the usual camera pan follows | Author wanted the Gauss laugh to land on the hill alone. The revealed state is the old layout exactly, so the auto-animated pan is unchanged both ways; 27 states by click |

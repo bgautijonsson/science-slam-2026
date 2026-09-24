@@ -175,6 +175,67 @@ $headings-font-weight:   700;
 }
 .reveal #hessian-hill img.hessian-panorama,
 .reveal #hessian-hill .live-panorama { left: -54%; }
+
+// Uncertainty slide: the hill arrives alone and centred. One click moves it to
+// its panel while the Hessian arrow and uncertainty panel slide in from the
+// right (a clipped copy of the strip, plus the live contours). The revealed
+// state is the old layout exactly, so the camera pan still auto-animates the
+// same data-id layers. `translate`, not `transform`, keeps clear of Reveal's
+// !important auto-animate transforms. In the 3072 px strip the hill panel ends
+// at x = 680 and the arrow starts at x = 715.
+$hill-cut: 22.72%;     // x = 698, between the hill panel and the arrow
+$hill-centre: 12.27%;  // moves the plot centre (x = 391) to the slide centre
+.reveal #uncertainty .hessian-rest {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  clip-path: inset(0 0 0 $hill-cut);
+  z-index: 1;
+  pointer-events: none;
+}
+.reveal #uncertainty .live-panorama { z-index: 2; }
+.reveal #uncertainty img.hessian-panorama {
+  clip-path: inset(0 (100% - $hill-cut) 0 0);
+  translate: $hill-centre 0;
+  transition: translate 0.8s ease-in-out, clip-path 0s;
+}
+.reveal #uncertainty .hessian-rest,
+.reveal #uncertainty .live-panorama {
+  translate: 20% 0;
+  opacity: 0;
+  transition: translate 0.8s ease-in-out, opacity 0.45s ease-in;
+}
+.reveal #uncertainty .camera-title {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+// Revealed. The hill layer unclips once the slide-in ends (0.8 s) and the copy
+// hides 50 ms later, so the swap is pixel-identical and the copy can never
+// linger during a backwards camera pan.
+.reveal #uncertainty:has(.uncertainty-reveal.visible) {
+  img.hessian-panorama {
+    clip-path: inset(0 0 0 0);
+    translate: none;
+    transition: translate 0.8s ease-in-out, clip-path 0s linear 0.8s;
+  }
+  .hessian-rest,
+  .live-panorama {
+    translate: none;
+    opacity: 1;
+    transition: translate 0.8s ease-in-out, opacity 0.45s ease-out;
+  }
+  .hessian-rest {
+    visibility: hidden;
+    transition: translate 0.8s ease-in-out, opacity 0.45s ease-out,
+      visibility 0s linear 0.85s;
+  }
+  .camera-title { opacity: 1; }
+}
 .reveal .live-panorama svg { display: block; width: 100%; height: 100%; }
 .reveal .density-shape {
   transform: var(--dependent-transform);
