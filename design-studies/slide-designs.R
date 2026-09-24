@@ -85,17 +85,43 @@ draw_stations <- function(stage) {
 }
 for(i in 1:3) save(paste0("stations-",i),function()draw_stations(i))
 save("three-settings",function()draw_stations(3))
+# Invented annual maxima: one bar per year, with a common rainfall scale.
+# These records illustrate the estimation step; they are not fitted research data.
+station_records <- list(
+  c(51, 65, 58, 73, 56, 82, 64, 60, 77, 53, 68, 72, 62, 87),
+  c(32, 57, 41, 81, 29, 65, 47, 91, 36, 53, 75, 39, 61, 48),
+  c(35, 42, 31, 49, 37, 44, 61, 33, 40, 107, 46, 36, 55, 39)
+)
+stopifnot(length(station_records) == 3L,
+          all(lengths(station_records) == 14L),
+          all(unlist(station_records) > 0),
+          all(unlist(station_records) < 120))
 save("station-tokens",function(){
-  base();tx("Now estimate all three at every station.",.06,.90,31,face="bold")
+  base(); tx("Three stations. Nine estimates.",.06,.92,34,face="bold")
+  tx("Wettest hour of each year",.40,.80,18,grey,just="centre")
+  token_x <- c(.70,.81,.92)
+  for(j in 1:3) {
+    tx(c("Level","Spread","Tail")[j],token_x[j],.80,18,grey,just="centre")
+  }
   for(i in 1:3) {
-    y <- c(.70,.45,.20)[i]
-    tx(paste("Station",LETTERS[i]),.08,y,25,face="bold")
-    tx(station_labels[i],.08,y-.065,15,grey)
+    y <- c(.65,.42,.19)[i]
+    tx(paste("Station",LETTERS[i]),.06,y,25,face="bold")
+    x <- seq(.27,.53,length.out=length(station_records[[i]]))
+    baseline <- y-.065
+    heights <- station_records[[i]]/120*.15
+    stopifnot(all(x-.005 >= .26), all(x+.005 <= .54),
+              baseline >= 0, all(baseline+heights <= 1))
+    ln(c(.257,.543),rep(baseline,2),grey,1)
+    for(k in seq_along(x)) {
+      box(x[k],baseline+heights[k]/2,.009,heights[k],ink)
+    }
+    grid.lines(c(.57,.63),c(y,y),
+               arrow=arrow(length=unit(.09,"inches"),type="open"),
+               gp=gpar(col=grey,lwd=1.8))
     for(j in 1:3) {
-      x <- c(.47,.65,.83)[j]
-      grid.circle(x,y,r=unit(.048,"npc"),gp=gpar(fill=paper,col=ink,lwd=2))
-      tx(c("L","S","T")[j],x,y,23,face="bold",just="centre")
-      tx(c("Level","Spread","Tail")[j],x,y-.082,15,grey,just="centre")
+      grid.circle(token_x[j],y,r=unit(.042,"npc"),
+                  gp=gpar(fill=paper,col=ink,lwd=2))
+      tx(c("L","S","T")[j],token_x[j],y,23,face="bold",just="centre")
     }
   }
 })

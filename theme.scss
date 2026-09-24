@@ -30,22 +30,6 @@ $headings-font-weight:   700;
 }
 .reveal .slides > section.art h2 { display: none; }
 
-// The matrix is a transparent second layer on the hill composition.
-// Both use the same 3:2 canvas, so the click reveal stays aligned at any size.
-.reveal #hessian-hill > p {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-}
-.reveal #hessian-hill img.hessian-overlay {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  margin: 0;
-  object-fit: contain;
-}
-
 // The flood photo is only 610 x 406, so it sits on the paper as a print
 // instead of being stretched full-bleed.
 .reveal .slides > section.print {

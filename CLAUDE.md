@@ -26,7 +26,7 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 
 ## Design studies
 
-`design-studies/` holds the Codex drafts and figure sources (start with `design-studies/README.md`). **Adopted into `index.qmd` on 2026-09-23** (author's choice): Codex running order, figures referenced in place from `design-studies/designs/` and `design-studies/figures/`, one visual system (paper `#f8f6f0`, ink `#20272d`, blue `#347eab` only for the added between-station links). `make-visuals.R` was moved onto that palette the same day; the uncertainty slide's normal approximation is grey-dashed, not blue. Re-run the R scripts in a UTF-8 locale (`LC_ALL=en_US.UTF-8`), or non-ASCII labels such as "→" render as "…".
+`design-studies/` holds the Codex drafts and figure sources (start with `design-studies/README.md`). **Adopted into `index.qmd` on 2026-09-23** (author's choice): Codex running order, figures referenced in place from `design-studies/designs/` and `design-studies/figures/`, one visual system (paper `#f8f6f0`, ink `#20272d`, blue `#347eab` only for the added between-station links). `make-visuals.R` was moved onto that palette the same day; the current uncertainty slide pairs the hill with grey density contours; blue remains reserved for the between-station links. Re-run the R scripts in a UTF-8 locale (`LC_ALL=en_US.UTF-8`), or non-ASCII labels such as "→" render as "…".
 
 ## Audience
 
@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail) so the audience holds nine estimates, hands them a Hessian as "how sure are we about an estimate?", defines its local curvature with a two-parameter hill and a 2×2 matrix reveal, then shows one fixed 9×9 grid gain connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. The same hill stays in place as the density is replaced by a 2×2 matrix, before one fixed 9×9 grid gains connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -72,18 +72,19 @@ Verbatim, 2026-09-23:
 | Slide | File | Source | Status |
 | ----- | ---- | ------ | ------ |
 | poster, callback | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
+| Gauss interlude | `Figures/gauss.png` | author's GPT poster, supplied 2026-09-24 | made; full portrait, no crop |
 | rain | `Figures/flod1.jpg` (610×406, shown at 820 px as a print) | photo Júlíus Sigurjónsson, mbl.is | copied |
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
-| stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | made (Codex) |
-| uncertainty | `design-studies/figures/uncertainty.png` | `design-studies/make-visuals.R` | re-rendered 2026-09-23 on the unified palette |
-| Hessian hill + matrix reveal | `design-studies/designs/hessian-hill.png`, `hessian-hill-matrix.png` | `design-studies/hessian-hill.R` | made 2026-09-24; log-Hessian checked analytically and numerically; browser alignment measured |
+| stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | redesigned 2026-09-24: three illustrative annual-maximum records → nine estimates |
+| uncertainty | `design-studies/designs/hessian-normal.png` | `design-studies/hessian-hill.R` | made 2026-09-24: hill + normal density contours using inverse full precision |
+| Hessian hill + matrix | `design-studies/designs/hessian-hill.png` | `design-studies/hessian-hill.R` | revised 2026-09-24: identical hill, density replaced by matrix; no extra reveal |
 | separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | made (Codex) |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
 
 ## Slide map
 
-**Current (2026-09-24): the Codex flow plus an intuitive Hessian definition**, with a 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 12 slides, 13 visual states including the matrix reveal, with 240 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 13 slides, 13 visual states, with 248 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. poster        The worrying.                                   ~15 s
@@ -91,13 +92,14 @@ Verbatim, 2026-09-23:
  3. level         Station A: higher level                         ~10 s
  4. spread        Station B: more spread                          ~10 s
  5. tail          Station C: heavier tail                         ~10 s
- 6. stations      Three stations, nine estimates                  ~20 s
- 7. uncertainty   Rainfall values → uncertainty about a parameter ~20 s
- 8. hessian-hill  Shape near the best fit; click for 2×2 Hessian    ~35 s
- 9. separate      Each estimate (diagonal)                        ~15 s
-10. within        Within stations (blocks)                        ~25 s
-11. between       Between stations (blue links): the research     ~45 s
-12. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+ 6. stations      Rainfall records → nine estimates               ~20 s
+ 7. gauss         Gauss poster: estimation → normal approximation ~8 s
+ 8. uncertainty   Hill → normal density via the Hessian            ~30 s
+ 9. hessian-hill  Same hill; density becomes the 2×2 Hessian        ~25 s
+10. separate      Each estimate (diagonal)                        ~15 s
+11. within        Within stations (blocks)                        ~25 s
+12. between       Between stations (blue links): the research     ~45 s
+13. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -125,3 +127,5 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Simplified the Hessian slide to the hill, peak marker, parameter labels and a plain matrix reveal; removed paths, symbols and explanatory captions | Author found the slide too busy and will explain the details verbally |
 | 2026-09-24 | Opening talking points: self, PhD project title and advisor; changing sub-daily precipitation and infrastructure design; illustrative hundred-year threshold becoming eighty- or fifty-year | Author supplied the opening in the slide-by-slide discussion. Follow up: station figure currently says wettest day; confirm the sub-daily duration before changing it |
 | 2026-09-24 | Changed station captions to wettest hour of each year; recorded annual maximum hourly precipitation as the response; station talking points name the GEV and introduce location/level, scale/spread and shape/tail without a distribution tutorial | Author confirmed the hourly duration and the intended explanation; resolves the previous daily-label follow-up |
+| 2026-09-24 | Rebuilt the three-slide bridge: rainfall records → nine estimates; hill → normal density contours via the Hessian; identical hill + two-by-two matrix. Removed the extra matrix reveal and updated talking-point notes | Author approved the paired hill/density design and humorous normal-approximation loop; keeps uncertainty in parameter space and gives each slide a distinct role |
+| 2026-09-24 | Added the author's Gauss poster between the station estimates and normal approximation, as a brief full-image interlude | Author supplied a second humorous poster to connect estimation to the normal approximation; the scientific explanation stays on the following hill slide |

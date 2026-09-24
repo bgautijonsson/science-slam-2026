@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-dfdecb09647f1e8731e2246d379114b7.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fc6244f29ba5aa1a0378faabe205b364.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -226,8 +226,9 @@
 <section id="stations" class="slide level2 art" data-background-image="design-studies/designs/station-tokens.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
 <aside class="notes">
-<p><strong>Three stations: nine estimates — 20 seconds.</strong></p>
-<p>These examples changed one setting at a time. In practice, we estimate all three at every station: three stations, nine estimates. All nine tokens now have equal emphasis. Different rainfall distributions do not yet tell us how the stations behave together. Keep A-B-C and L-S-T in this order for the grid.</p>
+<p><strong>Three stations: rainfall records to nine estimates — 20 seconds.</strong></p>
+<p>Each bar is the wettest hour of one year. Use each station’s history to estimate its level, spread and tail: three stations, nine estimates. Follow one row from observations to the three numbers, then gesture to the other rows. The earlier examples changed one parameter at a time; now every station has all three. These are invented records, not research observations.</p>
+<p>Transition: those estimates are our best guesses, but how sure are we? Zoom in on level and spread at one station, holding tail fixed. Keep A-B-C and L-S-T in this order for the later nine-by-nine grid.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -240,11 +241,32 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="uncertainty" class="slide level2 art" data-background-image="design-studies/figures/uncertainty.png" data-background-size="contain" data-background-color="#f8f6f0">
+<section id="gauss" class="slide level2 art" data-background-image="Figures/gauss.png" data-background-size="contain" data-background-color="#000000">
 <h2></h2>
 <aside class="notes">
-<p><strong>From rainfall to uncertainty — 20 seconds.</strong></p>
-<p>Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The dashed curves preview a normal approximation around each peak. Next, show what the shape means when two parameters can move together. These are toy likelihood curves, not fitted GEV likelihoods.</p>
+<p><strong>Gauss makes an entrance — 8 seconds.</strong></p>
+<p>A brief comic bridge from parameter estimation to the normal approximation. Let the poster make its entrance; there is no need to read its full title or explain its decorative details. Cue the return of Gauss and the normal distribution, then move to the hill for the explanation of what the approximation buys us. Keep the humorous normal-distribution/Hessian loop for that next slide.</p>
+<p>Author-supplied GPT poster, added 24 September 2026. The formulas and plot within the poster are decorative artwork, not the scientific explanation. The full portrait image is preserved without cropping.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="uncertainty" class="slide level2 art" data-background-image="design-studies/designs/hessian-normal.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>A useful approximation — 30 seconds.</strong></p>
+<p>We have moved from rainfall values to possible parameter values. Each point on the hill is a combination of level and spread; height describes how well that combination fits the observations. The summit is the best fit. Nearby combinations fit almost as well, and the long direction shows how the two parameters can compensate for one another.</p>
+<p>The Hessian describes the curvature near the summit. Use it to build the normal approximation on the right: a top-down density plot, centred at the best fit. Its width shows uncertainty and its tilt shows that the estimates are linked. These are the same two parameter coordinates in both panels, with tail held fixed.</p>
+<p>Author’s humorous loop, in your own words: normal distributions make the Hessian wonderfully useful; having a Hessian makes it wonderfully convenient to build a normal approximation. We are approximating uncertainty about the parameter estimates, not assuming the rainfall observations are normal. The rainfall model remains GEV. No formulas or spoken derivation needed.</p>
+<p>Preparation detail: the hill is a schematic Gaussian-shaped relative likelihood over centred, rescaled Level/Spread coordinates. Here its normal approximation is exact by construction; this does not demonstrate the accuracy of a normal approximation for a fitted GEV. The contours are equal-density ellipses from the same full precision matrix, with covariance equal to its inverse. Their enclosed probability levels are 95%, 80%, 50% and 20%; the slide does not label percentages.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -259,12 +281,11 @@
 </section>
 <section id="hessian-hill" class="slide level2 art" data-background-image="design-studies/designs/hessian-hill.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
-<p><img data-src="design-studies/designs/hessian-hill-matrix.png" class="hessian-overlay fragment" alt="A two-by-two Hessian labelled Level and Spread, with dark diagonal cells and grey off-diagonal cells."></p>
 <aside class="notes">
-<p><strong>The Hessian: the shape near the best fit — 35 seconds.</strong></p>
-<p>The peak is the best fit. Explain how the fit changes when one parameter moves with the other fixed, then how the two can compensate when they move together. Use the hill as a visual cue; keep the explanation in your own words.</p>
-<p>Click to reveal the matrix. Diagonal: how tightly each parameter is pinned down, holding the other fixed. Off-diagonal: interaction between the estimates. The full matrix describes their joint uncertainty. Two parameters give us two-by-two; our nine estimates give us nine-by-nine. This local shape builds the normal approximation.</p>
-<p>Preparation detail, not spoken: the illustration is a toy relative likelihood over centred, rescaled Level and Spread coordinates, holding tail fixed. The relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance of the normal approximation is the inverse of the full precision matrix. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations.</p>
+<p><strong>The Hessian: putting the shape into a matrix — 25 seconds.</strong></p>
+<p>The hill stays in exactly the same place; the density plot becomes a two-by-two matrix. Two parameters give us two rows and two columns. The diagonal describes curvature as one parameter moves with the other held fixed. The off-diagonal describes their interaction. The full matrix gives the local shape used to describe joint uncertainty.</p>
+<p>Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. Keep the explanation in your own words; the matrix is already visible, with no extra reveal click.</p>
+<p>Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
