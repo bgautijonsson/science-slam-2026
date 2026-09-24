@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. The four-slide Arrested Development stew joke replaces the matrix and research headings with the author's recipe captions. A final research bridge expands the same block pattern to a 90×90 illustrative Hessian and leads, through a spatial model, to an arbitrary UK rainfall-level field. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. The four-slide Arrested Development stew joke replaces the matrix and research headings with the author's recipe captions. A final research bridge expands the same block pattern to a 90×90 illustrative Hessian and leads, through a spatial model, to an arbitrary UK rainfall-level field. The research map holds the personal setup about Birgir's most important lesson, then the hockey meme delivers his answer. The closing bomb poster is the farewell.
 
 Working notes (step 2):
 
@@ -74,6 +74,7 @@ Verbatim, 2026-09-23:
 | opening | inline title, presenter and event label | `index.qmd`, `theme.scss` | made; neutral browser title preserves the reveal |
 | advisor | `Figures/birgir.png` plus inline name/role | author-supplied image, 2026-09-24 | copied unchanged; second slide, full image |
 | poster | `Figures/bomb.jpg` | author's image (ChatGPT) | made |
+| Birgir lesson | `Figures/birgir-hessian.png` | author-supplied image, 2026-09-24 | copied unchanged; image-only punchline after research |
 | callback | `Figures/hessian-ending.png` | author-supplied `hessian_ending.png`, 2026-09-24 | copied unchanged; full image, no crop |
 | thinking interlude | `Figures/binni-thinking.png` | author-supplied image, 2026-09-24 | copied unchanged; image-only setup before Gauss |
 | Gauss interlude | `Figures/gauss.png` | author's GPT poster, supplied 2026-09-24 | made; full portrait, no crop |
@@ -90,7 +91,7 @@ Verbatim, 2026-09-23:
 
 ## Slide map
 
-**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the closing artwork. Ending spoken over the new closing poster; the "Same storm" payoff slide remains cut. 17 slides, 25 visual states including three station-column focuses, three matrix highlights, a clear-overlay pause and the independence animation, with 280 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
+**Current (2026-09-24): observations → estimates → normal approximation → Hessian matrix**, with a shared 3D hill chosen by the author. A restrained Science Slam opening and a second slide introducing PhD advisor Birgir Hrafnkelsson let the author control the Strangelove poster reveal. Birgir returns in the final meme as the personal punchline, followed by the closing poster as a farewell; the "Same storm" payoff slide remains cut. 18 slides, 26 visual states including three station-column focuses, three matrix highlights, a clear-overlay pause and the independence animation, with 280 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. opening       Science Slam introduction; hold for poster cue  ~10 s
@@ -108,8 +109,9 @@ Verbatim, 2026-09-23:
 13. separate      “You take an assumption of independence”                        ~15 s
 14. within        “You add within-station dependence”                        ~25 s
 15. between       “You add spatial dependence between neighbours”     ~45 s
-16. research      “Baby, you got a stew going” → UK field        ~20 s
-17. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+16. research      UK field; set up Birgir’s most important lesson ~25 s
+17. birgir-lesson  Image-only Hessian punchline                     ~5 s
+18. callback      Closing poster; thank the audience               ~5 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -154,3 +156,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Removed the line-type legend and two bottom captions from all three station-parameter reveals | Author requested less unnecessary ink; the dashed-reference and annual-maximum explanations remain in the speaker notes |
 | 2026-09-24 | Removed “Lower → higher” and added three clicks to focus the Level, Spread and Tail columns of the nine-estimates slide | Author wants to compare parameter estimates across stations one column at a time; other columns fade without extra labels or coloured highlights |
 | 2026-09-24 | Added the author’s thinking cartoon between the estimates and Gauss, with the spoken Hessian question in notes and mouse-click progression through both images | Author approved a quick image-only setup and payoff before the hill explanation |
+| 2026-09-24 | Added Birgir’s hockey-meme Hessian lesson after the spatial field; kept the setup on the map and the final poster as a farewell | Author proposed a personal closing callback to the advisor introduction; the meme replaces the earlier spoken independence ending |

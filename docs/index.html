@@ -506,11 +506,29 @@
   <blockquote class="stew-caption"><p>“Baby, you got a stew going”</p></blockquote>
 </div>
 <aside class="notes">
-<p><strong>Back to the research: a spatial picture — 20 seconds.</strong></p>
+<p><strong>Back to the research, then Birgir’s lesson — 25 seconds.</strong></p>
 <p>“Baby, you got a stew going”. Give the payoff a beat before connecting the matrix to the map. This completes the four-slide recipe; no extra click is needed.</p>
-<p>With more stations, the matrix gets much bigger, but the idea is the same: keep the connections. The estimates and their Hessian feed into a spatial model, giving us a picture of how a rainfall parameter varies from place to place. Gesture from the repeated black and blue blocks to the map. This map illustrates the rainfall level; the other parameters can also have spatial fields. Keep this as the connection back to the research, then reveal the closing poster.</p>
+<p>With more stations, the matrix gets much bigger, but the idea is the same: keep the connections. The estimates and their Hessian feed into a spatial model, giving us a picture of how a rainfall parameter varies from place to place. Gesture from the repeated black and blue blocks to the map. This map illustrates the rainfall level; the other parameters can also have spatial fields.</p>
+<p>Keep the map onscreen for the setup, in your own words: “During my PhD, whenever a model gets so complicated that I start wondering how on earth I’m going to fit it, I come back to the most important lesson I’ve learned from Birgir…” Pause, then click to reveal his answer.</p>
 <p>Preparation detail, not spoken: both panels are illustrative. The 90-by-90 matrix represents thirty fictional stations with three parameters each; this is not the project’s actual station count or geographical neighbour graph. It extends the earlier chain pattern, with symmetric within-station blocks and neighbouring-station blocks. Its negative is a strictly diagonally dominant, positive-definite toy precision matrix. The normal approximation combines the estimates and their uncertainty; the Hessian alone does not determine a spatial mean or prediction. The arrow summarises the subsequent spatial modelling step, not a direct matrix-to-map calculation.</p>
 <p>The UK map, including Northern Ireland, shows an arbitrary smooth field of relative rainfall level generated from fixed random Gaussian basis weights. It is not a fitted result, a rainfall forecast, or a simulation from the displayed Hessian. Shading means lower to higher level, not uncertainty. The Republic of Ireland is faint geographical context without field values. The reference image supplied by the author showed Ireland; this slide follows the requested UK geography. Coastlines: Natural Earth 1:50m, public-domain data bundled with rnaturalearthdata; British National Grid projection preserves the map’s physical aspect.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="birgir-lesson" class="slide level2 art" data-background-image="Figures/birgir-hessian.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<aside class="notes">
+<p><strong>Birgir’s most important lesson — 5 seconds.</strong></p>
+<p>Let the image deliver the punchline. Hold for the audience to read it and laugh; add no heading or explanation. Birgir returns from the advisor introduction. Then click to the final poster for the farewell. Author-supplied artwork, birgir_hessian.png, shown in full without cropping.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -526,9 +544,8 @@
 <section id="callback" class="slide level2 art" data-background-image="Figures/hessian-ending.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
 <aside class="notes">
-<p><strong>The ending, spoken over the poster — 15 seconds.</strong></p>
-<p>The Hessian wasn’t the enemy. Assuming independence was the enemy. Pause between the two sentences. The independence here refers back to treating connected rainfall records as unrelated, rather than declaring every independence assumption wrong.</p>
-<p>Reveal the new closing poster. Birgir, introduced on slide two, returns here alongside the other riders. Hold it, finish, and stop. Do not introduce another scientific point. Author-supplied artwork, hessian_ending.png, added 24 September 2026; the complete image is shown without cropping.</p>
+<p><strong>The final farewell — 5 seconds.</strong></p>
+<p>Reveal the closing poster, thank the audience, and stop. Birgir’s lesson is the spoken payoff; this image is the farewell. Birgir, introduced on slide two, returns here alongside the other riders. Do not introduce another scientific point. Author-supplied artwork, hessian_ending.png, added 24 September 2026; the complete image is shown without cropping.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -758,12 +775,12 @@
       });
     </script>
     <script>
-    // Clicks advance the introductions, station columns, comic interludes and camera
+    // Clicks advance the introductions, station columns, comic reveals and camera
     // pair, including fragments. Keyboard navigation remains Reveal's own.
     document.addEventListener("click", function (event) {
       const deck = window.Reveal;
       if (!deck || !deck.isReady() || deck.isOverview() || deck.isPaused()) return;
-      if (!["opening", "advisor", "stations", "thinking", "gauss", "uncertainty", "hessian-hill"].includes(deck.getCurrentSlide()?.id)) return;
+      if (!["opening", "advisor", "stations", "thinking", "gauss", "uncertainty", "hessian-hill", "research", "birgir-lesson"].includes(deck.getCurrentSlide()?.id)) return;
       if (event.button !== 0 || event.defaultPrevented ||
           event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;
