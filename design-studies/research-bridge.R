@@ -99,7 +99,8 @@ draw_border <- function(shape, fill = NA, colour = grey, width = .7) {
 draw_bridge <- function() {
   grid.newpage()
   grid.rect(gp = gpar(fill = paper, col = NA))
-  text_at('From stations to a spatial field', .06, .92, 34, bold = TRUE, just = 'left')
+  # Match the other recipe slides; their photo and caption are live HTML.
+  pushViewport(viewport(x = 0, y = -.045, just = c('left', 'bottom'), clip = 'off'))
   text_at('Estimates + Hessian', .255, .815, 21)
   text_at('Rainfall level', map_cx, .85, 21)
   x0 <- .065; top <- .755; width <- .38
@@ -134,7 +135,8 @@ draw_bridge <- function() {
               width = legend_width, height = .009, interpolate = TRUE)
   text_at('Lower', map_cx - legend_width / 2 - .023, .105, 12, grey)
   text_at('Higher', map_cx + legend_width / 2 + .028, .105, 12, grey)
-  text_at('Illustrative example', .5, .043, 14, grey)
+  popViewport()
+  text_at('Illustrative example', .5, .028, 12, grey)
 }
 agg_png('designs/research-bridge.png', width = 1536, height = 1024, res = 144)
 draw_bridge(); dev.off()

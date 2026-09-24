@@ -188,40 +188,76 @@ Bridge straight to the next slide: level and spread gave us two-by-two; three pa
 Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Highlighted horizontal and vertical segments intersect the same density contour with the other coordinate fixed; they are not marginal standard deviations. The tilted segment illustrates interaction, not a width determined by the off-diagonal alone. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. The fifth reveal is an illustrative change of the normal approximation, not a refit of the rainfall model. Its four contours retain the same enclosed probability levels throughout a continuous nonsingular affine morph. It removes dependence and standardises the plotted axes together; independence alone allows unequal marginal variances and axis-aligned ellipses. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.
 :::
 
-## {#separate .art background-image="design-studies/designs/matrix-1.png" background-size="contain" background-color="#f8f6f0"}
+## {#separate .art .stew-slide background-image="design-studies/designs/matrix-1.png" background-size="contain" background-color="#f8f6f0"}
+
+```{=html}
+<div class="stew-header">
+  <img src="Figures/stew.png" alt="Carl Weathers in Arrested Development, holding a rib.">
+  <blockquote class="stew-caption"><p>“You take an assumption of independence”</p></blockquote>
+</div>
+```
 
 ::: {.notes}
 **First: ignore the connections — 15 seconds.**
+
+The Carl Weathers image starts the recipe: “You take an assumption of independence”. The caption replaces the old heading; introduce the people analogy underneath it.
 
 Set up the analogy once: these nine people represent our nine parameter estimates, three at each station. The lines will show which connections the approximation keeps. For now, everyone works alone: keep uncertainty for each estimate, but treat those uncertainties as independent. Point from one person to a diagonal entry. The same L/S/T ordering runs across the columns and down the rows; the brackets enclose the Hessian matrix.
 
 Preparation detail: use “independent” or “working alone”, rather than “iid”: these uncertainties need not be identically distributed. This is an approximation to parameter uncertainty, not a claim that the estimates were fitted separately or that a three-parameter GEV naturally has a diagonal Hessian. Darker cells indicate larger illustrative absolute entries, not greater correlation or marginal certainty. The toy Hessians are symmetric and negative definite (their negatives are positive-definite precision matrices). Shading uses one fixed scale and preserves retained entries across the three slides to make the structural comparison easy; these are not three fitted research results.
 :::
 
-## {#within .art background-image="design-studies/designs/matrix-2.png" background-size="contain" background-color="#f8f6f0"}
+## {#within .art .stew-slide background-image="design-studies/designs/matrix-2.png" background-size="contain" background-color="#f8f6f0"}
+
+```{=html}
+<div class="stew-header">
+  <img src="Figures/stew.png" alt="Carl Weathers in Arrested Development, holding a rib.">
+  <blockquote class="stew-caption"><p>“You add within-station dependence”</p></blockquote>
+</div>
+```
 
 ::: {.notes}
 **Then: keep links within a station — 25 seconds.**
+
+The next ingredient: “You add within-station dependence”. Keep the same image and let the changed caption carry the build. In the explanation, make clear that we are relaxing the earlier independence assumption, not retaining independence and dependence for the same pair.
 
 Now each station's group can whisper among themselves. They estimated their three quantities from the same rainfall record, so different combinations can fit similar observations. The triangle of connections within one group corresponds to its three-by-three matrix block. Point to one group and its matching block; the same happens at the other two stations. Nobody shares across station boundaries yet.
 
 Keep “whispering” as the author's communication analogy, without introducing the telephone game's garbled-message idea. The people stand for linked parameter estimates, not literal messages or a fitting algorithm. At this stage the station records are still treated separately in the likelihood.
 :::
 
-## {#between .art background-image="design-studies/designs/matrix-3.png" background-size="contain" background-color="#f8f6f0"}
+## {#between .art .stew-slide background-image="design-studies/designs/matrix-3.png" background-size="contain" background-color="#f8f6f0"}
+
+```{=html}
+<div class="stew-header">
+  <img src="Figures/stew.png" alt="Carl Weathers in Arrested Development, holding a rib.">
+  <blockquote class="stew-caption"><p>“You add spatial dependence<br> between neighbours”</p></blockquote>
+</div>
+```
 
 ::: {.notes}
 **The research moment: links between stations — 45 seconds.**
 
-Now the groups share openly with their neighbours. The same storm can affect several stations, so the likelihood couples estimates across station boundaries. Point from one blue bridge between groups to its blue off-diagonal block and the matching block across the diagonal: a single connection is represented symmetrically in the matrix. This is the part I work on: carrying those connections into an approximation we can compute with. Optional joke: Those extra blue squares took several years. Pause before returning to the science.
+The next ingredient: “You add spatial dependence between neighbours”. Tie this directly to the newly blue bridges and matrix blocks.
+
+Now the groups share openly with their neighbours. The same storm can affect several stations, so the likelihood couples estimates across station boundaries. Point from one blue bridge between groups to its blue off-diagonal block and the matching block across the diagonal: a single connection is represented symmetrically in the matrix. This is the part I work on: carrying those connections into an approximation we can compute with. Let the recipe joke build towards the following slide; keep this explanation focused on the newly blue connections.
 
 Preparation detail: the blue bridges connect whole station groups, matching entire blocks rather than just one pair of parameters. This is an illustrative A–B–C chain. A and C have no direct precision link, but can still be associated through B; do not describe the blank corner blocks as unconditional independence. Colours distinguish within-station and between-station entries; opacity shows illustrative absolute magnitude on the same scale, not correlations or fitted values.
 :::
 
-## {#research .art background-image="design-studies/designs/research-bridge.png" background-size="contain" background-color="#f8f6f0"}
+## {#research .art .stew-slide background-image="design-studies/designs/research-bridge.png" background-size="contain" background-color="#f8f6f0"}
+
+```{=html}
+<div class="stew-header">
+  <img src="Figures/stew.png" alt="Carl Weathers in Arrested Development, holding a rib.">
+  <blockquote class="stew-caption"><p>“Baby, you got a stew going”</p></blockquote>
+</div>
+```
 
 ::: {.notes}
 **Back to the research: a spatial picture — 20 seconds.**
+
+“Baby, you got a stew going”. Give the payoff a beat before connecting the matrix to the map. This completes the four-slide recipe; no extra click is needed.
 
 With more stations, the matrix gets much bigger, but the idea is the same: keep the connections. The estimates and their Hessian feed into a spatial model, giving us a picture of how a rainfall parameter varies from place to place. Gesture from the repeated black and blue blocks to the map. This map illustrates the rainfall level; the other parameters can also have spatial fields. Keep this as the connection back to the research, then reveal the closing poster.
 

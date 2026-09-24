@@ -202,13 +202,12 @@ draw_people <- function(stage, centres) {
 
 draw_matrix <- function(stage) {
   base()
-  tx(c("Working alone", "Sharing within stations", "Sharing with neighbours")[stage],
-     .06, .92, 30, face = "bold")
+  # The live slide supplies the recurring meme header; keep diagrams full size.
+  pushViewport(viewport(x = 0, y = -.045, just = c("left", "bottom"), clip = "off"))
   x0 <- .53; top <- .755; cw <- .045; ch <- cw * 1536 / 1024
   stopifnot(abs(cw * 1536 - ch * 1024) < 1e-10)
   block_centres <- top - (c(1, 2, 3) * 3 - 1.5) * ch
   draw_people(stage, block_centres)
-  tx("The Hessian", x0 + 4.5 * cw, .92, 23, face = "bold", just = "centre")
   for (i in 1:9) for (j in 1:9) {
     fill <- "#eeece6"
     if (matrix_masks[[stage]][i, j]) {
@@ -233,6 +232,7 @@ draw_matrix <- function(stage) {
     tx(LETTERS[station], x0 - .064, block_centres[station], 18, face = "bold", just = "centre")
   }
   tx("Illustrative magnitudes", x0 + 4.5 * cw, .10, 14, grey, just = "centre")
+  popViewport()
 }
 for(i in 1:3) save(paste0("matrix-",i),function()draw_matrix(i))
 

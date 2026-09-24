@@ -41,7 +41,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. A final research bridge expands the same block pattern to a 90×90 illustrative Hessian and leads, through a spatial model, to an arbitrary UK rainfall-level field. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail), shows each station's annual maximum hourly rainfall record becoming three estimates, then links a two-parameter hill to a normal density approximation through the Hessian. A rightward camera move carries the density left and brings in a 2×2 matrix. Three clicks link conditional level and spread slices to the diagonal, then joint movement to the off-diagonal. A fourth click clears the highlight; a fifth rounds the contours on standardised axes and fades the off-diagonal entries to illustrate independence, before one fixed, bracketed 9×9 grid gains connections. Nine people in three station groups show the same progression: working alone, sharing within stations, sharing with neighbours. Symmetric cell opacity varies with illustrative magnitude, on a fixed scale across all three views. The four-slide Arrested Development stew joke replaces the matrix and research headings with the author's recipe captions. A final research bridge expands the same block pattern to a 90×90 illustrative Hessian and leads, through a spatial model, to an arbitrary UK rainfall-level field. It ends over the new closing poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -82,6 +82,7 @@ Verbatim, 2026-09-23:
 | uncertainty | `design-studies/designs/hessian-panorama.png` | `design-studies/hessian-hill.R` | shared camera strip plus generated inline SVG; initial view: hill + normal density |
 | density + Hessian matrix | same panorama and `_hessian-panorama.qmd` SVG plus three highlight overlays | `design-studies/hessian-hill.R` | camera pans one panel right; three exclusive highlights, clear overlay, then independence morph |
 | research | `design-studies/designs/research-bridge.{png,svg}` | `design-studies/research-bridge.R` | 90×90 toy Hessian and illustrative UK spatial field |
+| stew header | `Figures/stew.png` and four exact captions | author-supplied screenshot; `index.qmd`, `theme.scss` | fixed top-left photo and italic quotations replace former headings |
 | separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | redesigned 2026-09-24: symmetric magnitudes, brackets and matching people groups |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
@@ -102,10 +103,10 @@ Verbatim, 2026-09-23:
  9. gauss         Gauss poster: estimation → normal approximation ~8 s
 10. uncertainty   Hill → normal density via the Hessian            ~30 s
 11. hessian-hill  Pan to density + matrix; 5 click steps           ~25 s
-12. separate      Working alone (diagonal)                        ~15 s
-13. within        Sharing within stations (blocks)                        ~25 s
-14. between       Sharing with neighbours (blue): the research     ~45 s
-15. research      More stations → spatial model → UK field        ~20 s
+12. separate      “You take an assumption of independence”                        ~15 s
+13. within        “You add within-station dependence”                        ~25 s
+14. between       “You add spatial dependence between neighbours”     ~45 s
+15. research      “Baby, you got a stew going” → UK field        ~20 s
 16. callback      New closing poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
@@ -146,3 +147,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Replaced the closing callback image with the author's new hessian_ending.png; retained the spoken ending and original opening poster | Author supplied a distinct final poster. Full image retained with paper-coloured surround |
 | 2026-09-24 | Added the author's Birgir cartoon as slide two, with his name and PhD-advisor label; moved the advisor introduction there and retained click control for the following poster reveal | Author identified Birgir Hrafnkelsson as his advisor and as a returning figure in the closing poster |
 | 2026-09-24 | Added a research bridge before the closing poster: larger patterned Hessian → spatial model → an illustrative UK rainfall-level field, with neutral map shading and Natural Earth coastlines | Author requested a direct link back to the research. The map is arbitrary, the station graph schematic, and the estimates accompany the Hessian as inputs to spatial modelling |
+| 2026-09-24 | Replaced the three large-matrix headings and research-bridge heading with the author's four Carl Weathers stew captions, as italic quotations beside the same top-left image; shifted full-size diagrams below the header | Author requested the Arrested Development recipe build and clarified that it replaces the old headings. Notes frame added connections as progressively relaxing independence |
