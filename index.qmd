@@ -82,14 +82,14 @@ Preparation detail: dot positions are schematic, not numerical GEV fits to the i
 Transition: those estimates are our best guesses, but how sure are we? Zoom in on level and spread at one station, holding tail fixed. Keep A-B-C and L-S-T in this order for the later nine-by-nine grid.
 :::
 
-## {#gauss .art background-image="Figures/gauss.png" background-size="contain" background-color="#000000"}
+## {#gauss .art background-image="Figures/gauss.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
 **Gauss makes an entrance — 8 seconds.**
 
 A brief comic bridge from parameter estimation to the normal approximation. Let the poster make its entrance; there is no need to read its full title or explain its decorative details. Cue the return of Gauss and the normal distribution, then move to the hill for the explanation of what the approximation buys us. Keep the humorous normal-distribution/Hessian loop for that next slide.
 
-Author-supplied GPT poster, added 24 September 2026. The formulas and plot within the poster are decorative artwork, not the scientific explanation. The full portrait image is preserved without cropping.
+Author-supplied GPT poster, revised 24 September 2026 with gauss2.png. Its paper background, hill and density contours echo the following slide. The poster remains comic artwork; the scientific explanation follows. The full portrait image is preserved without cropping.
 :::
 
 ## {#uncertainty .art background-image="design-studies/designs/hessian-normal.png" background-size="contain" background-color="#f8f6f0"}
