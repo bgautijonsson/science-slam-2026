@@ -40,7 +40,7 @@ _From Stefanía Benónísdóttir's emails (2026-09-10, 09-18, 09-23), amended an
 
 **Signed off 2026-09-23; structure revised the same day when the author adopted the Codex flow (see Slide map):**
 
-Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail) so the audience holds nine estimates, hands them a Hessian as "how sure are we about an estimate?", then shows one fixed 9×9 grid gain connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
+Modelling data-level dependence is hard, and every road leads back to the normal distribution. We simplify with normal approximations, and the Hessian is what builds them: it measures how sharply the peak curves. The talk introduces three fictional stations (A raises the level, B the spread, C the tail) so the audience holds nine estimates, hands them a Hessian as "how sure are we about an estimate?", defines its local curvature with a two-parameter hill and a 2×2 matrix reveal, then shows one fixed 9×9 grid gain connections: each estimate alone, within stations, between stations. It ends over the returning poster: "The Hessian wasn't the enemy. Assuming independence was the enemy."
 
 Working notes (step 2):
 
@@ -75,13 +75,14 @@ Verbatim, 2026-09-23:
 | level / spread / tail | `design-studies/designs/stations-{1,2,3}.png` | `design-studies/slide-designs.R` | made (Codex) |
 | stations | `design-studies/designs/station-tokens.png` | `slide-designs.R` | made (Codex) |
 | uncertainty | `design-studies/figures/uncertainty.png` | `design-studies/make-visuals.R` | re-rendered 2026-09-23 on the unified palette |
+| Hessian hill + matrix reveal | `design-studies/designs/hessian-hill.png`, `hessian-hill-matrix.png` | `design-studies/hessian-hill.R` | made 2026-09-24; log-Hessian checked analytically and numerically; browser alignment measured |
 | separate / within / between | `design-studies/designs/matrix-{1,2,3}.png` | `slide-designs.R` | made (Codex) |
 
 **Retired 2026-09-23** (kept for reference, not referenced by `index.qmd`): `R/figures.R` and `Figures/fig1`–`fig6`, `Figures/flod2.webp`: the covariance/precision/24×24 walk version (last used in commit `8ba1694`).
 
 ## Slide map
 
-**Current (2026-09-23): the Codex flow**, adopted by the author; ending spoken over the returning poster; the "Same storm" payoff slide cut. 11 visual states, ~220 s of 300 s. Speaker notes are the Codex draft's (`design-studies/science-slam-draft.qmd`), with the ending folded into the callback.
+**Current (2026-09-24): the Codex flow plus an intuitive Hessian definition**, with a 3D hill chosen by the author. Ending spoken over the returning poster; the "Same storm" payoff slide remains cut. 12 slides, 13 visual states including the matrix reveal, with 240 s of suggested speaking cues within the 300 s maximum. This is a planning allocation, not a measured duration; the author plans mentally and does not want a full rehearsal. `index.qmd` holds the current notes; the older `design-studies/science-slam-draft.qmd` is a historical draft.
 
 ```
  1. poster        The worrying.                                   ~15 s
@@ -90,11 +91,12 @@ Verbatim, 2026-09-23:
  4. spread        Station B: more spread                          ~10 s
  5. tail          Station C: heavier tail                         ~10 s
  6. stations      Three stations, nine estimates                  ~20 s
- 7. uncertainty   Give ourselves a Hessian (pinned down / room for doubt) ~35 s
- 8. separate      Each estimate (diagonal)                        ~15 s
- 9. within        Within stations (blocks)                        ~25 s
-10. between       Between stations (blue links): the research     ~45 s
-11. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
+ 7. uncertainty   Rainfall values → uncertainty about a parameter ~20 s
+ 8. hessian-hill  Shape near the best fit; click for 2×2 Hessian    ~35 s
+ 9. separate      Each estimate (diagonal)                        ~15 s
+10. within        Within stations (blocks)                        ~25 s
+11. between       Between stations (blue links): the research     ~45 s
+12. callback      Poster; spoken: "The Hessian wasn't the enemy. Assuming independence was the enemy."  ~15 s
 ```
 
 The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at `8ba1694`.
@@ -117,3 +119,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-23 | Poster opener + closing callback; closing = normal line → two-click ending; slide 4 heading off; bridge cue → slide 6 | Author's answers + second slide-critic pass |
 | 2026-09-23 | Adopted the Codex flow and visual system; ending spoken over the poster; payoff slide cut; make-visuals.R unified; stale docs/ figures removed | Author: "improve the aesthetic" using design-studies/ |
 | 2026-09-23 | Published: public repo `bgautijonsson/science-slam-2026`, Pages from main:/docs, live at bggj.is/science-slam-2026 (build of `9773042`) | Author asked Claude to publish (overriding the user-only publish-deck rule for this deck) |
+| 2026-09-24 | Added the intuitive Hessian hill before the matrix sequence, with a two-by-two grid on one click; shortened the preceding uncertainty cues | Author identified the missing definition and chose a hill; diagonal curvature and interaction now have a visual explanation |

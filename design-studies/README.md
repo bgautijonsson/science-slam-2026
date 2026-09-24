@@ -15,6 +15,7 @@ Working drafts and assets developed with Codex, brought into the talk repository
 - `figures/`: first draft figures in PNG/SVG, plus copies of the existing poster and flood photograph.
 - `designs/`: fictional station reveals (`stations-1` to `stations-3`), all-nine-parameter diagram, simplified Hessian ladder, and contact sheet, in PNG/SVG.
 - `make-visuals.R`, `slide-designs.R`: figure-generation sources; run from this directory.
+- `hessian-hill.R`: the live deck's intuitive Hessian slide, added 24 September. Generates the hill and transparent matrix reveal in `designs/hessian-hill*.{png,svg}`. The hill is a toy relative likelihood with an analytically checked log-Hessian; the diagonal/off-diagonal colours indicate matrix positions, not values. This addition is in `../index.qmd`; the earlier click-through draft and ZIP snapshots remain as they were.
 - `scripts/build_design_board.py`: builds the self-contained design board and its ZIP archive using relative paths.
 - `scripts/package_draft.py`: current draft generator. Running it overwrites both QMD sources with its stored draft text; keep speaker-cue changes in this script when rebuilding both views together.
 - `science-slam-draft.zip`, `slide-design-assets.zip`: downloadable snapshots refreshed with this revision; rebuild the packages after later changes.
@@ -28,6 +29,7 @@ From this directory:
 ```sh
 Rscript make-visuals.R
 Rscript slide-designs.R
+LC_ALL=en_US.UTF-8 Rscript hessian-hill.R
 python3 scripts/package_draft.py
 quarto render
 python3 scripts/build_design_board.py

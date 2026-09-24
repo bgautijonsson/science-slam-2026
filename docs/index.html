@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fc6244f29ba5aa1a0378faabe205b364.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-dfdecb09647f1e8731e2246d379114b7.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -240,8 +240,28 @@
 <section id="uncertainty" class="slide level2 art" data-background-image="design-studies/figures/uncertainty.png" data-background-size="contain" data-background-color="#f8f6f0">
 <h2></h2>
 <aside class="notes">
-<p><strong>Give ourselves a Hessian — 35 seconds.</strong></p>
-<p>Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.</p>
+<p><strong>From rainfall to uncertainty — 20 seconds.</strong></p>
+<p>Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The dashed curves preview a normal approximation around each peak. Next, show what the shape means when two parameters can move together. These are toy likelihood curves, not fitted GEV likelihoods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hessian-hill" class="slide level2 art" data-background-image="design-studies/designs/hessian-hill.png" data-background-size="contain" data-background-color="#f8f6f0">
+<h2></h2>
+<p><img data-src="design-studies/designs/hessian-hill-matrix.png" class="hessian-overlay fragment" alt="A two-by-two Hessian labelled Level and Spread: diagonal entries describe curvature for each parameter; off-diagonal entries describe how they interact."></p>
+<aside class="notes">
+<p><strong>The Hessian: the shape near the best fit — 35 seconds.</strong></p>
+<p>The top is our best fit. Nudge the parameters: in the steep direction, the fit gets worse quickly. Along the gentler direction, changing one parameter can partly compensate for changing the other. The Hessian records the local curvature of that hill.</p>
+<p>Click to reveal the two-by-two grid. The diagonal describes curvature for each parameter on its own; the other squares describe how the directions interact. Two parameters give us a two-by-two grid. Our nine estimates give us nine-by-nine. This local shape is what we use to build the normal approximation.</p>
+<p>Preparation detail, not spoken: the illustration is a toy relative likelihood over centred, rescaled Level and Spread coordinates, holding tail fixed. The relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. Cell colours identify diagonal versus off-diagonal positions, not numerical signs, magnitudes or correlations. The hill’s compensation direction is deliberately rotated relative to the parameter axes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

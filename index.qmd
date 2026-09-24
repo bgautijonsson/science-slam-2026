@@ -75,9 +75,23 @@ These examples changed one setting at a time. In practice, we estimate all three
 ## {#uncertainty .art background-image="design-studies/figures/uncertainty.png" background-size="contain" background-color="#f8f6f0"}
 
 ::: {.notes}
-**Give ourselves a Hessian — 35 seconds.**
+**From rainfall to uncertainty — 20 seconds.**
 
-Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The Hessian measures curvature near the peak, which helps us construct a normal approximation. With several parameters, it also records how their estimates are coupled. That information can be drawn as a grid. These are toy likelihood curves, not fitted GEV likelihoods.
+Now we are looking at possible parameter values, rather than possible rainfall values. A sharp peak pins an estimate down; a broad peak leaves room for doubt. The dashed curves preview a normal approximation around each peak. Next, show what the shape means when two parameters can move together. These are toy likelihood curves, not fitted GEV likelihoods.
+:::
+
+## {#hessian-hill .art background-image="design-studies/designs/hessian-hill.png" background-size="contain" background-color="#f8f6f0"}
+
+![](design-studies/designs/hessian-hill-matrix.png){.hessian-overlay .fragment .nostretch fig-alt="A two-by-two Hessian labelled Level and Spread: diagonal entries describe curvature for each parameter; off-diagonal entries describe how they interact."}
+
+::: {.notes}
+**The Hessian: the shape near the best fit — 35 seconds.**
+
+The top is our best fit. Nudge the parameters: in the steep direction, the fit gets worse quickly. Along the gentler direction, changing one parameter can partly compensate for changing the other. The Hessian records the local curvature of that hill.
+
+Click to reveal the two-by-two grid. The diagonal describes curvature for each parameter on its own; the other squares describe how the directions interact. Two parameters give us a two-by-two grid. Our nine estimates give us nine-by-nine. This local shape is what we use to build the normal approximation.
+
+Preparation detail, not spoken: the illustration is a toy relative likelihood over centred, rescaled Level and Spread coordinates, holding tail fixed. The relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. Cell colours identify diagonal versus off-diagonal positions, not numerical signs, magnitudes or correlations. The hill's compensation direction is deliberately rotated relative to the parameter axes.
 :::
 
 ## {#separate .art background-image="design-studies/designs/matrix-1.png" background-size="contain" background-color="#f8f6f0"}
