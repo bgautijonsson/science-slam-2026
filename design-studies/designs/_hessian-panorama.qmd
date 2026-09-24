@@ -1,0 +1,20 @@
+```{=html}
+<img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, followed by uncertainty and curvature near the peak.">
+<div class="live-panorama" data-id="hessian-live">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3072 1024" role="img" aria-label="Joint normal uncertainty and a two-by-two matrix. The independence step rounds the contours on standardised axes and fades the off-diagonal entries.">
+<g transform="translate(1221.120000 542.720000)">
+<g class="density-shape" style="--dependent-transform:matrix(1.513137686,-0.414671924,-0.414671924,0.960241787,0,0)">
+<circle class="density-contour" r="148.616738312" fill="#eeece6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"/>
+<circle class="density-contour" r="108.931463961" fill="#deded8" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"/>
+<circle class="density-contour" r="71.487310292" fill="#c6cac6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"/>
+<circle class="density-contour" r="40.560976013" fill="#a6afad" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"/>
+</g>
+<circle r="8" fill="#20272d" stroke="#f8f6f0" stroke-width="3"/>
+</g>
+<rect class="matrix-cell diagonal" x="1909.248000" y="353.792000" width="132.096000" height="132.096000" fill="#20272d"/>
+<rect class="matrix-cell off-diagonal" x="2053.632000" y="353.792000" width="132.096000" height="132.096000" fill="#8a9295"/>
+<rect class="matrix-cell off-diagonal" x="1909.248000" y="498.176000" width="132.096000" height="132.096000" fill="#8a9295"/>
+<rect class="matrix-cell diagonal" x="2053.632000" y="498.176000" width="132.096000" height="132.096000" fill="#20272d"/>
+</svg>
+</div>
+```

@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-ee17cbbbf693e517e5f8ba05d708ac31.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-c700696689ce4e004ac832bc3a4c9759.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -263,7 +263,24 @@
 <section id="uncertainty" class="slide level2 art camera-slide" data-auto-animate="true" data-auto-animate-id="hessian-camera" data-auto-animate-duration="0.8" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="false" data-background-color="#f8f6f0">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="panorama-frame">
-  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, leading to a normal approximation of joint uncertainty.">
+<img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, followed by uncertainty and curvature near the peak.">
+<div class="live-panorama" data-id="hessian-live">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3072 1024" role="img" aria-label="Joint normal uncertainty and a two-by-two matrix. The independence step rounds the contours on standardised axes and fades the off-diagonal entries.">
+<g transform="translate(1221.120000 542.720000)">
+<g class="density-shape" style="--dependent-transform:matrix(1.513137686,-0.414671924,-0.414671924,0.960241787,0,0)">
+<circle class="density-contour" r="148.616738312" fill="#eeece6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="108.931463961" fill="#deded8" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="71.487310292" fill="#c6cac6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="40.560976013" fill="#a6afad" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+</g>
+<circle r="8" fill="#20272d" stroke="#f8f6f0" stroke-width="3"></circle>
+</g>
+<rect class="matrix-cell diagonal" x="1909.248000" y="353.792000" width="132.096000" height="132.096000" fill="#20272d"></rect>
+<rect class="matrix-cell off-diagonal" x="2053.632000" y="353.792000" width="132.096000" height="132.096000" fill="#8a9295"></rect>
+<rect class="matrix-cell off-diagonal" x="1909.248000" y="498.176000" width="132.096000" height="132.096000" fill="#8a9295"></rect>
+<rect class="matrix-cell diagonal" x="2053.632000" y="498.176000" width="132.096000" height="132.096000" fill="#20272d"></rect>
+</svg>
+</div>
 </div>
 <h3 class="camera-title">A normal approximation</h3>
 <aside class="notes">
@@ -287,10 +304,29 @@
 <section id="hessian-hill" class="slide level2 art camera-slide" data-auto-animate="true" data-auto-animate-id="hessian-camera" data-auto-animate-duration="0.8" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="false" data-background-color="#f8f6f0">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="panorama-frame">
-  <img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="The same joint density now sits on the left and points to a two-by-two Hessian matrix on the right.">
+<img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, followed by uncertainty and curvature near the peak.">
+<div class="live-panorama" data-id="hessian-live">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3072 1024" role="img" aria-label="Joint normal uncertainty and a two-by-two matrix. The independence step rounds the contours on standardised axes and fades the off-diagonal entries.">
+<g transform="translate(1221.120000 542.720000)">
+<g class="density-shape" style="--dependent-transform:matrix(1.513137686,-0.414671924,-0.414671924,0.960241787,0,0)">
+<circle class="density-contour" r="148.616738312" fill="#eeece6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="108.931463961" fill="#deded8" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="71.487310292" fill="#c6cac6" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+<circle class="density-contour" r="40.560976013" fill="#a6afad" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"></circle>
+</g>
+<circle r="8" fill="#20272d" stroke="#f8f6f0" stroke-width="3"></circle>
+</g>
+<rect class="matrix-cell diagonal" x="1909.248000" y="353.792000" width="132.096000" height="132.096000" fill="#20272d"></rect>
+<rect class="matrix-cell off-diagonal" x="2053.632000" y="353.792000" width="132.096000" height="132.096000" fill="#8a9295"></rect>
+<rect class="matrix-cell off-diagonal" x="1909.248000" y="498.176000" width="132.096000" height="132.096000" fill="#8a9295"></rect>
+<rect class="matrix-cell diagonal" x="2053.632000" y="498.176000" width="132.096000" height="132.096000" fill="#20272d"></rect>
+</svg>
+</div>
   <img class="matrix-highlight fragment current-visible" data-fragment-index="0" src="design-studies/designs/hessian-level.png" alt="Horizontal level slice with spread held fixed, linked to the first diagonal cell.">
   <img class="matrix-highlight fragment current-visible" data-fragment-index="1" src="design-studies/designs/hessian-spread.png" alt="Vertical spread slice with level held fixed, linked to the second diagonal cell.">
   <img class="matrix-highlight fragment current-visible" data-fragment-index="2" src="design-studies/designs/hessian-interaction.png" alt="Joint movement along the tilted contours, linked to both off-diagonal cells.">
+  <span class="clear-highlight fragment" data-fragment-index="3" aria-hidden="true"></span>
+  <p class="independence fragment" data-fragment-index="4">Independent · standardised axes</p>
 </div>
 <h3 class="camera-title">The Hessian</h3>
 <aside class="notes">
@@ -300,10 +336,12 @@
 <li>Level: the horizontal slice shows how tightly level is pinned down with spread held fixed; highlight the first diagonal entry.</li>
 <li>Spread: the vertical slice shows how tightly spread is pinned down with level held fixed; highlight the second diagonal entry.</li>
 <li>Interaction: highlight both off-diagonal entries and the tilted direction in which the two estimates can move together. The full matrix determines the joint shape, including the direction’s width.</li>
+<li>Clear the tilted line and the matrix highlight, returning to the clean density and full matrix. Pause here before changing the picture.</li>
+<li>Independence: the contours round into circles as the off-diagonal entries fade. This illustration also standardises both axes; independence removes the tilt, while equal standardised uncertainty makes the contours circular.</li>
 </ol>
 <p>One highlight replaces the previous one. Keep the explanation in your own words; the short captions carry the held-fixed qualification.</p>
-<p>Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. The next click after the three highlights advances to that nine-by-nine grid; the left arrow retraces the highlights and camera movement.</p>
-<p>Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Highlighted horizontal and vertical segments intersect the same density contour with the other coordinate fixed; they are not marginal standard deviations. The tilted segment illustrates interaction, not a width determined by the off-diagonal alone. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.</p>
+<p>Bridge straight to the next slide: level and spread gave us two-by-two; three parameters at each of our three stations give us nine-by-nine. The next click after the fifth reveal advances to that nine-by-nine grid; the left arrow reverses the independence animation, then retraces the highlights and camera movement.</p>
+<p>Preparation detail, not spoken: the relevant Hessian is that of the log-likelihood at its peak; its negative is the precision for the normal approximation. Because this relative likelihood equals one at the peak and has zero gradient there, its Hessian at the peak equals the log-likelihood Hessian. A diagonal entry of the precision matrix is conditional precision with other parameters fixed, not the inverse marginal variance. The covariance is the inverse of the full precision matrix. Highlighted horizontal and vertical segments intersect the same density contour with the other coordinate fixed; they are not marginal standard deviations. The tilted segment illustrates interaction, not a width determined by the off-diagonal alone. Curvature in a joint direction combines diagonal and off-diagonal terms. Cell colours identify matrix positions, not numerical signs, magnitudes or correlations. The fifth reveal is an illustrative change of the normal approximation, not a refit of the rainfall model. Its four contours retain the same enclosed probability levels throughout a continuous nonsingular affine morph. It removes dependence and standardises the plotted axes together; independence alone allows unequal marginal variances and axis-aligned ellipses. Within-station parameter interaction is distinct from dependence between rainfall observations at different stations, which enters later.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

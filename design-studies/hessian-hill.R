@@ -134,10 +134,10 @@ draw_hill <- function() {
   text_at("Maximum likelihood estimate", peak[1], peak[2] + .057, 17, just = "centre")
 }
 
-draw_matrix <- function(centre_x = panel_centres[2], active = NULL, labels = TRUE) {
+draw_matrix <- function(centre_x = panel_centres[2], active = NULL, labels = TRUE, cells = TRUE) {
   x <- centre_x + c(-.049, .045)
   y <- c(.59, .449)
-  for (i in 1:2) for (j in 1:2) {
+  if (cells) for (i in 1:2) for (j in 1:2) {
     fill <- if (i == j) ink else interaction
     if (!is.null(active)) {
       selected <- (active == "level" && i == 1 && j == 1) ||
@@ -244,11 +244,58 @@ draw_panorama <- function() {
   text_at("Curvature near the peak", panel_centres[2] + shift, .79, 21, just = "centre")
   draw_hill()
   draw_arrow(label = TRUE)
-  draw_density()
+  # Density and matrix cells are live SVG, above this static strip.
+  draw_axes(panel_centres[2])
   draw_arrow(offset = shift)
-  draw_matrix(panel_centres[2] + shift)
+  draw_matrix(panel_centres[2] + shift, cells = FALSE)
   drawing_width <<- 1
   popViewport()
+}
+
+# A single shared SVG layer pans with the strip. Its symmetric square-root
+# transform interpolates smoothly to a circle on the fifth matrix fragment.
+# This last illustration both removes dependence and standardises the axes;
+# it does not imply that independence alone gives equal marginal variances.
+save_live_panorama <- function() {
+  pixels <- c(1536, 1024)
+  plane <- diag(parameter_scale * pixels * c(1, -1))
+  pixel_covariance <- plane %*% Sigma %*% plane
+  root_eig <- eigen(pixel_covariance, symmetric = TRUE)
+  root <- root_eig$vectors %*% diag(sqrt(root_eig$values)) %*% t(root_eig$vectors)
+  circle_sd <- sqrt(prod(parameter_scale * pixels)) / sqrt(Q[1, 1])
+  dependent <- root / circle_sd
+  stopifnot(max(abs(root %*% t(root) - pixel_covariance)) < 1e-9)
+  # Validate endpoints here; CSS decomposes the transform during interpolation.
+  # Browser checks exercise the actual forward and reverse animation.
+  stopifnot(min(eigen(dependent, symmetric = TRUE)$values) > 0, circle_sd > 0)
+  radii <- circle_sd * sqrt(qchisq(c(.95, .80, .50, .20), df = 2))
+  shades <- c("#eeece6", "#deded8", "#c6cac6", "#a6afad")
+  centre <- c(panel_centres[2] * pixels[1], (1 - parameter_centre_y) * pixels[2])
+  matrix_centre <- panel_centres[2] + diff(panel_centres)
+  matrix_x <- (matrix_centre + c(-.049, .045) - .086 / 2) * pixels[1]
+  matrix_y <- (1 - c(.59, .449) - .129 / 2) * pixels[2]
+  cells <- character()
+  for (i in 1:2) for (j in 1:2) {
+    cells <- c(cells, sprintf(
+      '<rect class="matrix-cell %s" x="%.6f" y="%.6f" width="%.6f" height="%.6f" fill="%s"/>',
+      if (i == j) "diagonal" else "off-diagonal", matrix_x[j], matrix_y[i],
+      .086 * pixels[1], .129 * pixels[2], if (i == j) ink else interaction))
+  }
+  markup <- c(
+    '```{=html}',
+    '<img class="hessian-panorama" data-id="hessian-panorama" src="design-studies/designs/hessian-panorama.png" alt="Likelihood hill with a trail to the maximum likelihood estimate, followed by uncertainty and curvature near the peak.">',
+    '<div class="live-panorama" data-id="hessian-live">',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3072 1024" role="img" aria-label="Joint normal uncertainty and a two-by-two matrix. The independence step rounds the contours on standardised axes and fades the off-diagonal entries.">',
+    sprintf('<g transform="translate(%.6f %.6f)">', centre[1], centre[2]),
+    sprintf('<g class="density-shape" style="--dependent-transform:matrix(%.9f,%.9f,%.9f,%.9f,0,0)">',
+            dependent[1, 1], dependent[2, 1], dependent[1, 2], dependent[2, 2]),
+    vapply(seq_along(radii), function(i) sprintf(
+      '<circle class="density-contour" r="%.9f" fill="%s" stroke="#929b98" stroke-width="1.65" vector-effect="non-scaling-stroke"/>',
+      radii[i], shades[i]), character(1)),
+    '</g>',
+    '<circle r="8" fill="#20272d" stroke="#f8f6f0" stroke-width="3"/>',
+    '</g>', cells, '</svg>', '</div>', '```')
+  writeLines(markup, file.path("designs", "_hessian-panorama.qmd"))
 }
 
 save_figure <- function(name, draw, background = paper, width = 1536) {
@@ -264,9 +311,11 @@ save_figure <- function(name, draw, background = paper, width = 1536) {
 save_figure("hessian-normal", function() draw_pair(normal = TRUE))
 save_figure("hessian-hill", draw_pair)
 save_figure("hessian-panorama", draw_panorama, width = 3072)
+save_live_panorama()
 for (part in c("level", "spread", "interaction")) {
   save_figure(paste0("hessian-", part), function() draw_highlight(part), "transparent")
 }
 cat("Validated the hill's log-Hessian, covariance, peak and equal-density contours.\n")
 cat("Validated the trail's monotone ascent and exactly matched parameter frames.\n")
 cat("Rendered the camera panorama, static views and three matrix overlays; text bounds checked.\n")
+cat("Validated the live SVG covariance and circular standardised endpoint.\n")
