@@ -2,7 +2,7 @@
 
 Deck slug: `science-slam-2026`
 Talk date: 2026-09-24
-Delivered: 2026-09-24 at Gróska. Author, 2026-09-25: it went well and people thought it was fun. Step 8 (post-talk pass) not yet started.
+Delivered: 2026-09-24 at Gróska. Author, 2026-09-25: it went well and people thought it was fun. Finished on time; the Gauss section worked well; biggest laugh probably the Birgir cartoon. Step 8: summary filed to the PhD vault (`Sessions/2026-09-24 — Science Slam delivered.md`); annotated reading-version pass not done (notes kept minimal by choice).
 Modelled response: annual maximum hourly precipitation — the wettest hour of each year (author confirmed 2026-09-24).
 Repo: `bgautijonsson/science-slam-2026` (public, created 2026-09-23)
 Public URL: https://bggj.is/science-slam-2026/ (GitHub Pages from `main:/docs`; first build from commit `9773042`, verified live 2026-09-23: 11 slides, all images 200)
@@ -23,7 +23,7 @@ Per [`~/talks/.claude/skills/slide-workshop/SKILL.md`](../../.claude/skills/slid
 | 5 — Slide map                                 | ✓ done 2026-09-23 |
 | 6 — Render-and-check (deliberate visual pass) | ✓ done 2026-09-23 (DOM measurements; squash fixed) |
 | 7 — Draft slide-by-slide                      | ✓ 2026-09-23 (Codex flow adopted; 11 states) |
-| 8 — Post-talk annotated pass                  | □       |
+| 8 — Post-talk annotated pass                  | ◐ 2026-09-25: summary filed (PhD vault); annotated pass not done |
 
 ## Design studies
 
@@ -162,3 +162,4 @@ The earlier 8-slide map (covariance → precision → 24×24 walk) is in git at 
 | 2026-09-24 | Cut the speaker notes to one-to-three-line cues (2,687 to 214 words); kept the author's verbatim thinking and Birgir-setup lines; replaced per-slide timings with one 2:50 checkpoint on the first stew slide | Author found the notes too verbose. Rendered audience view unchanged (HTML identical with notes stripped); full notes in git at `eb48a90` |
 | 2026-09-24 | The uncertainty slide opens on the hill alone, centred; one click moves it left while the Hessian arrow and density slide in, then the usual camera pan follows | Author wanted the Gauss laugh to land on the hill alone. The revealed state is the old layout exactly, so the auto-animated pan is unchanged both ways; 27 states by click |
 | 2026-09-25 | Recorded the delivery: talk given 2026-09-24; author reports it went well and people found it fun | Closes steps 1–7; step 8 (annotated pass and summary) still open |
+| 2026-09-25 | Step 8 summary filed to the PhD vault (`Sessions/2026-09-24 — Science Slam delivered.md`) | Author: on time, the Gauss section worked, biggest laugh probably the Birgir cartoon; the track-record entry awaits the author's confirmation |
